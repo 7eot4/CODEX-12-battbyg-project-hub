@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Publiczny, zagregowany rejestr wiedzy z projektów okrętowych BATTBYG." />
+    <meta name="theme-color" content="#07191f" />
+    <title>BATTBYG Project Hub</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307191f'/%3E%3Cpath d='M16 17h24a9 9 0 0 1 0 18H28v12h12' fill='none' stroke='%232dd4bf' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='47' cy='47' r='5' fill='%23ff9b61'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <div>
+          <strong>BATTBYG</strong>
+          <span>Project intelligence</span>
+        </div>
+      </div>
+      <div class="snapshot" aria-live="polite">
+        <span>Stan danych</span>
+        <strong id="snapshot-date">—</strong>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Rejestr projektów okrętowych</p>
+          <h1 id="page-title">Wiedza z pracy stoczniowej, uporządkowana jako materiał inżynierski.</h1>
+          <p class="lead">Bieżący obraz projektów, obszarów technicznych i jakości dowodów. Publiczna wersja pokazuje wyłącznie bezpieczne agregaty.</p>
+        </div>
+        <div class="scope-note">
+          <span class="scope-dot" aria-hidden="true"></span>
+          <div>
+            <strong>Tryb publiczny</strong>
+            <p>Bez zdjęć, rysunków, danych prywatnych i szczegółów wykonawczych.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Podsumowanie">
+        <article><span>Projekty</span><strong id="metric-projects">—</strong><small>jednostki w rejestrze</small></article>
+        <article><span>Materiał dowodowy</span><strong id="metric-photos">—</strong><small>zweryfikowane fotografie</small></article>
+        <article><span>Aktualizacje</span><strong id="metric-updates">—</strong><small>udokumentowane importy</small></article>
+        <article><span>Wysoka pewność</span><strong id="metric-confidence">—</strong><small>rekordy klasyfikacji</small></article>
+      </section>
+
+      <section class="workspace" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Flota projektowa</p>
+            <h2 id="projects-title">Jednostki i zakres wiedzy</h2>
+          </div>
+          <div class="filters" id="project-filters" aria-label="Filtr projektu"></div>
+        </div>
+
+        <div class="project-layout">
+          <div class="project-list" id="project-list"></div>
+          <aside class="detail-panel" id="project-detail" aria-live="polite"></aside>
+        </div>
+      </section>
+
+      <section class="analysis-grid">
+        <article class="panel" aria-labelledby="areas-title">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Rozkład materiału</p>
+              <h2 id="areas-title">Obszary techniczne</h2>
+            </div>
+            <span id="area-context">Wszystkie projekty</span>
+          </div>
+          <div class="bars" id="category-bars"></div>
+        </article>
+
+        <article class="panel" aria-labelledby="updates-title">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Chronologia</p>
+              <h2 id="updates-title">Ostatnie aktualizacje</h2>
+            </div>
+          </div>
+          <ol class="timeline" id="update-timeline"></ol>
+        </article>
+      </section>
+
+      <section class="method" aria-labelledby="method-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Standard jakości</p>
+            <h2 id="method-title">Co uznajemy za wiedzę</h2>
+          </div>
+        </div>
+        <div class="method-grid">
+          <article><span>01</span><h3>Fakt</h3><p id="method-facts"></p></article>
+          <article><span>02</span><h3>Interpretacja</h3><p id="method-interpretations"></p></article>
+          <article><span>03</span><h3>Ograniczenie</h3><p id="method-limitations"></p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>BATTBYG Project Hub · materiał szkoleniowy i ewidencyjny</p>
+      <p id="generated-at">—</p>
+    </footer>
+
+    <noscript>Do wyświetlenia danych projektowych wymagane jest włączenie JavaScript.</noscript>
+  </body>
+</html>

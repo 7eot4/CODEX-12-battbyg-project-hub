@@ -1,0 +1,277 @@
+{
+  "site": {
+    "title": "BATTBYG Project Hub",
+    "description": "Publiczny, zagregowany rejestr wiedzy z projektów okrętowych BATTBYG.",
+    "data_snapshot": "2026-10-04",
+    "generated_at": "2026-10-06T15:11:33+02:00",
+    "publication_mode": "public-sanitized"
+  },
+  "summary": {
+    "projects": 4,
+    "photos": 1370,
+    "updates": 2,
+    "high_confidence": 522,
+    "medium_confidence": 848
+  },
+  "projects": [
+    {
+      "id": "01_MS_FONNES",
+      "name": "M/S FONNES",
+      "code": "NVC 315",
+      "focus": "Automatyka, maszyny pomocnicze i dokumentacja systemowa.",
+      "photos": 151,
+      "date_from": "2026-04-09",
+      "date_to": "2026-04-18",
+      "confidence": {
+        "high": 6,
+        "medium": 145
+      },
+      "categories": [
+        {
+          "key": "50_Automation_control_instrumentation",
+          "label": "Automatyka i pomiary",
+          "count": 100
+        },
+        {
+          "key": "60_Machinery_auxiliaries_piping",
+          "label": "Maszyny i instalacje",
+          "count": 20
+        },
+        {
+          "key": "20_Hull_deck_yard",
+          "label": "Kadłub, pokład i stocznia",
+          "count": 15
+        },
+        {
+          "key": "10_Drawings_specs_asbuilt",
+          "label": "Rysunki i as-built",
+          "count": 12
+        },
+        {
+          "key": "30_Safety_fire_LSA",
+          "label": "Bezpieczeństwo i LSA",
+          "count": 2
+        },
+        {
+          "key": "00_Project_identity_context",
+          "label": "Identyfikacja projektu",
+          "count": 1
+        }
+      ],
+      "restricted_material_published": false
+    },
+    {
+      "id": "02_GO_SARS",
+      "name": "G.O. SARS",
+      "code": "projekt badawczy",
+      "focus": "Rozdział energii, automatyka, nawigacja i systemy specjalistyczne.",
+      "photos": 126,
+      "date_from": "2026-04-20",
+      "date_to": "2026-04-27",
+      "confidence": {
+        "high": 3,
+        "medium": 123
+      },
+      "categories": [
+        {
+          "key": "10_Drawings_specs_asbuilt",
+          "label": "Rysunki i as-built",
+          "count": 27
+        },
+        {
+          "key": "50_Automation_control_instrumentation",
+          "label": "Automatyka i pomiary",
+          "count": 26
+        },
+        {
+          "key": "70_Navigation_scientific_mission",
+          "label": "Nawigacja i systemy specjalne",
+          "count": 22
+        },
+        {
+          "key": "20_Hull_deck_yard",
+          "label": "Kadłub, pokład i stocznia",
+          "count": 20
+        },
+        {
+          "key": "40_Electrical_power_distribution",
+          "label": "Rozdział energii",
+          "count": 20
+        },
+        {
+          "key": "60_Machinery_auxiliaries_piping",
+          "label": "Maszyny i instalacje",
+          "count": 10
+        },
+        {
+          "key": "30_Safety_fire_LSA",
+          "label": "Bezpieczeństwo i LSA",
+          "count": 1
+        }
+      ],
+      "restricted_material_published": false
+    },
+    {
+      "id": "03_MV_BATSFJORD",
+      "name": "M/V BÅTSFJORD",
+      "code": "projekt stoczniowy",
+      "focus": "Rysunki as-built, rozdział energii, automatyka i commissioning.",
+      "photos": 1007,
+      "date_from": "2026-08-06",
+      "date_to": "2026-10-03",
+      "confidence": {
+        "high": 451,
+        "medium": 556
+      },
+      "categories": [
+        {
+          "key": "10_Drawings_specs_asbuilt",
+          "label": "Rysunki i as-built",
+          "count": 367
+        },
+        {
+          "key": "40_Electrical_power_distribution",
+          "label": "Rozdział energii",
+          "count": 301
+        },
+        {
+          "key": "50_Automation_control_instrumentation",
+          "label": "Automatyka i pomiary",
+          "count": 243
+        },
+        {
+          "key": "60_Machinery_auxiliaries_piping",
+          "label": "Maszyny i instalacje",
+          "count": 74
+        },
+        {
+          "key": "80_Commissioning_testing_closeout",
+          "label": "Commissioning i testy",
+          "count": 11
+        },
+        {
+          "key": "20_Hull_deck_yard",
+          "label": "Kadłub, pokład i stocznia",
+          "count": 10
+        },
+        {
+          "key": "30_Safety_fire_LSA",
+          "label": "Bezpieczeństwo i LSA",
+          "count": 1
+        }
+      ],
+      "restricted_material_published": false
+    },
+    {
+      "id": "04_VESTFISK",
+      "name": "VESTFISK",
+      "code": "projekt stoczniowy",
+      "focus": "Automatyka, rysunki i identyfikacja wyposażenia.",
+      "photos": 86,
+      "date_from": "2026-09-17",
+      "date_to": "2026-09-25",
+      "confidence": {
+        "high": 62,
+        "medium": 24
+      },
+      "categories": [
+        {
+          "key": "50_Automation_control_instrumentation",
+          "label": "Automatyka i pomiary",
+          "count": 44
+        },
+        {
+          "key": "10_Drawings_specs_asbuilt",
+          "label": "Rysunki i as-built",
+          "count": 35
+        },
+        {
+          "key": "00_Project_identity_context",
+          "label": "Identyfikacja projektu",
+          "count": 4
+        },
+        {
+          "key": "20_Hull_deck_yard",
+          "label": "Kadłub, pokład i stocznia",
+          "count": 3
+        }
+      ],
+      "restricted_material_published": false
+    }
+  ],
+  "categories": [
+    {
+      "key": "10_Drawings_specs_asbuilt",
+      "label": "Rysunki i as-built",
+      "count": 441
+    },
+    {
+      "key": "50_Automation_control_instrumentation",
+      "label": "Automatyka i pomiary",
+      "count": 413
+    },
+    {
+      "key": "40_Electrical_power_distribution",
+      "label": "Rozdział energii",
+      "count": 321
+    },
+    {
+      "key": "60_Machinery_auxiliaries_piping",
+      "label": "Maszyny i instalacje",
+      "count": 104
+    },
+    {
+      "key": "20_Hull_deck_yard",
+      "label": "Kadłub, pokład i stocznia",
+      "count": 48
+    },
+    {
+      "key": "70_Navigation_scientific_mission",
+      "label": "Nawigacja i systemy specjalne",
+      "count": 22
+    },
+    {
+      "key": "80_Commissioning_testing_closeout",
+      "label": "Commissioning i testy",
+      "count": 11
+    },
+    {
+      "key": "00_Project_identity_context",
+      "label": "Identyfikacja projektu",
+      "count": 5
+    },
+    {
+      "key": "30_Safety_fire_LSA",
+      "label": "Bezpieczeństwo i LSA",
+      "count": 4
+    }
+  ],
+  "updates": [
+    {
+      "date": "2026-10-04",
+      "included": 459,
+      "excluded": 65,
+      "projects": [
+        "M/V BÅTSFJORD"
+      ],
+      "status": "zweryfikowana"
+    },
+    {
+      "date": "2026-09-27",
+      "included": 911,
+      "excluded": 956,
+      "projects": [
+        "M/S FONNES",
+        "G.O. SARS",
+        "M/V BÅTSFJORD",
+        "VESTFISK"
+      ],
+      "status": "zweryfikowana"
+    }
+  ],
+  "methodology": {
+    "facts": "Dane widoczne w rejestrach projektu lub bezpośrednio na materiale źródłowym.",
+    "interpretations": "Robocze wnioski techniczne wymagające potwierdzenia dokumentacją.",
+    "limitations": "Zdjęcia nie potwierdzają rewizji, wyniku testu ani aktualnego stanu urządzenia."
+  }
+}
