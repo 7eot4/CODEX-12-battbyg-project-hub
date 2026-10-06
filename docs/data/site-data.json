@@ -3,7 +3,7 @@
     "title": "BATTBYG Project Hub",
     "description": "Publiczny, zagregowany rejestr wiedzy z projektów okrętowych BATTBYG.",
     "data_snapshot": "2026-10-04",
-    "generated_at": "2026-10-06T15:11:33+02:00",
+    "generated_at": "2026-10-06T15:28:48+02:00",
     "publication_mode": "public-sanitized"
   },
   "summary": {
@@ -58,6 +58,442 @@
           "count": 1
         }
       ],
+      "language_learning": {
+        "term_count": 47,
+        "domains": [
+          "Automatyka",
+          "Bezpieczeństwo",
+          "Dokumentacja",
+          "Maszyny",
+          "Proces i chłodnictwo",
+          "Statek i przestrzenie"
+        ],
+        "terms": [
+          {
+            "id": "term-001",
+            "english": "vessel",
+            "norwegian": "fartøy",
+            "polish": "jednostka/statek",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-002",
+            "english": "engine room",
+            "norwegian": "maskinrom",
+            "polish": "maszynownia",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-003",
+            "english": "bridge",
+            "norwegian": "bro",
+            "polish": "mostek",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-004",
+            "english": "main deck",
+            "norwegian": "hoveddekk",
+            "polish": "pokład główny",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-005",
+            "english": "bulkhead",
+            "norwegian": "skott",
+            "polish": "gródź",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-006",
+            "english": "watertight door",
+            "norwegian": "vanntett dør",
+            "polish": "drzwi wodoszczelne",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-007",
+            "english": "bilge system",
+            "norwegian": "lensesystem",
+            "polish": "instalacja zęzowa",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-008",
+            "english": "ballast system",
+            "norwegian": "ballastsystem",
+            "polish": "instalacja balastowa",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-009",
+            "english": "main engine",
+            "norwegian": "hovedmotor",
+            "polish": "silnik główny",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-010",
+            "english": "auxiliary engine",
+            "norwegian": "hjelpemotor",
+            "polish": "silnik pomocniczy",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-011",
+            "english": "steering gear",
+            "norwegian": "styremaskin",
+            "polish": "maszyna sterowa",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-012",
+            "english": "bow thruster",
+            "norwegian": "baugpropell",
+            "polish": "ster strumieniowy dziobowy",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-013",
+            "english": "pump",
+            "norwegian": "pumpe",
+            "polish": "pompa",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-014",
+            "english": "valve",
+            "norwegian": "ventil",
+            "polish": "zawór",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-015",
+            "english": "piping system",
+            "norwegian": "rørsystem",
+            "polish": "instalacja rurowa",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-036",
+            "english": "variable-frequency drive",
+            "norwegian": "frekvensomformer",
+            "polish": "przemiennik częstotliwości",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-037",
+            "english": "PLC",
+            "norwegian": "PLS / PLC",
+            "polish": "sterownik PLC",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-038",
+            "english": "operator panel / HMI",
+            "norwegian": "operatørpanel",
+            "polish": "panel operatorski HMI",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-039",
+            "english": "input/output",
+            "norwegian": "inngang/utgang",
+            "polish": "wejście/wyjście",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-040",
+            "english": "I/O list",
+            "norwegian": "I/O-liste",
+            "polish": "lista wejść i wyjść",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-041",
+            "english": "sensor",
+            "norwegian": "sensor / føler",
+            "polish": "czujnik",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-042",
+            "english": "transmitter",
+            "norwegian": "transmitter / måleomformer",
+            "polish": "przetwornik pomiarowy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-043",
+            "english": "actuator",
+            "norwegian": "aktuator",
+            "polish": "element wykonawczy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-044",
+            "english": "limit switch",
+            "norwegian": "endebryter",
+            "polish": "wyłącznik krańcowy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-045",
+            "english": "pressure switch",
+            "norwegian": "pressostat",
+            "polish": "presostat",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-046",
+            "english": "setpoint",
+            "norwegian": "settpunkt",
+            "polish": "wartość zadana",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-047",
+            "english": "interlock",
+            "norwegian": "forrigling",
+            "polish": "blokada funkcjonalna",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-048",
+            "english": "fail-safe state",
+            "norwegian": "feilsikker tilstand",
+            "polish": "stan bezpieczny przy uszkodzeniu",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-049",
+            "english": "fire control plan",
+            "norwegian": "brann- og sikkerhetsplan",
+            "polish": "plan ochrony przeciwpożarowej i bezpieczeństwa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-050",
+            "english": "fire detection system",
+            "norwegian": "brannalarmanlegg",
+            "polish": "system sygnalizacji pożaru",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-051",
+            "english": "fire pump",
+            "norwegian": "brannpumpe",
+            "polish": "pompa pożarowa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-052",
+            "english": "fire extinguisher",
+            "norwegian": "brannslokningsapparat",
+            "polish": "gaśnica",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-053",
+            "english": "fixed extinguishing system",
+            "norwegian": "fast slokkeanlegg",
+            "polish": "stała instalacja gaśnicza",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-054",
+            "english": "emergency exit",
+            "norwegian": "nødutgang",
+            "polish": "wyjście awaryjne",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-055",
+            "english": "muster station",
+            "norwegian": "mønstringsstasjon",
+            "polish": "miejsce zbiórki",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-056",
+            "english": "liferaft",
+            "norwegian": "redningsflåte",
+            "polish": "tratwa ratunkowa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-057",
+            "english": "lifejacket",
+            "norwegian": "redningsvest",
+            "polish": "kamizelka ratunkowa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-058",
+            "english": "remote stop",
+            "norwegian": "fjernstopp",
+            "polish": "zdalne zatrzymanie",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-059",
+            "english": "refrigeration plant",
+            "norwegian": "kuldeanlegg",
+            "polish": "instalacja chłodnicza",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-060",
+            "english": "compressor",
+            "norwegian": "kompressor",
+            "polish": "sprężarka",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-061",
+            "english": "evaporator",
+            "norwegian": "fordamper",
+            "polish": "parownik",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-062",
+            "english": "condenser",
+            "norwegian": "kondensator (kuldeanlegg)",
+            "polish": "skraplacz",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-063",
+            "english": "solenoid valve",
+            "norwegian": "magnetventil",
+            "polish": "zawór elektromagnetyczny",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-074",
+            "english": "as-built drawing",
+            "norwegian": "som-bygget-tegning",
+            "polish": "rysunek powykonawczy",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-075",
+            "english": "cable schedule",
+            "norwegian": "kabelliste",
+            "polish": "lista kablowa",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-076",
+            "english": "drawing revision",
+            "norwegian": "tegningsrevisjon",
+            "polish": "rewizja rysunku",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-077",
+            "english": "traceability",
+            "norwegian": "sporbarhet",
+            "polish": "identyfikowalność",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          }
+        ]
+      },
       "restricted_material_published": false
     },
     {
@@ -109,6 +545,669 @@
           "count": 1
         }
       ],
+      "language_learning": {
+        "term_count": 72,
+        "domains": [
+          "Automatyka",
+          "Bezpieczeństwo",
+          "Dokumentacja",
+          "Elektrotechnika",
+          "Maszyny",
+          "Proces i chłodnictwo",
+          "Statek i przestrzenie",
+          "Systemy badawcze"
+        ],
+        "terms": [
+          {
+            "id": "term-001",
+            "english": "vessel",
+            "norwegian": "fartøy",
+            "polish": "jednostka/statek",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-002",
+            "english": "engine room",
+            "norwegian": "maskinrom",
+            "polish": "maszynownia",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-003",
+            "english": "bridge",
+            "norwegian": "bro",
+            "polish": "mostek",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-004",
+            "english": "main deck",
+            "norwegian": "hoveddekk",
+            "polish": "pokład główny",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-005",
+            "english": "bulkhead",
+            "norwegian": "skott",
+            "polish": "gródź",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-006",
+            "english": "watertight door",
+            "norwegian": "vanntett dør",
+            "polish": "drzwi wodoszczelne",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-007",
+            "english": "bilge system",
+            "norwegian": "lensesystem",
+            "polish": "instalacja zęzowa",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-008",
+            "english": "ballast system",
+            "norwegian": "ballastsystem",
+            "polish": "instalacja balastowa",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-009",
+            "english": "main engine",
+            "norwegian": "hovedmotor",
+            "polish": "silnik główny",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-010",
+            "english": "auxiliary engine",
+            "norwegian": "hjelpemotor",
+            "polish": "silnik pomocniczy",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-011",
+            "english": "steering gear",
+            "norwegian": "styremaskin",
+            "polish": "maszyna sterowa",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-012",
+            "english": "bow thruster",
+            "norwegian": "baugpropell",
+            "polish": "ster strumieniowy dziobowy",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-013",
+            "english": "pump",
+            "norwegian": "pumpe",
+            "polish": "pompa",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-014",
+            "english": "valve",
+            "norwegian": "ventil",
+            "polish": "zawór",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-015",
+            "english": "piping system",
+            "norwegian": "rørsystem",
+            "polish": "instalacja rurowa",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-016",
+            "english": "main switchboard",
+            "norwegian": "hovedtavle",
+            "polish": "rozdzielnica główna",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-017",
+            "english": "emergency switchboard",
+            "norwegian": "nødtavle",
+            "polish": "rozdzielnica awaryjna",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-018",
+            "english": "distribution board",
+            "norwegian": "fordelingstavle",
+            "polish": "rozdzielnica",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-019",
+            "english": "distribution cabinet",
+            "norwegian": "fordelingsskap",
+            "polish": "szafa rozdzielcza",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-020",
+            "english": "control cabinet",
+            "norwegian": "styreskap",
+            "polish": "szafa sterownicza",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-021",
+            "english": "busbar",
+            "norwegian": "samleskinne",
+            "polish": "szyna zbiorcza",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-022",
+            "english": "circuit breaker",
+            "norwegian": "effektbryter / automatsikring",
+            "polish": "wyłącznik mocy / nadprądowy",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-023",
+            "english": "fuse",
+            "norwegian": "sikring",
+            "polish": "bezpiecznik",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-024",
+            "english": "contactor",
+            "norwegian": "kontaktor",
+            "polish": "stycznik",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-025",
+            "english": "protective relay",
+            "norwegian": "vernrelé",
+            "polish": "przekaźnik zabezpieczeniowy",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-026",
+            "english": "terminal block",
+            "norwegian": "rekkeklemme",
+            "polish": "listwa/złączka zaciskowa",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-027",
+            "english": "protective conductor",
+            "norwegian": "beskyttelsesleder / jordleder",
+            "polish": "przewód ochronny PE",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-028",
+            "english": "equipotential bonding",
+            "norwegian": "utjevningsforbindelse",
+            "polish": "połączenie wyrównawcze",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-029",
+            "english": "earthing",
+            "norwegian": "jording",
+            "polish": "uziemienie",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-030",
+            "english": "cable tray",
+            "norwegian": "kabelstige / kabelbro",
+            "polish": "drabina/trasa kablowa",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-031",
+            "english": "cable gland",
+            "norwegian": "kabelnippel / kabelgjennomføring",
+            "polish": "dławik/przepust kablowy",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-032",
+            "english": "short-circuit current",
+            "norwegian": "kortslutningsstrøm",
+            "polish": "prąd zwarciowy",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-033",
+            "english": "selectivity",
+            "norwegian": "selektivitet",
+            "polish": "selektywność zabezpieczeń",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-034",
+            "english": "insulation resistance",
+            "norwegian": "isolasjonsmotstand",
+            "polish": "rezystancja izolacji",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-035",
+            "english": "continuity test",
+            "norwegian": "kontinuitetsmåling",
+            "polish": "pomiar ciągłości",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-036",
+            "english": "variable-frequency drive",
+            "norwegian": "frekvensomformer",
+            "polish": "przemiennik częstotliwości",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-037",
+            "english": "PLC",
+            "norwegian": "PLS / PLC",
+            "polish": "sterownik PLC",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-038",
+            "english": "operator panel / HMI",
+            "norwegian": "operatørpanel",
+            "polish": "panel operatorski HMI",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-039",
+            "english": "input/output",
+            "norwegian": "inngang/utgang",
+            "polish": "wejście/wyjście",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-040",
+            "english": "I/O list",
+            "norwegian": "I/O-liste",
+            "polish": "lista wejść i wyjść",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-041",
+            "english": "sensor",
+            "norwegian": "sensor / føler",
+            "polish": "czujnik",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-042",
+            "english": "transmitter",
+            "norwegian": "transmitter / måleomformer",
+            "polish": "przetwornik pomiarowy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-043",
+            "english": "actuator",
+            "norwegian": "aktuator",
+            "polish": "element wykonawczy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-044",
+            "english": "limit switch",
+            "norwegian": "endebryter",
+            "polish": "wyłącznik krańcowy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-045",
+            "english": "pressure switch",
+            "norwegian": "pressostat",
+            "polish": "presostat",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-046",
+            "english": "setpoint",
+            "norwegian": "settpunkt",
+            "polish": "wartość zadana",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-047",
+            "english": "interlock",
+            "norwegian": "forrigling",
+            "polish": "blokada funkcjonalna",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-048",
+            "english": "fail-safe state",
+            "norwegian": "feilsikker tilstand",
+            "polish": "stan bezpieczny przy uszkodzeniu",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-049",
+            "english": "fire control plan",
+            "norwegian": "brann- og sikkerhetsplan",
+            "polish": "plan ochrony przeciwpożarowej i bezpieczeństwa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-050",
+            "english": "fire detection system",
+            "norwegian": "brannalarmanlegg",
+            "polish": "system sygnalizacji pożaru",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-051",
+            "english": "fire pump",
+            "norwegian": "brannpumpe",
+            "polish": "pompa pożarowa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-052",
+            "english": "fire extinguisher",
+            "norwegian": "brannslokningsapparat",
+            "polish": "gaśnica",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-053",
+            "english": "fixed extinguishing system",
+            "norwegian": "fast slokkeanlegg",
+            "polish": "stała instalacja gaśnicza",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-054",
+            "english": "emergency exit",
+            "norwegian": "nødutgang",
+            "polish": "wyjście awaryjne",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-055",
+            "english": "muster station",
+            "norwegian": "mønstringsstasjon",
+            "polish": "miejsce zbiórki",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-056",
+            "english": "liferaft",
+            "norwegian": "redningsflåte",
+            "polish": "tratwa ratunkowa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-057",
+            "english": "lifejacket",
+            "norwegian": "redningsvest",
+            "polish": "kamizelka ratunkowa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-058",
+            "english": "remote stop",
+            "norwegian": "fjernstopp",
+            "polish": "zdalne zatrzymanie",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-059",
+            "english": "refrigeration plant",
+            "norwegian": "kuldeanlegg",
+            "polish": "instalacja chłodnicza",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-060",
+            "english": "compressor",
+            "norwegian": "kompressor",
+            "polish": "sprężarka",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-061",
+            "english": "evaporator",
+            "norwegian": "fordamper",
+            "polish": "parownik",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-062",
+            "english": "condenser",
+            "norwegian": "kondensator (kuldeanlegg)",
+            "polish": "skraplacz",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-063",
+            "english": "solenoid valve",
+            "norwegian": "magnetventil",
+            "polish": "zawór elektromagnetyczny",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-064",
+            "english": "echo sounder",
+            "norwegian": "ekkolodd",
+            "polish": "echosonda",
+            "domain": "research",
+            "domain_label": "Systemy badawcze",
+            "evidence_basis": "Nawigacja i systemy specjalne"
+          },
+          {
+            "id": "term-065",
+            "english": "sonar",
+            "norwegian": "sonar",
+            "polish": "sonar",
+            "domain": "research",
+            "domain_label": "Systemy badawcze",
+            "evidence_basis": "Nawigacja i systemy specjalne"
+          },
+          {
+            "id": "term-066",
+            "english": "transducer",
+            "norwegian": "svinger",
+            "polish": "przetwornik hydroakustyczny",
+            "domain": "research",
+            "domain_label": "Systemy badawcze",
+            "evidence_basis": "Nawigacja i systemy specjalne"
+          },
+          {
+            "id": "term-067",
+            "english": "hydrophone",
+            "norwegian": "hydrofon",
+            "polish": "hydrofon",
+            "domain": "research",
+            "domain_label": "Systemy badawcze",
+            "evidence_basis": "Nawigacja i systemy specjalne"
+          },
+          {
+            "id": "term-068",
+            "english": "winch",
+            "norwegian": "vinsj",
+            "polish": "wciągarka/winda",
+            "domain": "research",
+            "domain_label": "Systemy badawcze",
+            "evidence_basis": "Nawigacja i systemy specjalne"
+          },
+          {
+            "id": "term-074",
+            "english": "as-built drawing",
+            "norwegian": "som-bygget-tegning",
+            "polish": "rysunek powykonawczy",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-075",
+            "english": "cable schedule",
+            "norwegian": "kabelliste",
+            "polish": "lista kablowa",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-076",
+            "english": "drawing revision",
+            "norwegian": "tegningsrevisjon",
+            "polish": "rewizja rysunku",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-077",
+            "english": "traceability",
+            "norwegian": "sporbarhet",
+            "polish": "identyfikowalność",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          }
+        ]
+      },
       "restricted_material_published": false
     },
     {
@@ -160,6 +1259,669 @@
           "count": 1
         }
       ],
+      "language_learning": {
+        "term_count": 72,
+        "domains": [
+          "Automatyka",
+          "Bezpieczeństwo",
+          "Commissioning",
+          "Dokumentacja",
+          "Elektrotechnika",
+          "Maszyny",
+          "Proces i chłodnictwo",
+          "Statek i przestrzenie"
+        ],
+        "terms": [
+          {
+            "id": "term-001",
+            "english": "vessel",
+            "norwegian": "fartøy",
+            "polish": "jednostka/statek",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-002",
+            "english": "engine room",
+            "norwegian": "maskinrom",
+            "polish": "maszynownia",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-003",
+            "english": "bridge",
+            "norwegian": "bro",
+            "polish": "mostek",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-004",
+            "english": "main deck",
+            "norwegian": "hoveddekk",
+            "polish": "pokład główny",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-005",
+            "english": "bulkhead",
+            "norwegian": "skott",
+            "polish": "gródź",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-006",
+            "english": "watertight door",
+            "norwegian": "vanntett dør",
+            "polish": "drzwi wodoszczelne",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-007",
+            "english": "bilge system",
+            "norwegian": "lensesystem",
+            "polish": "instalacja zęzowa",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-008",
+            "english": "ballast system",
+            "norwegian": "ballastsystem",
+            "polish": "instalacja balastowa",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-009",
+            "english": "main engine",
+            "norwegian": "hovedmotor",
+            "polish": "silnik główny",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-010",
+            "english": "auxiliary engine",
+            "norwegian": "hjelpemotor",
+            "polish": "silnik pomocniczy",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-011",
+            "english": "steering gear",
+            "norwegian": "styremaskin",
+            "polish": "maszyna sterowa",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-012",
+            "english": "bow thruster",
+            "norwegian": "baugpropell",
+            "polish": "ster strumieniowy dziobowy",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-013",
+            "english": "pump",
+            "norwegian": "pumpe",
+            "polish": "pompa",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-014",
+            "english": "valve",
+            "norwegian": "ventil",
+            "polish": "zawór",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-015",
+            "english": "piping system",
+            "norwegian": "rørsystem",
+            "polish": "instalacja rurowa",
+            "domain": "machinery",
+            "domain_label": "Maszyny",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-016",
+            "english": "main switchboard",
+            "norwegian": "hovedtavle",
+            "polish": "rozdzielnica główna",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-017",
+            "english": "emergency switchboard",
+            "norwegian": "nødtavle",
+            "polish": "rozdzielnica awaryjna",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-018",
+            "english": "distribution board",
+            "norwegian": "fordelingstavle",
+            "polish": "rozdzielnica",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-019",
+            "english": "distribution cabinet",
+            "norwegian": "fordelingsskap",
+            "polish": "szafa rozdzielcza",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-020",
+            "english": "control cabinet",
+            "norwegian": "styreskap",
+            "polish": "szafa sterownicza",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-021",
+            "english": "busbar",
+            "norwegian": "samleskinne",
+            "polish": "szyna zbiorcza",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-022",
+            "english": "circuit breaker",
+            "norwegian": "effektbryter / automatsikring",
+            "polish": "wyłącznik mocy / nadprądowy",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-023",
+            "english": "fuse",
+            "norwegian": "sikring",
+            "polish": "bezpiecznik",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-024",
+            "english": "contactor",
+            "norwegian": "kontaktor",
+            "polish": "stycznik",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-025",
+            "english": "protective relay",
+            "norwegian": "vernrelé",
+            "polish": "przekaźnik zabezpieczeniowy",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-026",
+            "english": "terminal block",
+            "norwegian": "rekkeklemme",
+            "polish": "listwa/złączka zaciskowa",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-027",
+            "english": "protective conductor",
+            "norwegian": "beskyttelsesleder / jordleder",
+            "polish": "przewód ochronny PE",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-028",
+            "english": "equipotential bonding",
+            "norwegian": "utjevningsforbindelse",
+            "polish": "połączenie wyrównawcze",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-029",
+            "english": "earthing",
+            "norwegian": "jording",
+            "polish": "uziemienie",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-030",
+            "english": "cable tray",
+            "norwegian": "kabelstige / kabelbro",
+            "polish": "drabina/trasa kablowa",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-031",
+            "english": "cable gland",
+            "norwegian": "kabelnippel / kabelgjennomføring",
+            "polish": "dławik/przepust kablowy",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-032",
+            "english": "short-circuit current",
+            "norwegian": "kortslutningsstrøm",
+            "polish": "prąd zwarciowy",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-033",
+            "english": "selectivity",
+            "norwegian": "selektivitet",
+            "polish": "selektywność zabezpieczeń",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-034",
+            "english": "insulation resistance",
+            "norwegian": "isolasjonsmotstand",
+            "polish": "rezystancja izolacji",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-035",
+            "english": "continuity test",
+            "norwegian": "kontinuitetsmåling",
+            "polish": "pomiar ciągłości",
+            "domain": "electrical",
+            "domain_label": "Elektrotechnika",
+            "evidence_basis": "Rozdział energii"
+          },
+          {
+            "id": "term-036",
+            "english": "variable-frequency drive",
+            "norwegian": "frekvensomformer",
+            "polish": "przemiennik częstotliwości",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-037",
+            "english": "PLC",
+            "norwegian": "PLS / PLC",
+            "polish": "sterownik PLC",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-038",
+            "english": "operator panel / HMI",
+            "norwegian": "operatørpanel",
+            "polish": "panel operatorski HMI",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-039",
+            "english": "input/output",
+            "norwegian": "inngang/utgang",
+            "polish": "wejście/wyjście",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-040",
+            "english": "I/O list",
+            "norwegian": "I/O-liste",
+            "polish": "lista wejść i wyjść",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-041",
+            "english": "sensor",
+            "norwegian": "sensor / føler",
+            "polish": "czujnik",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-042",
+            "english": "transmitter",
+            "norwegian": "transmitter / måleomformer",
+            "polish": "przetwornik pomiarowy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-043",
+            "english": "actuator",
+            "norwegian": "aktuator",
+            "polish": "element wykonawczy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-044",
+            "english": "limit switch",
+            "norwegian": "endebryter",
+            "polish": "wyłącznik krańcowy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-045",
+            "english": "pressure switch",
+            "norwegian": "pressostat",
+            "polish": "presostat",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-046",
+            "english": "setpoint",
+            "norwegian": "settpunkt",
+            "polish": "wartość zadana",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-047",
+            "english": "interlock",
+            "norwegian": "forrigling",
+            "polish": "blokada funkcjonalna",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-048",
+            "english": "fail-safe state",
+            "norwegian": "feilsikker tilstand",
+            "polish": "stan bezpieczny przy uszkodzeniu",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-049",
+            "english": "fire control plan",
+            "norwegian": "brann- og sikkerhetsplan",
+            "polish": "plan ochrony przeciwpożarowej i bezpieczeństwa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-050",
+            "english": "fire detection system",
+            "norwegian": "brannalarmanlegg",
+            "polish": "system sygnalizacji pożaru",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-051",
+            "english": "fire pump",
+            "norwegian": "brannpumpe",
+            "polish": "pompa pożarowa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-052",
+            "english": "fire extinguisher",
+            "norwegian": "brannslokningsapparat",
+            "polish": "gaśnica",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-053",
+            "english": "fixed extinguishing system",
+            "norwegian": "fast slokkeanlegg",
+            "polish": "stała instalacja gaśnicza",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-054",
+            "english": "emergency exit",
+            "norwegian": "nødutgang",
+            "polish": "wyjście awaryjne",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-055",
+            "english": "muster station",
+            "norwegian": "mønstringsstasjon",
+            "polish": "miejsce zbiórki",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-056",
+            "english": "liferaft",
+            "norwegian": "redningsflåte",
+            "polish": "tratwa ratunkowa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-057",
+            "english": "lifejacket",
+            "norwegian": "redningsvest",
+            "polish": "kamizelka ratunkowa",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-058",
+            "english": "remote stop",
+            "norwegian": "fjernstopp",
+            "polish": "zdalne zatrzymanie",
+            "domain": "safety",
+            "domain_label": "Bezpieczeństwo",
+            "evidence_basis": "Bezpieczeństwo i LSA"
+          },
+          {
+            "id": "term-059",
+            "english": "refrigeration plant",
+            "norwegian": "kuldeanlegg",
+            "polish": "instalacja chłodnicza",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-060",
+            "english": "compressor",
+            "norwegian": "kompressor",
+            "polish": "sprężarka",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-061",
+            "english": "evaporator",
+            "norwegian": "fordamper",
+            "polish": "parownik",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-062",
+            "english": "condenser",
+            "norwegian": "kondensator (kuldeanlegg)",
+            "polish": "skraplacz",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-063",
+            "english": "solenoid valve",
+            "norwegian": "magnetventil",
+            "polish": "zawór elektromagnetyczny",
+            "domain": "process",
+            "domain_label": "Proces i chłodnictwo",
+            "evidence_basis": "Maszyny i instalacje"
+          },
+          {
+            "id": "term-069",
+            "english": "commissioning",
+            "norwegian": "idriftsettelse",
+            "polish": "uruchomienie",
+            "domain": "commissioning",
+            "domain_label": "Commissioning",
+            "evidence_basis": "Commissioning i testy"
+          },
+          {
+            "id": "term-070",
+            "english": "functional test",
+            "norwegian": "funksjonstest",
+            "polish": "test funkcjonalny",
+            "domain": "commissioning",
+            "domain_label": "Commissioning",
+            "evidence_basis": "Commissioning i testy"
+          },
+          {
+            "id": "term-071",
+            "english": "factory acceptance test",
+            "norwegian": "fabrikkakseptansetest (FAT)",
+            "polish": "odbiór fabryczny FAT",
+            "domain": "commissioning",
+            "domain_label": "Commissioning",
+            "evidence_basis": "Commissioning i testy"
+          },
+          {
+            "id": "term-072",
+            "english": "site acceptance test",
+            "norwegian": "akseptansetest på installasjonsstedet (SAT)",
+            "polish": "odbiór SAT na obiekcie",
+            "domain": "commissioning",
+            "domain_label": "Commissioning",
+            "evidence_basis": "Commissioning i testy"
+          },
+          {
+            "id": "term-073",
+            "english": "punch list",
+            "norwegian": "mangelliste",
+            "polish": "lista usterek/braków",
+            "domain": "commissioning",
+            "domain_label": "Commissioning",
+            "evidence_basis": "Commissioning i testy"
+          },
+          {
+            "id": "term-074",
+            "english": "as-built drawing",
+            "norwegian": "som-bygget-tegning",
+            "polish": "rysunek powykonawczy",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-075",
+            "english": "cable schedule",
+            "norwegian": "kabelliste",
+            "polish": "lista kablowa",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-076",
+            "english": "drawing revision",
+            "norwegian": "tegningsrevisjon",
+            "polish": "rewizja rysunku",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-077",
+            "english": "traceability",
+            "norwegian": "sporbarhet",
+            "polish": "identyfikowalność",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          }
+        ]
+      },
       "restricted_material_published": false
     },
     {
@@ -196,6 +1958,241 @@
           "count": 3
         }
       ],
+      "language_learning": {
+        "term_count": 25,
+        "domains": [
+          "Automatyka",
+          "Dokumentacja",
+          "Statek i przestrzenie"
+        ],
+        "terms": [
+          {
+            "id": "term-001",
+            "english": "vessel",
+            "norwegian": "fartøy",
+            "polish": "jednostka/statek",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-002",
+            "english": "engine room",
+            "norwegian": "maskinrom",
+            "polish": "maszynownia",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-003",
+            "english": "bridge",
+            "norwegian": "bro",
+            "polish": "mostek",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-004",
+            "english": "main deck",
+            "norwegian": "hoveddekk",
+            "polish": "pokład główny",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-005",
+            "english": "bulkhead",
+            "norwegian": "skott",
+            "polish": "gródź",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-006",
+            "english": "watertight door",
+            "norwegian": "vanntett dør",
+            "polish": "drzwi wodoszczelne",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-007",
+            "english": "bilge system",
+            "norwegian": "lensesystem",
+            "polish": "instalacja zęzowa",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-008",
+            "english": "ballast system",
+            "norwegian": "ballastsystem",
+            "polish": "instalacja balastowa",
+            "domain": "general",
+            "domain_label": "Statek i przestrzenie",
+            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+          },
+          {
+            "id": "term-036",
+            "english": "variable-frequency drive",
+            "norwegian": "frekvensomformer",
+            "polish": "przemiennik częstotliwości",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-037",
+            "english": "PLC",
+            "norwegian": "PLS / PLC",
+            "polish": "sterownik PLC",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-038",
+            "english": "operator panel / HMI",
+            "norwegian": "operatørpanel",
+            "polish": "panel operatorski HMI",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-039",
+            "english": "input/output",
+            "norwegian": "inngang/utgang",
+            "polish": "wejście/wyjście",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-040",
+            "english": "I/O list",
+            "norwegian": "I/O-liste",
+            "polish": "lista wejść i wyjść",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-041",
+            "english": "sensor",
+            "norwegian": "sensor / føler",
+            "polish": "czujnik",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-042",
+            "english": "transmitter",
+            "norwegian": "transmitter / måleomformer",
+            "polish": "przetwornik pomiarowy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-043",
+            "english": "actuator",
+            "norwegian": "aktuator",
+            "polish": "element wykonawczy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-044",
+            "english": "limit switch",
+            "norwegian": "endebryter",
+            "polish": "wyłącznik krańcowy",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-045",
+            "english": "pressure switch",
+            "norwegian": "pressostat",
+            "polish": "presostat",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-046",
+            "english": "setpoint",
+            "norwegian": "settpunkt",
+            "polish": "wartość zadana",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-047",
+            "english": "interlock",
+            "norwegian": "forrigling",
+            "polish": "blokada funkcjonalna",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-048",
+            "english": "fail-safe state",
+            "norwegian": "feilsikker tilstand",
+            "polish": "stan bezpieczny przy uszkodzeniu",
+            "domain": "automation",
+            "domain_label": "Automatyka",
+            "evidence_basis": "Automatyka i pomiary"
+          },
+          {
+            "id": "term-074",
+            "english": "as-built drawing",
+            "norwegian": "som-bygget-tegning",
+            "polish": "rysunek powykonawczy",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-075",
+            "english": "cable schedule",
+            "norwegian": "kabelliste",
+            "polish": "lista kablowa",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-076",
+            "english": "drawing revision",
+            "norwegian": "tegningsrevisjon",
+            "polish": "rewizja rysunku",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          },
+          {
+            "id": "term-077",
+            "english": "traceability",
+            "norwegian": "sporbarhet",
+            "polish": "identyfikowalność",
+            "domain": "documentation",
+            "domain_label": "Dokumentacja",
+            "evidence_basis": "Rysunki i as-built"
+          }
+        ]
+      },
       "restricted_material_published": false
     }
   ],
@@ -269,6 +2266,15 @@
       "status": "zweryfikowana"
     }
   ],
+  "language_learning": {
+    "source_terms": 77,
+    "languages": [
+      "English",
+      "Norsk",
+      "Polski"
+    ],
+    "assignment_rule": "Termin trafia do projektu, gdy odpowiada kategorii technicznej obecnej w jego zweryfikowanym rejestrze zdjęć."
+  },
   "methodology": {
     "facts": "Dane widoczne w rejestrach projektu lub bezpośrednio na materiale źródłowym.",
     "interpretations": "Robocze wnioski techniczne wymagające potwierdzenia dokumentacją.",

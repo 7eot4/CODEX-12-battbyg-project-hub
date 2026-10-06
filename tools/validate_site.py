@@ -31,6 +31,32 @@ def main() -> None:
     if any(item.get("restricted_material_published") for item in payload["projects"]):
         raise SystemExit("Materiał wrażliwy oznaczony do publikacji")
 
+    if payload.get("language_learning", {}).get("source_terms") != 77:
+        raise SystemExit("Niepełny glosariusz źródłowy")
+    all_terms: set[str] = set()
+    for project in payload["projects"]:
+        learning = project.get("language_learning", {})
+        terms = learning.get("terms", [])
+        if not terms or learning.get("term_count") != len(terms):
+            raise SystemExit(f"Niespójna sekcja językowa: {project['id']}")
+        project_terms = {term.get("english", "") for term in terms}
+        if len(project_terms) != len(terms):
+            raise SystemExit(f"Powtórzone terminy w projekcie: {project['id']}")
+        for term in terms:
+            required_fields = {
+                "english",
+                "norwegian",
+                "polish",
+                "domain",
+                "domain_label",
+                "evidence_basis",
+            }
+            if any(not term.get(field) for field in required_fields):
+                raise SystemExit(f"Niepełny termin językowy: {project['id']}")
+        all_terms.update(project_terms)
+    if len(all_terms) != 77:
+        raise SystemExit("Nie wszystkie terminy są dostępne w projektach")
+
     published = "\n".join(
         path.read_text(encoding="utf-8", errors="strict")
         for path in DOCS.rglob("*")
@@ -52,8 +78,18 @@ def main() -> None:
     if leaked:
         raise SystemExit(f"Niedozwolone artefakty w publikacji: {leaked}")
 
+    html = (DOCS / "index.html").read_text(encoding="utf-8")
+    required_ui = ["language-lab", "flashcard", "vocabulary-body", "data-language"]
+    if any(marker not in html for marker in required_ui):
+        raise SystemExit("Brak kompletnego interfejsu nauki języków")
+
     print("SITE_VALIDATION_OK")
-    print(f"projects={payload['summary']['projects']} photos={payload['summary']['photos']} updates={payload['summary']['updates']}")
+    assignments = sum(project["language_learning"]["term_count"] for project in payload["projects"])
+    print(
+        f"projects={payload['summary']['projects']} photos={payload['summary']['photos']} "
+        f"updates={payload['summary']['updates']} source_terms={len(all_terms)} "
+        f"project_assignments={assignments}"
+    )
 
 
 if __name__ == "__main__":

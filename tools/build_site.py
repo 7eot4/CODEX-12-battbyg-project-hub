@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT.parent / "battbygg"
 OUTPUT = ROOT / "docs" / "data" / "site-data.json"
+TERMINOLOGY = SOURCE / "output" / "pdf" / "BATTBYG_learning_package" / "terminology_EN_NO_PL.csv"
 
 CATEGORY_LABELS = {
     "00_Project_identity_context": "Identyfikacja projektu",
@@ -46,6 +47,39 @@ PROJECTS = {
     },
 }
 
+DOMAIN_LABELS = {
+    "general": "Statek i przestrzenie",
+    "machinery": "Maszyny",
+    "electrical": "Elektrotechnika",
+    "automation": "Automatyka",
+    "safety": "Bezpieczeństwo",
+    "process": "Proces i chłodnictwo",
+    "research": "Systemy badawcze",
+    "commissioning": "Commissioning",
+    "documentation": "Dokumentacja",
+}
+
+DOMAIN_EVIDENCE = {
+    "general": "Kontekst ogólnookrętowy projektu",
+    "machinery": "Maszyny i instalacje",
+    "electrical": "Rozdział energii",
+    "automation": "Automatyka i pomiary",
+    "safety": "Bezpieczeństwo i LSA",
+    "process": "Maszyny i instalacje",
+    "research": "Nawigacja i systemy specjalne",
+    "commissioning": "Commissioning i testy",
+    "documentation": "Rysunki i as-built",
+}
+
+CATEGORY_DOMAINS = {
+    "30_Safety_fire_LSA": {"safety"},
+    "40_Electrical_power_distribution": {"electrical"},
+    "50_Automation_control_instrumentation": {"automation"},
+    "60_Machinery_auxiliaries_piping": {"machinery", "process"},
+    "70_Navigation_scientific_mission": {"research"},
+    "80_Commissioning_testing_closeout": {"commissioning"},
+}
+
 
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
@@ -65,9 +99,44 @@ def category_payload(counter: Counter[str]) -> list[dict[str, object]]:
     return result
 
 
+def active_domains(categories: Counter[str]) -> set[str]:
+    domains = {"general"}
+    if categories.get("10_Drawings_specs_asbuilt", 0):
+        domains.add("documentation")
+    for category, mapped_domains in CATEGORY_DOMAINS.items():
+        if categories.get(category, 0):
+            domains.update(mapped_domains)
+    return domains
+
+
+def vocabulary_payload(
+    terminology: list[dict[str, str]], categories: Counter[str]
+) -> list[dict[str, str]]:
+    domains = active_domains(categories)
+    return [
+        {
+            "id": f"term-{index:03d}",
+            "english": row["english"],
+            "norwegian": row["norsk"],
+            "polish": row["polski"],
+            "domain": row["domain"],
+            "domain_label": DOMAIN_LABELS[row["domain"]],
+            "evidence_basis": DOMAIN_EVIDENCE[row["domain"]],
+        }
+        for index, row in enumerate(terminology, start=1)
+        if row["domain"] in domains
+    ]
+
+
 def build() -> dict[str, object]:
     if not SOURCE.is_dir():
         raise FileNotFoundError(f"Brak katalogu źródłowego: {SOURCE}")
+
+    terminology = read_csv(TERMINOLOGY)
+    if len(terminology) != 77:
+        raise RuntimeError(f"Oczekiwano 77 terminów, znaleziono {len(terminology)}")
+    if any(row["domain"] not in DOMAIN_LABELS for row in terminology):
+        raise RuntimeError("Glosariusz zawiera nieznaną domenę")
 
     projects = []
     total_categories: Counter[str] = Counter()
@@ -92,6 +161,7 @@ def build() -> dict[str, object]:
         total_medium += confidence.get("medium", 0)
         total_categories.update(public_categories)
 
+        vocabulary = vocabulary_payload(terminology, public_categories)
         projects.append(
             {
                 "id": project_id,
@@ -106,6 +176,13 @@ def build() -> dict[str, object]:
                     "medium": confidence.get("medium", 0),
                 },
                 "categories": category_payload(public_categories),
+                "language_learning": {
+                    "term_count": len(vocabulary),
+                    "domains": sorted(
+                        {item["domain_label"] for item in vocabulary}
+                    ),
+                    "terms": vocabulary,
+                },
                 "restricted_material_published": False,
             }
         )
@@ -126,6 +203,14 @@ def build() -> dict[str, object]:
         )
 
     latest = max(row["update_date"] for row in update_rows)
+    published_terms = {
+        item["english"]
+        for project in projects
+        for item in project["language_learning"]["terms"]
+    }
+    if published_terms != {row["english"] for row in terminology}:
+        raise RuntimeError("Nie wszystkie terminy źródłowe zostały przypisane do projektów")
+
     return {
         "site": {
             "title": "BATTBYG Project Hub",
@@ -144,6 +229,14 @@ def build() -> dict[str, object]:
         "projects": projects,
         "categories": category_payload(total_categories),
         "updates": updates,
+        "language_learning": {
+            "source_terms": len(terminology),
+            "languages": ["English", "Norsk", "Polski"],
+            "assignment_rule": (
+                "Termin trafia do projektu, gdy odpowiada kategorii technicznej "
+                "obecnej w jego zweryfikowanym rejestrze zdjęć."
+            ),
+        },
         "methodology": {
             "facts": "Dane widoczne w rejestrach projektu lub bezpośrednio na materiale źródłowym.",
             "interpretations": "Robocze wnioski techniczne wymagające potwierdzenia dokumentacją.",

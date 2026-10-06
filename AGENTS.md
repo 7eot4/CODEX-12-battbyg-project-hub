@@ -28,5 +28,8 @@ okrętowych BATTBYG. Dane źródłowe pozostają lokalnie w `../battbygg`.
 - `../battbygg/projects/*/project_register.csv` - liczniki projektów i kategorii;
 - `../battbygg/UPDATE_LOG.csv` - historia aktualizacji;
 - `../battbygg/PROJECT_GUIDELINES.md` - metodologia i ograniczenia.
+- `../battbygg/output/pdf/BATTBYG_learning_package/terminology_EN_NO_PL.csv` -
+  słownik EN–NO–PL; terminy przypisuj do projektu wyłącznie przez obecne w jego
+  rejestrze kategorie techniczne.
 
 Nie edytuj ręcznie `docs/data/site-data.json`; jest generowany ze źródeł.

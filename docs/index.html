@@ -64,6 +64,65 @@
         </div>
       </section>
 
+      <section class="language-lab" aria-labelledby="language-title">
+        <div class="section-heading language-heading">
+          <div>
+            <p class="eyebrow">English · Norsk · Polski</p>
+            <h2 id="language-title">Języki techniczne z dokumentacji projektu</h2>
+            <p class="section-copy" id="language-rule"></p>
+          </div>
+          <div class="language-project" id="language-project-name">—</div>
+        </div>
+
+        <div class="language-toolbar">
+          <div class="language-switch" role="group" aria-label="Kierunek nauki">
+            <button class="language-button active" type="button" data-language="english" aria-pressed="true">Angielski → polski</button>
+            <button class="language-button" type="button" data-language="norwegian" aria-pressed="false">Norweski → polski</button>
+          </div>
+          <div class="language-summary"><strong id="language-term-count">—</strong><span id="language-term-label">terminy w projekcie</span></div>
+        </div>
+
+        <div class="domain-filters" id="domain-filters" aria-label="Filtr dziedziny"></div>
+
+        <div class="learning-grid">
+          <article class="flashcard-panel" aria-labelledby="flashcard-title">
+            <div class="flashcard-topline">
+              <span id="flashcard-domain">—</span>
+              <span id="flashcard-progress">—</span>
+            </div>
+            <h3 id="flashcard-title">Fiszka</h3>
+            <div class="flashcard" id="flashcard">
+              <span class="flashcard-label" id="flashcard-question-label">—</span>
+              <strong id="flashcard-question">—</strong>
+              <div class="flashcard-answer" id="flashcard-answer" hidden></div>
+            </div>
+            <p class="evidence-line" id="flashcard-evidence"></p>
+            <div class="flashcard-actions">
+              <button class="action-button primary" id="reveal-card" type="button">Pokaż odpowiedź</button>
+              <button class="action-button" id="speak-english" type="button">Odsłuchaj EN</button>
+              <button class="action-button" id="speak-norwegian" type="button">Odsłuchaj NO</button>
+              <button class="action-button" id="next-card" type="button">Następna fiszka</button>
+            </div>
+          </article>
+
+          <article class="vocabulary-panel" aria-labelledby="vocabulary-title">
+            <div class="panel-head compact">
+              <div>
+                <p class="eyebrow">Pełny materiał projektu</p>
+                <h3 id="vocabulary-title">Słownik EN–NO–PL</h3>
+              </div>
+              <span id="vocabulary-count">—</span>
+            </div>
+            <div class="vocabulary-table-wrap">
+              <table class="vocabulary-table">
+                <thead><tr><th>English</th><th>Norsk</th><th>Polski</th><th>Podstawa</th></tr></thead>
+                <tbody id="vocabulary-body"></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="analysis-grid">
         <article class="panel" aria-labelledby="areas-title">
           <div class="panel-head">
