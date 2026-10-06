@@ -5,6 +5,9 @@ const state = {
   domain: "all",
   cardIndex: 0,
   revealed: false,
+  deck: [],
+  deckKey: "",
+  voices: [],
 };
 
 const byId = (id) => document.getElementById(id);
@@ -69,10 +72,51 @@ function renderProjects(data) {
   `;
 }
 
-function languageTerms(project) {
+function filteredTerms(project) {
   const terms = project.language_learning.terms;
   if (state.domain === "all") return terms;
   return terms.filter((item) => item.domain === state.domain);
+}
+
+function randomIndex(maxExclusive) {
+  if (window.crypto?.getRandomValues) {
+    const range = 0x100000000;
+    const limit = range - (range % maxExclusive);
+    const buffer = new Uint32Array(1);
+    do window.crypto.getRandomValues(buffer); while (buffer[0] >= limit);
+    return buffer[0] % maxExclusive;
+  }
+  return Math.floor(Math.random() * maxExclusive);
+}
+
+function shuffled(items) {
+  const result = [...items];
+  for (let index = result.length - 1; index > 0; index -= 1) {
+    const target = randomIndex(index + 1);
+    [result[index], result[target]] = [result[target], result[index]];
+  }
+  return result;
+}
+
+function ensureDeck(project, force = false) {
+  const key = `${project.id}|${state.domain}`;
+  if (force || state.deckKey !== key || state.deck.length === 0) {
+    const previousFirst = state.deck[0];
+    const nextDeck = shuffled(filteredTerms(project));
+    if (force && nextDeck.length > 1 && nextDeck[0] === previousFirst) {
+      const target = 1 + randomIndex(nextDeck.length - 1);
+      [nextDeck[0], nextDeck[target]] = [nextDeck[target], nextDeck[0]];
+    }
+    state.deck = nextDeck;
+    state.deckKey = key;
+    state.cardIndex = 0;
+    state.revealed = false;
+  }
+  return state.deck;
+}
+
+function languageTerms(project) {
+  return ensureDeck(project);
 }
 
 function renderLanguageSwitch() {
@@ -83,6 +127,74 @@ function renderLanguageSwitch() {
   });
 }
 
+const VOICE_PREFERENCES = {
+  english: ["sonia", "libby", "olivia", "abbi", "bella", "hollie", "hazel", "susan", "zira", "aria", "jenny"],
+  norwegian: ["pernille", "iselin"],
+};
+
+const MALE_VOICE_NAMES = ["finn", "ryan", "thomas", "george", "guy", "david", "mark"];
+
+function voiceLanguageMatches(voice, language) {
+  const normalized = voice.lang.toLowerCase().replace("_", "-");
+  return language === "english"
+    ? normalized.startsWith("en-")
+    : normalized.startsWith("nb-no") || normalized.startsWith("no-no");
+}
+
+function preferredVoiceIndex(voices, language) {
+  const preferred = VOICE_PREFERENCES[language];
+  const scored = voices.map((voice, index) => {
+    const name = voice.name.toLowerCase();
+    const preferredIndex = preferred.findIndex((token) => name.includes(token));
+    const isKnownMale = MALE_VOICE_NAMES.some((token) => name.includes(token));
+    let score = 0;
+    if (preferredIndex >= 0) score += 100 - preferredIndex;
+    if (language === "english" && voice.lang.toLowerCase().replace("_", "-").startsWith("en-gb")) score += 12;
+    if (/natural|neural|online/.test(name)) score += 20;
+    if (voice.localService) score += 2;
+    if (isKnownMale) score -= 200;
+    return { index, score };
+  });
+  scored.sort((a, b) => b.score - a.score);
+  return scored[0]?.index ?? -1;
+}
+
+function populateVoiceSelect(language) {
+  const select = byId(`voice-${language}`);
+  const previousVoiceURI = select.value;
+  const voices = state.voices.filter((voice) => voiceLanguageMatches(voice, language));
+  select.innerHTML = "";
+  if (voices.length === 0) {
+    select.add(new Option("Brak głosu dla tego języka", ""));
+    select.disabled = true;
+    return false;
+  }
+  voices.forEach((voice) => select.add(new Option(`${voice.name} (${voice.lang})`, voice.voiceURI)));
+  const previousIndex = voices.findIndex((voice) => voice.voiceURI === previousVoiceURI);
+  select.selectedIndex = previousIndex >= 0 ? previousIndex : preferredVoiceIndex(voices, language);
+  select.disabled = false;
+  return VOICE_PREFERENCES[language].some((token) => voices[select.selectedIndex].name.toLowerCase().includes(token));
+}
+
+function loadVoices() {
+  if (!("speechSynthesis" in window)) return;
+  state.voices = window.speechSynthesis.getVoices();
+  const englishFemale = populateVoiceSelect("english");
+  const norwegianFemale = populateVoiceSelect("norwegian");
+  if (englishFemale && norwegianFemale) {
+    byId("voice-status").textContent = "Wybrano kobiece głosy EN i NO";
+  } else if (state.voices.length === 0) {
+    byId("voice-status").textContent = "Przeglądarka jeszcze ładuje głosy";
+  } else {
+    byId("voice-status").textContent = "Sprawdź wybór — brak rozpoznanego kobiecego głosu dla jednego z języków";
+  }
+}
+
+function selectedVoice(language) {
+  const voiceURI = byId(`voice-${language}`).value;
+  return state.voices.find((voice) => voice.voiceURI === voiceURI) || null;
+}
+
 function renderAudioSupport() {
   const supported = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
   ["speak-english", "speak-norwegian"].forEach((id) => {
@@ -90,6 +202,11 @@ function renderAudioSupport() {
     button.disabled = !supported;
     button.title = supported ? "" : "Odsłuch nie jest obsługiwany w tej przeglądarce";
   });
+  byId("speech-rate").disabled = !supported;
+  if (!supported) {
+    ["voice-english", "voice-norwegian"].forEach((id) => { byId(id).disabled = true; });
+    byId("voice-status").textContent = "Odsłuch nie jest obsługiwany w tej przeglądarce";
+  }
 }
 
 function renderDomainFilters(project) {
@@ -127,7 +244,7 @@ function renderFlashcard(project) {
 }
 
 function renderVocabulary(project) {
-  const terms = languageTerms(project);
+  const terms = filteredTerms(project);
   byId("vocabulary-count").textContent = `${number(terms.length)} ${plural(terms.length, "pozycja", "pozycje", "pozycji")}`;
   byId("vocabulary-body").innerHTML = terms.map((term) => `
     <tr>
@@ -148,6 +265,7 @@ function renderLanguage(data) {
   renderLanguageSwitch();
   renderAudioSupport();
   renderDomainFilters(project);
+  ensureDeck(project);
   renderFlashcard(project);
   renderVocabulary(project);
 }
@@ -159,8 +277,12 @@ function speakTerm(language) {
   if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(language === "english" ? term.english : term.norwegian);
-  utterance.lang = language === "english" ? "en-GB" : "nb-NO";
-  utterance.rate = 0.82;
+  const voice = selectedVoice(language);
+  if (voice) utterance.voice = voice;
+  utterance.lang = voice?.lang || (language === "english" ? "en-GB" : "nb-NO");
+  utterance.rate = Number(byId("speech-rate").value);
+  utterance.pitch = 1.02;
+  utterance.volume = 1;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -210,6 +332,7 @@ document.addEventListener("click", (event) => {
   if (projectTarget) {
     state.selected = projectTarget.dataset.project;
     state.domain = "all";
+    state.deckKey = "";
     state.cardIndex = 0;
     state.revealed = false;
     render();
@@ -227,6 +350,7 @@ document.addEventListener("click", (event) => {
   const domainTarget = event.target.closest("[data-domain]");
   if (domainTarget) {
     state.domain = domainTarget.dataset.domain;
+    state.deckKey = "";
     state.cardIndex = 0;
     state.revealed = false;
     renderLanguage(state.data);
@@ -247,6 +371,20 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  if (event.target.closest("#previous-card")) {
+    const terms = languageTerms(activeProject(state.data));
+    state.cardIndex = (state.cardIndex - 1 + terms.length) % terms.length;
+    state.revealed = false;
+    renderFlashcard(activeProject(state.data));
+    return;
+  }
+
+  if (event.target.closest("#shuffle-cards")) {
+    ensureDeck(activeProject(state.data), true);
+    renderFlashcard(activeProject(state.data));
+    return;
+  }
+
   if (event.target.closest("#speak-english")) {
     speakTerm("english");
     return;
@@ -256,6 +394,21 @@ document.addEventListener("click", (event) => {
     speakTerm("norwegian");
   }
 });
+
+byId("speech-rate").addEventListener("input", (event) => {
+  byId("speech-rate-value").value = `${Number(event.target.value).toLocaleString("pl-PL", { minimumFractionDigits: 2 })}×`;
+});
+
+["voice-english", "voice-norwegian"].forEach((id) => {
+  byId(id).addEventListener("change", () => {
+    byId("voice-status").textContent = "Głos wybrany ręcznie";
+  });
+});
+
+if ("speechSynthesis" in window) {
+  window.speechSynthesis.addEventListener("voiceschanged", loadVoices);
+  loadVoices();
+}
 
 fetch("data/site-data.json")
   .then((response) => {
@@ -268,6 +421,9 @@ fetch("data/site-data.json")
     renderUpdates(data);
     renderMethod(data);
     render();
+    if (window.location.hash === "#language-lab") {
+      requestAnimationFrame(() => byId("language-lab").scrollIntoView({ block: "start" }));
+    }
   })
   .catch(() => {
     byId("main").innerHTML = "<section class='intro'><div><p class='eyebrow'>Błąd danych</p><h1>Nie udało się wczytać rejestru.</h1><p class='lead'>Spróbuj odświeżyć stronę. Jeżeli problem pozostaje, aktualizacja wymaga ponownej walidacji.</p></div></section>";

@@ -152,6 +152,21 @@ h3 { font-size: 1.05rem; }
 .flashcard-answer span { color: var(--muted); font-size: .78rem; }
 .flashcard-answer strong { margin-top: .15rem; font-size: 1.05rem; overflow-wrap: anywhere; }
 .evidence-line { min-height: 2.7rem; margin: 1rem 0; color: var(--muted); font-size: .86rem; }
+.voice-controls {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem;
+  margin: 0 0 1rem; padding: .9rem; border: 1px solid var(--line); background: rgba(5, 22, 27, .72);
+}
+.voice-controls-head { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: .8rem; align-items: baseline; }
+.voice-controls-head strong { color: var(--teal); font-size: .84rem; letter-spacing: .08em; text-transform: uppercase; }
+.voice-controls-head span { color: var(--muted); font-size: .72rem; text-align: right; }
+.voice-controls label { display: grid; gap: .32rem; color: var(--muted); font-size: .76rem; }
+.voice-controls select {
+  width: 100%; min-width: 0; padding: .5rem; border: 1px solid var(--line); border-radius: 0;
+  background: #081b21; color: var(--text); font: inherit;
+}
+.speech-rate-control { grid-column: 1 / -1; grid-template-columns: auto auto; align-items: center; }
+.speech-rate-control output { justify-self: end; color: var(--teal); font-variant-numeric: tabular-nums; }
+.speech-rate-control input { grid-column: 1 / -1; width: 100%; accent-color: var(--teal); }
 .flashcard-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
 .action-button { padding: .65rem .75rem; border-color: var(--line); }
 .action-button:disabled { cursor: not-allowed; opacity: .42; }
@@ -223,6 +238,10 @@ noscript { display: block; padding: 1rem; background: #7c2d12; color: white; tex
   .language-summary { justify-content: flex-end; }
   .language-project { width: 100%; }
   .flashcard { min-height: 13rem; }
+  .voice-controls { grid-template-columns: 1fr; }
+  .voice-controls-head, .speech-rate-control { grid-column: 1; }
+  .voice-controls-head { align-items: flex-start; flex-direction: column; }
+  .voice-controls-head span { text-align: left; }
   .flashcard-actions { grid-template-columns: 1fr; }
   .vocabulary-table, .vocabulary-table tbody, .vocabulary-table tr, .vocabulary-table td { display: block; }
   .vocabulary-table thead { display: none; }

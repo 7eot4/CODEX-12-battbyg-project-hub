@@ -79,7 +79,17 @@ def main() -> None:
         raise SystemExit(f"Niedozwolone artefakty w publikacji: {leaked}")
 
     html = (DOCS / "index.html").read_text(encoding="utf-8")
-    required_ui = ["language-lab", "flashcard", "vocabulary-body", "data-language"]
+    required_ui = [
+        "language-lab",
+        "flashcard",
+        "vocabulary-body",
+        "data-language",
+        "previous-card",
+        "shuffle-cards",
+        "voice-english",
+        "voice-norwegian",
+        "speech-rate",
+    ]
     if any(marker not in html for marker in required_ui):
         raise SystemExit("Brak kompletnego interfejsu nauki języków")
 

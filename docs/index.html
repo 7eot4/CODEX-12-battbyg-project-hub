@@ -64,7 +64,7 @@
         </div>
       </section>
 
-      <section class="language-lab" aria-labelledby="language-title">
+      <section class="language-lab" id="language-lab" aria-labelledby="language-title">
         <div class="section-heading language-heading">
           <div>
             <p class="eyebrow">English · Norsk · Polski</p>
@@ -97,11 +97,28 @@
               <div class="flashcard-answer" id="flashcard-answer" hidden></div>
             </div>
             <p class="evidence-line" id="flashcard-evidence"></p>
+            <div class="voice-controls" aria-labelledby="voice-settings-title">
+              <div class="voice-controls-head">
+                <strong id="voice-settings-title">Lektor</strong>
+                <span id="voice-status" role="status">Sprawdzanie dostępnych głosów…</span>
+              </div>
+              <label>Głos angielski
+                <select id="voice-english" aria-label="Kobiecy głos angielski"></select>
+              </label>
+              <label>Głos norweski
+                <select id="voice-norwegian" aria-label="Kobiecy głos norweski"></select>
+              </label>
+              <label class="speech-rate-control">Tempo <output id="speech-rate-value" for="speech-rate">0,72×</output>
+                <input id="speech-rate" type="range" min="0.55" max="1" value="0.72" step="0.01">
+              </label>
+            </div>
             <div class="flashcard-actions">
               <button class="action-button primary" id="reveal-card" type="button">Pokaż odpowiedź</button>
               <button class="action-button" id="speak-english" type="button">Odsłuchaj EN</button>
               <button class="action-button" id="speak-norwegian" type="button">Odsłuchaj NO</button>
+              <button class="action-button" id="previous-card" type="button">Poprzednia fiszka</button>
               <button class="action-button" id="next-card" type="button">Następna fiszka</button>
+              <button class="action-button" id="shuffle-cards" type="button">Losuj fiszki</button>
             </div>
           </article>
 

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Lokalna przeglądarka dokumentacji fotograficznej BATTBYG">
+  <title>BATTBYG · Przeglądarka zdjęć</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#viewer-main">Przejdź do przeglądarki</a>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">B</span><div><strong>BATTBYG</strong><span>Photo intelligence</span></div></div>
+    <div class="local-status"><span class="lock" aria-hidden="true">LOCAL</span><div><strong>Tylko ten komputer</strong><span>127.0.0.1 · bez publikacji zdjęć</span></div></div>
+  </header>
+
+  <main id="viewer-main">
+    <section class="viewer-intro" aria-labelledby="viewer-title">
+      <div>
+        <p class="eyebrow">Dokumentacja fotograficzna</p>
+        <h1 id="viewer-title">Od schematu do fizycznego urządzenia</h1>
+        <p class="lead">Rysunki są oddzielone od pozostałych zdjęć. Powiązania z szafami i urządzeniami są kandydatami opartymi na sesji lub czasie wykonania i wymagają potwierdzenia tagiem.</p>
+      </div>
+      <div class="summary" aria-label="Podsumowanie katalogu">
+        <div><span>Zdjęcia dostępne</span><strong id="metric-visible">—</strong></div>
+        <div><span>Schematy i dokumenty</span><strong id="metric-schematics">—</strong></div>
+        <div><span>Pozostałe zdjęcia</span><strong id="metric-other">—</strong></div>
+        <div><span>Zestawy dokumentów</span><strong id="metric-sets">—</strong></div>
+      </div>
+    </section>
+
+    <section class="control-deck" aria-label="Sterowanie przeglądarką">
+      <div class="project-switch" id="project-switch" role="group" aria-label="Projekt"></div>
+      <div class="mode-switch" role="tablist" aria-label="Rodzaj materiału">
+        <button class="mode-button active" type="button" role="tab" aria-selected="true" data-mode="schematics">Schematy i elementy powiązane</button>
+        <button class="mode-button" type="button" role="tab" aria-selected="false" data-mode="photos">Pozostałe zdjęcia</button>
+      </div>
+      <label class="search-box">
+        <span>Znajdź opis lub plik</span>
+        <input id="search-input" type="search" placeholder="np. rozdzielnica, PLC, 20260929…" autocomplete="off">
+      </label>
+    </section>
+
+    <section class="schematic-workspace" id="schematics-view" aria-labelledby="schematics-title">
+      <aside class="set-panel">
+        <div class="panel-heading">
+          <div><p class="eyebrow">Dokumentacja</p><h2 id="schematics-title">Zestawy schematów</h2></div>
+          <span id="set-count">—</span>
+        </div>
+        <div class="set-list" id="set-list"></div>
+      </aside>
+
+      <div class="relation-stage">
+        <div class="empty-state" id="set-empty" hidden>
+          <strong>Brak zestawów dla wybranego filtra</strong>
+          <span>Zmień projekt albo usuń tekst wyszukiwania.</span>
+        </div>
+        <div id="set-content">
+          <header class="relation-header">
+            <div><p class="eyebrow" id="set-method">—</p><h2 id="set-title">—</h2><p id="set-period" class="muted">—</p></div>
+            <span class="status-badge" id="set-status">—</span>
+          </header>
+
+          <section class="evidence-block" aria-labelledby="source-drawings-title">
+            <div class="block-heading"><h3 id="source-drawings-title">Zdjęcia schematu lub dokumentu</h3><span id="schematic-count">—</span></div>
+            <div class="photo-grid compact" id="schematic-grid"></div>
+          </section>
+
+          <div class="relation-bridge">
+            <span class="bridge-line" aria-hidden="true"></span>
+            <div><strong>Kandydaci powiązania</strong><span id="relation-basis">—</span></div>
+            <p id="relation-status">—</p>
+          </div>
+
+          <section class="evidence-block" aria-labelledby="related-elements-title">
+            <div class="block-heading"><h3 id="related-elements-title">Elementy, szafy i urządzenia z tej sesji</h3><span id="related-count">—</span></div>
+            <div class="photo-grid" id="related-grid"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="photos-workspace" id="photos-view" aria-labelledby="photos-title" hidden>
+      <div class="photos-toolbar">
+        <div><p class="eyebrow">Materiał pozostały</p><h2 id="photos-title">Pozostałe zdjęcia z opisem</h2><p class="muted">Opis wskazuje rozpoznany obszar techniczny. Dokładny typ i funkcję potwierdź z tagu lub rysunku.</p></div>
+        <label class="sort-control">Kolejność<select id="sort-select"><option value="newest">Najnowsze</option><option value="oldest">Najstarsze</option></select></label>
+      </div>
+      <div class="category-filters" id="category-filters" aria-label="Filtr kategorii"></div>
+      <div class="result-line"><strong id="photo-result-count">—</strong><span>pasujących zdjęć</span></div>
+      <div class="photo-grid gallery" id="photo-grid"></div>
+      <button class="load-more" id="load-more" type="button" hidden>Pokaż kolejne zdjęcia</button>
+      <div class="empty-state" id="photo-empty" hidden><strong>Brak zdjęć dla wybranego filtra</strong><span>Zmień kategorię albo wyszukiwanie.</span></div>
+    </section>
+
+    <section class="method-strip" aria-labelledby="method-title">
+      <div><span>FAKT</span><strong id="method-fact">—</strong></div>
+      <div><span>INTERPRETACJA</span><strong id="method-interpretation">—</strong></div>
+      <div><span>OGRANICZENIE</span><strong id="method-limitation">—</strong></div>
+    </section>
+  </main>
+
+  <dialog id="photo-dialog" class="photo-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-shell">
+      <div class="dialog-image-wrap"><img id="dialog-image" alt=""></div>
+      <article class="dialog-details">
+        <button class="dialog-close" id="dialog-close" type="button" aria-label="Zamknij podgląd">Zamknij</button>
+        <p class="eyebrow" id="dialog-project">—</p>
+        <h2 id="dialog-title">—</h2>
+        <p class="dialog-description" id="dialog-description">—</p>
+        <dl class="metadata" id="dialog-metadata"></dl>
+        <div class="claim-box"><span>Klasa opisu</span><strong id="dialog-claim-class">—</strong><p id="dialog-limitation">—</p></div>
+        <div class="dialog-nav"><button id="dialog-prev" type="button">Poprzednie</button><button id="dialog-next" type="button">Następne</button></div>
+      </article>
+    </div>
+  </dialog>
+
+  <noscript>Ta przeglądarka wymaga włączonego JavaScript.</noscript>
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>
