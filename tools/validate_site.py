@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+from datetime import date
 from pathlib import Path
 
 
@@ -35,6 +36,21 @@ def main() -> None:
 
     if payload.get("language_learning", {}).get("source_terms") != 77:
         raise SystemExit("Niepełny glosariusz źródłowy")
+    if payload.get("language_learning", {}).get("defined_terms") != 77:
+        raise SystemExit("Nie wszystkie pojęcia mają definicję")
+    definition_date = payload.get("language_learning", {}).get("definitions_added_on", "")
+    try:
+        date.fromisoformat(definition_date)
+    except ValueError as error:
+        raise SystemExit("Nieprawidłowa data opracowania definicji") from error
+    sources = payload.get("language_learning", {}).get("reference_sources", [])
+    if len(sources) < 4 or any(
+        not source.get("title")
+        or not source.get("url", "").startswith("https://")
+        or source.get("accessed_on") != definition_date
+        for source in sources
+    ):
+        raise SystemExit("Niepełne źródła referencyjne definicji")
     all_terms: set[str] = set()
     for project in payload["projects"]:
         learning = project.get("language_learning", {})
@@ -52,9 +68,15 @@ def main() -> None:
                 "domain",
                 "domain_label",
                 "evidence_basis",
+                "definition_pl",
+                "application_pl",
+                "definition_added_on",
+                "definition_status",
             }
             if any(not term.get(field) for field in required_fields):
                 raise SystemExit(f"Niepełny termin językowy: {project['id']}")
+            if term["definition_added_on"] != definition_date:
+                raise SystemExit(f"Niespójna data definicji: {term['english']}")
         all_terms.update(project_terms)
     if len(all_terms) != 77:
         raise SystemExit("Nie wszystkie terminy są dostępne w projektach")
@@ -103,6 +125,12 @@ def main() -> None:
         "global-search",
         "search-results",
         "shipyard-hero.webp",
+        "definition-note",
+        "definition-sources",
+        "field-journal",
+        "journal-form",
+        "export-journal",
+        "ship-guide",
     ]
     if any(marker not in html for marker in required_ui):
         raise SystemExit("Brak kompletnego interfejsu nauki języków")
@@ -111,6 +139,9 @@ def main() -> None:
     required_search_logic = ["buildSearchIndex", "findSearchResults", "normalizeSearch", "openSearchResult"]
     if any(marker not in script for marker in required_search_logic):
         raise SystemExit("Brak kompletnej logiki wyszukiwarki")
+    required_journal_logic = ["loadJournalEntries", "persistJournalEntries", "journalAsMarkdown", "exportJournal"]
+    if any(marker not in script for marker in required_journal_logic):
+        raise SystemExit("Brak kompletnej logiki lokalnego dziennika")
 
     print("SITE_VALIDATION_OK")
     assignments = sum(project["language_learning"]["term_count"] for project in payload["projects"])

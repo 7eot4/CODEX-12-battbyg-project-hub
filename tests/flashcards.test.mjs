@@ -48,6 +48,10 @@ const term = (english) => ({
   domain: "general",
   domain_label: "Ogólne",
   evidence_basis: "test",
+  definition_pl: `definicja-${english}`,
+  application_pl: `zastosowanie-${english}`,
+  definition_added_on: "2026-10-07",
+  definition_status: "test",
 });
 const project = { id: "p", language_learning: { terms: [term("a"), term("b"), term("c")] } };
 
@@ -64,6 +68,7 @@ assert.ok(vm.runInContext("buildSearchIndex(siteData).length", context) > 80);
 assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'uziemienie')[0].title", context), "earthing");
 assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'jording')[0].title", context), "earthing");
 assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'control cabinet')[0].title", context), "control cabinet");
+assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'utracie energii sterujacej')[0].title", context), "fail-safe state");
 assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'rozdzial energii')[0].title", context), "Rozdział energii");
 assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'fonnes')[0].title", context), "M/S FONNES");
 

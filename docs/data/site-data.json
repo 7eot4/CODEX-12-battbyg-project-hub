@@ -3,7 +3,7 @@
     "title": "BATTBYG Project Hub",
     "description": "Publiczny, zagregowany rejestr wiedzy z projektów okrętowych BATTBYG.",
     "data_snapshot": "2026-10-04",
-    "generated_at": "2026-10-07T19:17:02+02:00",
+    "generated_at": "2026-10-07T22:12:51+02:00",
     "publication_mode": "public-sanitized"
   },
   "summary": {
@@ -76,7 +76,11 @@
             "polish": "jednostka/statek",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Jednostka pływająca zaprojektowana do poruszania się lub wykonywania określonych zadań na wodzie.",
+            "application_pl": "Najpierw ustal typ jednostki, jej przeznaczenie i wymagania klasyfikacyjne, bo wpływają na wszystkie systemy pokładowe.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-002",
@@ -85,7 +89,11 @@
             "polish": "maszynownia",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Wydzielona przestrzeń statku mieszcząca główne urządzenia napędowe, energetyczne i pomocnicze.",
+            "application_pl": "Przed wejściem sprawdź zasady dostępu, hałas, gorące powierzchnie, drogi ewakuacji i aktualny stan pracy urządzeń.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-003",
@@ -94,7 +102,11 @@
             "polish": "mostek",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Stanowisko dowodzenia, z którego prowadzi się nawigację i nadzoruje ruch oraz podstawowe funkcje statku.",
+            "application_pl": "Instalacje na mostku obejmują m.in. zasilanie, nawigację, łączność, alarmy i interfejsy monitoringu.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-004",
@@ -103,7 +115,11 @@
             "polish": "pokład główny",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Podstawowy ciągły pokład konstrukcyjny statku, zwykle stanowiący ważny poziom odniesienia dla rozmieszczenia wyposażenia.",
+            "application_pl": "Numer pokładu i oznaczenie wręgi pomagają jednoznacznie lokalizować kable, urządzenia i przejścia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-005",
@@ -112,7 +128,11 @@
             "polish": "gródź",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Pionowa przegroda dzieląca kadłub na pomieszczenia lub przedziały, czasem o wymaganej szczelności albo odporności ogniowej.",
+            "application_pl": "Każde przejście kablowe lub rurowe przez gródź musi zachować wymaganą klasę przegrody.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-006",
@@ -121,7 +141,11 @@
             "polish": "drzwi wodoszczelne",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Zamykane przejście w grodzi wodoszczelnej, które po prawidłowym zamknięciu zachowuje podział wodoszczelny statku.",
+            "application_pl": "Nie blokuj drzwi i nie ingeruj w krańcówki, napęd ani alarm bez zatwierdzonej procedury.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-007",
@@ -130,7 +154,11 @@
             "polish": "instalacja zęzowa",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Układ zbierający i usuwający wodę, przecieki oraz inne ciecze gromadzące się w zęzach statku.",
+            "application_pl": "Przy analizie sprawdza się pompy, zawory, czujniki poziomu, alarmy i prawidłową drogę tłoczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-008",
@@ -139,7 +167,11 @@
             "polish": "instalacja balastowa",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Układ przyjmowania, przemieszczania i usuwania wody balastowej w celu regulacji zanurzenia, przegłębienia i stateczności.",
+            "application_pl": "Sterowanie zaworami i pompami musi odpowiadać zatwierdzonemu planowi oraz zabezpieczeniom przed błędną operacją.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-009",
@@ -148,7 +180,11 @@
             "polish": "silnik główny",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Podstawowa maszyna wytwarzająca moc mechaniczną potrzebną do napędu statku.",
+            "application_pl": "Elektryk spotyka tu układy rozruchu, smarowania, chłodzenia, zabezpieczeń, alarmów i sterowania napędem.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-010",
@@ -157,7 +193,11 @@
             "polish": "silnik pomocniczy",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Silnik napędzający prądnicę lub urządzenie pomocnicze, niezależnie od głównego napędu statku.",
+            "application_pl": "Przy agregacie sprawdza się sekwencję startu, synchronizację, zabezpieczenia i wymianę sygnałów z PMS.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-011",
@@ -166,7 +206,11 @@
             "polish": "maszyna sterowa",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Zespół urządzeń zmieniających położenie steru zgodnie z poleceniem ze stanowiska sterowania.",
+            "application_pl": "Kluczowe są zasilania podstawowe i rezerwowe, sterowanie lokalne/zdalne, alarmy oraz próby awaryjne.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-012",
@@ -175,7 +219,11 @@
             "polish": "ster strumieniowy dziobowy",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Poprzeczny pędnik w części dziobowej wspomagający manewrowanie statkiem przy małych prędkościach.",
+            "application_pl": "Sprawdza się blokady, chłodzenie, smarowanie, sprzężenia zwrotne i ograniczenia czasu pracy.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-013",
@@ -184,7 +232,11 @@
             "polish": "pompa",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Maszyna przekazująca energię cieczy w celu uzyskania wymaganego przepływu lub ciśnienia.",
+            "application_pl": "Przed uruchomieniem potwierdź drogę przepływu, zalanie, kierunek obrotów, stan zaworów i zabezpieczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-014",
@@ -193,7 +245,11 @@
             "polish": "zawór",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Element instalacji rurowej służący do otwierania, zamykania albo regulacji przepływu medium.",
+            "application_pl": "Ustal pozycję bezpieczną, sposób napędu, oznaczenie oraz sygnały potwierdzenia położenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-015",
@@ -202,7 +258,11 @@
             "polish": "instalacja rurowa",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Powiązany układ rur, armatury, podpór i urządzeń transportujący określone medium.",
+            "application_pl": "Identyfikuj medium, kierunek przepływu, granice systemu i zależności z automatyką przed oceną działania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-036",
@@ -211,7 +271,11 @@
             "polish": "przemiennik częstotliwości",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Przekształtnik regulujący prędkość i moment silnika AC przez zmianę częstotliwości oraz napięcia zasilania.",
+            "application_pl": "Sprawdź dane silnika, kierunek, rampy, limity, chłodzenie, EMC i sygnały sterujące przed próbą funkcjonalną.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-037",
@@ -220,7 +284,11 @@
             "polish": "sterownik PLC",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Programowalny sterownik przemysłowy realizujący logikę sterowania na podstawie programu oraz sygnałów wejściowych i wyjściowych.",
+            "application_pl": "Diagnozę prowadź od statusu CPU i zasilania przez I/O, sieć, logikę programu aż do elementu wykonawczego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-038",
@@ -229,7 +297,11 @@
             "polish": "panel operatorski HMI",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Interfejs człowiek–maszyna wyświetlający stan procesu i umożliwiający operatorowi wydawanie dozwolonych poleceń.",
+            "application_pl": "Ekran nie jest sam w sobie dowodem stanu fizycznego; krytyczne wskazania porównuj z sygnałem źródłowym.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-039",
@@ -238,7 +310,11 @@
             "polish": "wejście/wyjście",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Punkt wymiany sygnału między sterownikiem a urządzeniem zewnętrznym: wejście odbiera informację, a wyjście steruje.",
+            "application_pl": "Ustal typ sygnału, adres, zakres, stan bezpieczny i miejsce zakończenia przewodów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-040",
@@ -247,7 +323,11 @@
             "polish": "lista wejść i wyjść",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Kontrolowany wykaz wszystkich sygnałów systemu automatyki z adresami, typami, opisami i powiązaniem z urządzeniami.",
+            "application_pl": "Służy do trasowania sygnału, kontroli okablowania i planowania testów loop-check oraz funkcjonalnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-041",
@@ -256,7 +336,11 @@
             "polish": "czujnik",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Element wykrywający wielkość fizyczną lub stan i przekształcający go w użyteczny sygnał.",
+            "application_pl": "Sprawdź zasadę działania, zakres, zasilanie, montaż i warunki środowiskowe czujnika.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-042",
@@ -265,7 +349,11 @@
             "polish": "przetwornik pomiarowy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Przetwornik pomiarowy zamieniający mierzoną wielkość na standaryzowany sygnał przesyłany do układu sterowania.",
+            "application_pl": "Weryfikuje się zakres, jednostkę, zero, zasilanie pętli i skalowanie kanału wejściowego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-043",
@@ -274,7 +362,11 @@
             "polish": "element wykonawczy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Element wykonawczy zamieniający sygnał sterujący na ruch lub inną zmianę fizyczną w procesie.",
+            "application_pl": "Przed próbą potwierdź energię pomocniczą, kierunek ruchu, położenia krańcowe i bezpieczną reakcję na zanik sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-044",
@@ -283,7 +375,11 @@
             "polish": "wyłącznik krańcowy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Łącznik położeniowy zmieniający stan elektryczny po osiągnięciu przez mechanizm określonego położenia.",
+            "application_pl": "Sprawdź mechaniczne zadziałanie, regulację, styki NO/NC i zgodność sygnału w PLC/HMI.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-045",
@@ -292,7 +388,11 @@
             "polish": "presostat",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Łącznik zmieniający stan styku po przekroczeniu ustawionego progu ciśnienia.",
+            "application_pl": "Test obejmuje rzeczywisty próg zadziałania, histerezę, powrót i reakcję układu sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-046",
@@ -301,7 +401,11 @@
             "polish": "wartość zadana",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Wartość zadana, do której regulator lub logika sterowania porównuje wartość mierzoną.",
+            "application_pl": "Zapisuj jednostkę, dopuszczalny zakres, źródło nastawy i wpływ jej zmiany na zabezpieczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-047",
@@ -310,7 +414,11 @@
             "polish": "blokada funkcjonalna",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Warunek logiczny lub sprzętowy blokujący niedozwoloną operację albo wymuszający bezpieczną kolejność działań.",
+            "application_pl": "Testuj osobno warunek aktywacji, blokowaną funkcję, alarm, reset i zachowanie po zaniku zasilania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-048",
@@ -319,7 +427,11 @@
             "polish": "stan bezpieczny przy uszkodzeniu",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Zdefiniowany stan, do którego układ powinien przejść po określonym uszkodzeniu lub utracie energii sterującej, aby ograniczyć ryzyko.",
+            "application_pl": "Stan bezpieczny zależy od procesu; zawór nie zawsze ma się zamknąć, dlatego sprawdź filozofię sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-049",
@@ -328,7 +440,11 @@
             "polish": "plan ochrony przeciwpożarowej i bezpieczeństwa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Zatwierdzony plan pokazujący rozmieszczenie ochrony przeciwpożarowej, dróg ewakuacji i wyposażenia pożarowego statku.",
+            "application_pl": "Używaj aktualnej rewizji i porównuj oznaczenia planu z rzeczywistym rozmieszczeniem wyposażenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-050",
@@ -337,7 +453,11 @@
             "polish": "system sygnalizacji pożaru",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Układ czujek, central, sygnalizatorów i połączeń służący do wykrycia pożaru oraz ogłoszenia alarmu.",
+            "application_pl": "Próba powinna potwierdzić detekcję, właściwą strefę, alarmy, uszkodzenia i wymagane funkcje wykonawcze.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-051",
@@ -346,7 +466,11 @@
             "polish": "pompa pożarowa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Pompa dostarczająca wodę do statkowej instalacji przeciwpożarowej przy wymaganym ciśnieniu i wydajności.",
+            "application_pl": "Sprawdza się uruchomienie lokalne/zdalne, zasilanie, ssanie, ciśnienie oraz dostępność hydrantów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-052",
@@ -355,7 +479,11 @@
             "polish": "gaśnica",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Przenośne lub przewoźne urządzenie zawierające środek gaśniczy przeznaczony do gaszenia określonych klas pożaru.",
+            "application_pl": "Potwierdź typ, plombę, termin przeglądu, dostępność i dopasowanie środka do zagrożenia elektrycznego lub paliwowego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-053",
@@ -364,7 +492,11 @@
             "polish": "stała instalacja gaśnicza",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Stała instalacja podająca środek gaśniczy do chronionej przestrzeni lub urządzenia.",
+            "application_pl": "Nie wykonuj prób wyzwolenia bez procedury; kluczowe są alarm wstępny, blokady, odcięcia wentylacji i ewakuacja.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-054",
@@ -373,7 +505,11 @@
             "polish": "wyjście awaryjne",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Wyznaczone przejście prowadzące z zagrożonej przestrzeni do bezpiecznej drogi ewakuacji.",
+            "application_pl": "Musi pozostać dostępne, oznakowane, oświetlone i możliwe do użycia w przewidzianych warunkach awaryjnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-055",
@@ -382,7 +518,11 @@
             "polish": "miejsce zbiórki",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Wyznaczone miejsce zbiórki osób podczas alarmu, przypisane w planie alarmowym statku.",
+            "application_pl": "Po wejściu na statek ustal swoją stację zbiórki, drogę dojścia i obowiązki alarmowe.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-056",
@@ -391,7 +531,11 @@
             "polish": "tratwa ratunkowa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Nadmuchiwana lub sztywna tratwa ratunkowa stanowiąca środek przetrwania po opuszczeniu statku.",
+            "application_pl": "Nie zasłaniaj dostępu ani zwalniaka; kontroluj oznaczenie, pojemność, mocowanie i termin serwisowy.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-057",
@@ -400,7 +544,11 @@
             "polish": "kamizelka ratunkowa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Osobisty środek ratunkowy zapewniający wyporność i właściwe ułożenie osoby w wodzie.",
+            "application_pl": "Znajdź przydzieloną kamizelkę, sprawdź sposób założenia oraz obecność światła i gwizdka, jeśli są wymagane.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-058",
@@ -409,7 +557,11 @@
             "polish": "zdalne zatrzymanie",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Funkcja umożliwiająca zatrzymanie urządzenia z miejsca oddalonego od jego lokalnego sterowania.",
+            "application_pl": "Testuj zgodnie z procedurą, potwierdzając właściwy odbiornik, priorytet sygnału, alarm i sposób resetu.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-059",
@@ -418,7 +570,11 @@
             "polish": "instalacja chłodnicza",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Zespół urządzeń realizujący obieg chłodniczy w celu odbierania ciepła z chłodzonej przestrzeni lub medium.",
+            "application_pl": "Analizuj sprężarkę, skraplacz, zawór rozprężny, parownik, zabezpieczenia ciśnieniowe i sterowanie.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-060",
@@ -427,7 +583,11 @@
             "polish": "sprężarka",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Maszyna zwiększająca ciśnienie gazu przez dostarczenie mu energii mechanicznej.",
+            "application_pl": "Przed startem sprawdź smarowanie, chłodzenie, zawory, odciążenie, presostaty i zabezpieczenia silnika.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-061",
@@ -436,7 +596,11 @@
             "polish": "parownik",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Wymiennik ciepła, w którym czynnik chłodniczy odparowuje, odbierając ciepło od chłodzonego medium.",
+            "application_pl": "Obserwuj temperaturę, ciśnienie, przepływ powietrza lub cieczy oraz oznaki oblodzenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-062",
@@ -445,7 +609,11 @@
             "polish": "skraplacz",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Wymiennik ciepła, w którym para czynnika chłodniczego skrapla się, oddając ciepło do otoczenia.",
+            "application_pl": "Sprawdź przepływ medium chłodzącego, czystość powierzchni, ciśnienie skraplania i pracę wentylatorów lub pomp.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-063",
@@ -454,7 +622,11 @@
             "polish": "zawór elektromagnetyczny",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Zawór uruchamiany elektromagnesem, który po podaniu lub zaniku napięcia zmienia drogę przepływu.",
+            "application_pl": "Ustal napięcie cewki, pozycję beznapięciową, kierunek przepływu i możliwość ręcznego przesterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-074",
@@ -463,7 +635,11 @@
             "polish": "rysunek powykonawczy",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Rysunek zaktualizowany do rzeczywistego, zaakceptowanego sposobu wykonania instalacji po zakończeniu prac.",
+            "application_pl": "Nie każda czerwona poprawka jest as-built; potwierdź numer dokumentu, rewizję i status zatwierdzenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-075",
@@ -472,7 +648,11 @@
             "polish": "lista kablowa",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Wykaz kabli zawierający ich identyfikatory, typy, przekroje, punkty FROM–TO i inne dane instalacyjne.",
+            "application_pl": "To podstawowe źródło do sprawdzania trasy i zakończeń; zdjęcie nie zastępuje aktualnej listy kablowej.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-076",
@@ -481,7 +661,11 @@
             "polish": "rewizja rysunku",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Oznaczona wersja dokumentu pokazująca kontrolowany etap zmian względem wcześniejszego wydania.",
+            "application_pl": "Przed pracą potwierdź numer rewizji, status dokumentu, datę i zgodność z rejestrem dokumentacji.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-077",
@@ -490,7 +674,11 @@
             "polish": "identyfikowalność",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Możliwość odtworzenia pochodzenia, historii, zmian i powiązań elementu, dokumentu lub wyniku pomiaru.",
+            "application_pl": "Łącz tag urządzenia, kabel, rysunek, rewizję, protokół, datę i osobę zatwierdzającą bez publikowania danych prywatnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           }
         ]
       },
@@ -565,7 +753,11 @@
             "polish": "jednostka/statek",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Jednostka pływająca zaprojektowana do poruszania się lub wykonywania określonych zadań na wodzie.",
+            "application_pl": "Najpierw ustal typ jednostki, jej przeznaczenie i wymagania klasyfikacyjne, bo wpływają na wszystkie systemy pokładowe.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-002",
@@ -574,7 +766,11 @@
             "polish": "maszynownia",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Wydzielona przestrzeń statku mieszcząca główne urządzenia napędowe, energetyczne i pomocnicze.",
+            "application_pl": "Przed wejściem sprawdź zasady dostępu, hałas, gorące powierzchnie, drogi ewakuacji i aktualny stan pracy urządzeń.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-003",
@@ -583,7 +779,11 @@
             "polish": "mostek",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Stanowisko dowodzenia, z którego prowadzi się nawigację i nadzoruje ruch oraz podstawowe funkcje statku.",
+            "application_pl": "Instalacje na mostku obejmują m.in. zasilanie, nawigację, łączność, alarmy i interfejsy monitoringu.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-004",
@@ -592,7 +792,11 @@
             "polish": "pokład główny",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Podstawowy ciągły pokład konstrukcyjny statku, zwykle stanowiący ważny poziom odniesienia dla rozmieszczenia wyposażenia.",
+            "application_pl": "Numer pokładu i oznaczenie wręgi pomagają jednoznacznie lokalizować kable, urządzenia i przejścia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-005",
@@ -601,7 +805,11 @@
             "polish": "gródź",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Pionowa przegroda dzieląca kadłub na pomieszczenia lub przedziały, czasem o wymaganej szczelności albo odporności ogniowej.",
+            "application_pl": "Każde przejście kablowe lub rurowe przez gródź musi zachować wymaganą klasę przegrody.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-006",
@@ -610,7 +818,11 @@
             "polish": "drzwi wodoszczelne",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Zamykane przejście w grodzi wodoszczelnej, które po prawidłowym zamknięciu zachowuje podział wodoszczelny statku.",
+            "application_pl": "Nie blokuj drzwi i nie ingeruj w krańcówki, napęd ani alarm bez zatwierdzonej procedury.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-007",
@@ -619,7 +831,11 @@
             "polish": "instalacja zęzowa",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Układ zbierający i usuwający wodę, przecieki oraz inne ciecze gromadzące się w zęzach statku.",
+            "application_pl": "Przy analizie sprawdza się pompy, zawory, czujniki poziomu, alarmy i prawidłową drogę tłoczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-008",
@@ -628,7 +844,11 @@
             "polish": "instalacja balastowa",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Układ przyjmowania, przemieszczania i usuwania wody balastowej w celu regulacji zanurzenia, przegłębienia i stateczności.",
+            "application_pl": "Sterowanie zaworami i pompami musi odpowiadać zatwierdzonemu planowi oraz zabezpieczeniom przed błędną operacją.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-009",
@@ -637,7 +857,11 @@
             "polish": "silnik główny",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Podstawowa maszyna wytwarzająca moc mechaniczną potrzebną do napędu statku.",
+            "application_pl": "Elektryk spotyka tu układy rozruchu, smarowania, chłodzenia, zabezpieczeń, alarmów i sterowania napędem.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-010",
@@ -646,7 +870,11 @@
             "polish": "silnik pomocniczy",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Silnik napędzający prądnicę lub urządzenie pomocnicze, niezależnie od głównego napędu statku.",
+            "application_pl": "Przy agregacie sprawdza się sekwencję startu, synchronizację, zabezpieczenia i wymianę sygnałów z PMS.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-011",
@@ -655,7 +883,11 @@
             "polish": "maszyna sterowa",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Zespół urządzeń zmieniających położenie steru zgodnie z poleceniem ze stanowiska sterowania.",
+            "application_pl": "Kluczowe są zasilania podstawowe i rezerwowe, sterowanie lokalne/zdalne, alarmy oraz próby awaryjne.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-012",
@@ -664,7 +896,11 @@
             "polish": "ster strumieniowy dziobowy",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Poprzeczny pędnik w części dziobowej wspomagający manewrowanie statkiem przy małych prędkościach.",
+            "application_pl": "Sprawdza się blokady, chłodzenie, smarowanie, sprzężenia zwrotne i ograniczenia czasu pracy.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-013",
@@ -673,7 +909,11 @@
             "polish": "pompa",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Maszyna przekazująca energię cieczy w celu uzyskania wymaganego przepływu lub ciśnienia.",
+            "application_pl": "Przed uruchomieniem potwierdź drogę przepływu, zalanie, kierunek obrotów, stan zaworów i zabezpieczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-014",
@@ -682,7 +922,11 @@
             "polish": "zawór",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Element instalacji rurowej służący do otwierania, zamykania albo regulacji przepływu medium.",
+            "application_pl": "Ustal pozycję bezpieczną, sposób napędu, oznaczenie oraz sygnały potwierdzenia położenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-015",
@@ -691,7 +935,11 @@
             "polish": "instalacja rurowa",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Powiązany układ rur, armatury, podpór i urządzeń transportujący określone medium.",
+            "application_pl": "Identyfikuj medium, kierunek przepływu, granice systemu i zależności z automatyką przed oceną działania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-016",
@@ -700,7 +948,11 @@
             "polish": "rozdzielnica główna",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Główna rozdzielnica odbierająca energię z podstawowych źródeł i rozdzielająca ją do głównych odbiorów oraz podrozdzielnic.",
+            "application_pl": "Praca wymaga znajomości układu szyn, generatorów, zabezpieczeń, synchronizacji i procedur łączeniowych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-017",
@@ -709,7 +961,11 @@
             "polish": "rozdzielnica awaryjna",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Rozdzielnica zasilająca wymagane odbiory awaryjne z niezależnego źródła po zaniku zasilania podstawowego.",
+            "application_pl": "Podczas testu potwierdza się automatyczne przełączenie, czas dostępności i listę rzeczywiście zasilonych odbiorów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-018",
@@ -718,7 +974,11 @@
             "polish": "rozdzielnica",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Rozdzielnica rozprowadzająca energię do grup odbiorów końcowych lub kolejnych obwodów rozdzielczych.",
+            "application_pl": "Porównaj opis pól, schemat jednokreskowy, zabezpieczenia i oznaczenia kabli z wykonaniem.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-019",
@@ -727,7 +987,11 @@
             "polish": "szafa rozdzielcza",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Obudowana szafa zawierająca aparaturę służącą głównie do rozdziału energii elektrycznej.",
+            "application_pl": "Sprawdza się stopień ochrony, uziemienie obudowy, dławnice, zapas miejsca i zgodność wyposażenia z dokumentacją.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-020",
@@ -736,7 +1000,11 @@
             "polish": "szafa sterownicza",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Szafa mieszcząca aparaturę sterowania, automatyki i interfejsy wejść/wyjść danego układu.",
+            "application_pl": "Śledź tor od zasilania i zabezpieczeń przez PLC/przekaźniki do zacisków oraz urządzeń polowych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-021",
@@ -745,7 +1013,11 @@
             "polish": "szyna zbiorcza",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Sztywny przewodnik o dużej obciążalności służący do wspólnego rozdziału energii pomiędzy wieloma polami lub obwodami.",
+            "application_pl": "Weryfikuje się przekrój, izolację, odstępy, połączenia, kolejność faz i zdolność zwarciową.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-022",
@@ -754,7 +1026,11 @@
             "polish": "wyłącznik mocy / nadprądowy",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Łącznik zdolny załączać i wyłączać prąd roboczy oraz samoczynnie przerwać prąd w określonych warunkach uszkodzeniowych.",
+            "application_pl": "Dobór i nastawy muszą odpowiadać obciążeniu, prądom zwarciowym, selektywności i dokumentacji zatwierdzonej.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-023",
@@ -763,7 +1039,11 @@
             "polish": "bezpiecznik",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Aparat zabezpieczający, którego element topikowy przerywa obwód po przekroczeniu zależności prąd–czas.",
+            "application_pl": "Po zadziałaniu usuń przyczynę i zastosuj wkładkę dokładnie właściwego typu, prądu, napięcia i charakterystyki.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-024",
@@ -772,7 +1052,11 @@
             "polish": "stycznik",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Elektromagnetycznie sterowany łącznik przeznaczony do częstego załączania i wyłączania obwodów roboczych.",
+            "application_pl": "Sprawdza się napięcie cewki, styki pomocnicze, blokady i kategorię użytkowania dla danego odbioru.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-025",
@@ -781,7 +1065,11 @@
             "polish": "przekaźnik zabezpieczeniowy",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Urządzenie oceniające wielkości elektryczne i inicjujące sygnał alarmowy lub wyłączenie po rozpoznaniu zakłócenia.",
+            "application_pl": "Nie zmieniaj nastaw bez zatwierdzonej koordynacji zabezpieczeń i zapisu poprzedniej konfiguracji.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-026",
@@ -790,7 +1078,11 @@
             "polish": "listwa/złączka zaciskowa",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Izolowany element zaciskowy umożliwiający uporządkowane i rozłączne łączenie przewodów w szafie lub puszce.",
+            "application_pl": "Numer zacisku, mostki, przekrój przewodu i oznaczniki muszą zgadzać się ze schematem połączeń.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-027",
@@ -799,7 +1091,11 @@
             "polish": "przewód ochronny PE",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Przewód łączący dostępne części przewodzące z układem ochronnym, aby ograniczyć niebezpieczne napięcie dotykowe.",
+            "application_pl": "Potwierdź ciągłość, przekrój, oznaczenie PE i trwałe połączenie z punktem wyrównawczym lub kadłubem.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-028",
@@ -808,7 +1104,11 @@
             "polish": "połączenie wyrównawcze",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Połączenie przewodzących części w celu zmniejszenia różnicy potencjałów między nimi.",
+            "application_pl": "Na statku obejmuje m.in. obudowy, konstrukcję i wybrane instalacje; jakość połączenia potwierdza się pomiarem.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-029",
@@ -817,7 +1117,11 @@
             "polish": "uziemienie",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Celowe połączenie punktu obwodu lub części przewodzącej z kadłubem albo innym przyjętym punktem odniesienia potencjału.",
+            "application_pl": "Nie zakładaj rozwiązania sieci na podstawie koloru przewodu; sprawdź schemat uziemienia konkretnej instalacji.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-030",
@@ -826,7 +1130,11 @@
             "polish": "drabina/trasa kablowa",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "System wsporczy prowadzący i podtrzymujący kable w uporządkowanej trasie.",
+            "application_pl": "Kontroluj promienie gięcia, mocowanie, separację obwodów, przejścia, rezerwę i połączenia wyrównawcze trasy.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-031",
@@ -835,7 +1143,11 @@
             "polish": "dławik/przepust kablowy",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Element wprowadzenia kabla do obudowy zapewniający zamocowanie, uszczelnienie i wymagany stopień ochrony.",
+            "application_pl": "Typ dławika musi pasować do średnicy i konstrukcji kabla, środowiska oraz ewentualnych wymagań EMC lub Ex.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-032",
@@ -844,7 +1156,11 @@
             "polish": "prąd zwarciowy",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Prąd płynący wskutek zwarcia, ograniczony impedancją źródła, sieci i miejsca uszkodzenia.",
+            "application_pl": "Wyznacza wymaganą zdolność wyłączania aparatury, wytrzymałość szyn i parametry ochrony kabli.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-033",
@@ -853,7 +1169,11 @@
             "polish": "selektywność zabezpieczeń",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Koordynacja zabezpieczeń powodująca, że zakłócony obwód wyłącza zabezpieczenie najbliższe miejscu uszkodzenia.",
+            "application_pl": "Weryfikacja wymaga charakterystyk czasowo-prądowych, nastaw i obliczonych poziomów zwarciowych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-034",
@@ -862,7 +1182,11 @@
             "polish": "rezystancja izolacji",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Rezystancja izolacji między przewodnikami lub między przewodnikiem a ziemią, oceniana określonym napięciem pomiarowym.",
+            "application_pl": "Przed pomiarem odłącz wrażliwą elektronikę i stosuj napięcie oraz kryterium właściwe dla badanego obwodu.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-035",
@@ -871,7 +1195,11 @@
             "polish": "pomiar ciągłości",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Pomiar potwierdzający istnienie nieprzerwanej, dostatecznie niskorezystancyjnej drogi przewodzącej.",
+            "application_pl": "Stosuje się go m.in. do PE i połączeń wyrównawczych, zapisując punkty pomiaru, przyrząd i wynik.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-036",
@@ -880,7 +1208,11 @@
             "polish": "przemiennik częstotliwości",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Przekształtnik regulujący prędkość i moment silnika AC przez zmianę częstotliwości oraz napięcia zasilania.",
+            "application_pl": "Sprawdź dane silnika, kierunek, rampy, limity, chłodzenie, EMC i sygnały sterujące przed próbą funkcjonalną.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-037",
@@ -889,7 +1221,11 @@
             "polish": "sterownik PLC",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Programowalny sterownik przemysłowy realizujący logikę sterowania na podstawie programu oraz sygnałów wejściowych i wyjściowych.",
+            "application_pl": "Diagnozę prowadź od statusu CPU i zasilania przez I/O, sieć, logikę programu aż do elementu wykonawczego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-038",
@@ -898,7 +1234,11 @@
             "polish": "panel operatorski HMI",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Interfejs człowiek–maszyna wyświetlający stan procesu i umożliwiający operatorowi wydawanie dozwolonych poleceń.",
+            "application_pl": "Ekran nie jest sam w sobie dowodem stanu fizycznego; krytyczne wskazania porównuj z sygnałem źródłowym.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-039",
@@ -907,7 +1247,11 @@
             "polish": "wejście/wyjście",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Punkt wymiany sygnału między sterownikiem a urządzeniem zewnętrznym: wejście odbiera informację, a wyjście steruje.",
+            "application_pl": "Ustal typ sygnału, adres, zakres, stan bezpieczny i miejsce zakończenia przewodów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-040",
@@ -916,7 +1260,11 @@
             "polish": "lista wejść i wyjść",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Kontrolowany wykaz wszystkich sygnałów systemu automatyki z adresami, typami, opisami i powiązaniem z urządzeniami.",
+            "application_pl": "Służy do trasowania sygnału, kontroli okablowania i planowania testów loop-check oraz funkcjonalnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-041",
@@ -925,7 +1273,11 @@
             "polish": "czujnik",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Element wykrywający wielkość fizyczną lub stan i przekształcający go w użyteczny sygnał.",
+            "application_pl": "Sprawdź zasadę działania, zakres, zasilanie, montaż i warunki środowiskowe czujnika.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-042",
@@ -934,7 +1286,11 @@
             "polish": "przetwornik pomiarowy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Przetwornik pomiarowy zamieniający mierzoną wielkość na standaryzowany sygnał przesyłany do układu sterowania.",
+            "application_pl": "Weryfikuje się zakres, jednostkę, zero, zasilanie pętli i skalowanie kanału wejściowego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-043",
@@ -943,7 +1299,11 @@
             "polish": "element wykonawczy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Element wykonawczy zamieniający sygnał sterujący na ruch lub inną zmianę fizyczną w procesie.",
+            "application_pl": "Przed próbą potwierdź energię pomocniczą, kierunek ruchu, położenia krańcowe i bezpieczną reakcję na zanik sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-044",
@@ -952,7 +1312,11 @@
             "polish": "wyłącznik krańcowy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Łącznik położeniowy zmieniający stan elektryczny po osiągnięciu przez mechanizm określonego położenia.",
+            "application_pl": "Sprawdź mechaniczne zadziałanie, regulację, styki NO/NC i zgodność sygnału w PLC/HMI.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-045",
@@ -961,7 +1325,11 @@
             "polish": "presostat",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Łącznik zmieniający stan styku po przekroczeniu ustawionego progu ciśnienia.",
+            "application_pl": "Test obejmuje rzeczywisty próg zadziałania, histerezę, powrót i reakcję układu sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-046",
@@ -970,7 +1338,11 @@
             "polish": "wartość zadana",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Wartość zadana, do której regulator lub logika sterowania porównuje wartość mierzoną.",
+            "application_pl": "Zapisuj jednostkę, dopuszczalny zakres, źródło nastawy i wpływ jej zmiany na zabezpieczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-047",
@@ -979,7 +1351,11 @@
             "polish": "blokada funkcjonalna",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Warunek logiczny lub sprzętowy blokujący niedozwoloną operację albo wymuszający bezpieczną kolejność działań.",
+            "application_pl": "Testuj osobno warunek aktywacji, blokowaną funkcję, alarm, reset i zachowanie po zaniku zasilania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-048",
@@ -988,7 +1364,11 @@
             "polish": "stan bezpieczny przy uszkodzeniu",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Zdefiniowany stan, do którego układ powinien przejść po określonym uszkodzeniu lub utracie energii sterującej, aby ograniczyć ryzyko.",
+            "application_pl": "Stan bezpieczny zależy od procesu; zawór nie zawsze ma się zamknąć, dlatego sprawdź filozofię sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-049",
@@ -997,7 +1377,11 @@
             "polish": "plan ochrony przeciwpożarowej i bezpieczeństwa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Zatwierdzony plan pokazujący rozmieszczenie ochrony przeciwpożarowej, dróg ewakuacji i wyposażenia pożarowego statku.",
+            "application_pl": "Używaj aktualnej rewizji i porównuj oznaczenia planu z rzeczywistym rozmieszczeniem wyposażenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-050",
@@ -1006,7 +1390,11 @@
             "polish": "system sygnalizacji pożaru",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Układ czujek, central, sygnalizatorów i połączeń służący do wykrycia pożaru oraz ogłoszenia alarmu.",
+            "application_pl": "Próba powinna potwierdzić detekcję, właściwą strefę, alarmy, uszkodzenia i wymagane funkcje wykonawcze.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-051",
@@ -1015,7 +1403,11 @@
             "polish": "pompa pożarowa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Pompa dostarczająca wodę do statkowej instalacji przeciwpożarowej przy wymaganym ciśnieniu i wydajności.",
+            "application_pl": "Sprawdza się uruchomienie lokalne/zdalne, zasilanie, ssanie, ciśnienie oraz dostępność hydrantów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-052",
@@ -1024,7 +1416,11 @@
             "polish": "gaśnica",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Przenośne lub przewoźne urządzenie zawierające środek gaśniczy przeznaczony do gaszenia określonych klas pożaru.",
+            "application_pl": "Potwierdź typ, plombę, termin przeglądu, dostępność i dopasowanie środka do zagrożenia elektrycznego lub paliwowego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-053",
@@ -1033,7 +1429,11 @@
             "polish": "stała instalacja gaśnicza",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Stała instalacja podająca środek gaśniczy do chronionej przestrzeni lub urządzenia.",
+            "application_pl": "Nie wykonuj prób wyzwolenia bez procedury; kluczowe są alarm wstępny, blokady, odcięcia wentylacji i ewakuacja.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-054",
@@ -1042,7 +1442,11 @@
             "polish": "wyjście awaryjne",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Wyznaczone przejście prowadzące z zagrożonej przestrzeni do bezpiecznej drogi ewakuacji.",
+            "application_pl": "Musi pozostać dostępne, oznakowane, oświetlone i możliwe do użycia w przewidzianych warunkach awaryjnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-055",
@@ -1051,7 +1455,11 @@
             "polish": "miejsce zbiórki",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Wyznaczone miejsce zbiórki osób podczas alarmu, przypisane w planie alarmowym statku.",
+            "application_pl": "Po wejściu na statek ustal swoją stację zbiórki, drogę dojścia i obowiązki alarmowe.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-056",
@@ -1060,7 +1468,11 @@
             "polish": "tratwa ratunkowa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Nadmuchiwana lub sztywna tratwa ratunkowa stanowiąca środek przetrwania po opuszczeniu statku.",
+            "application_pl": "Nie zasłaniaj dostępu ani zwalniaka; kontroluj oznaczenie, pojemność, mocowanie i termin serwisowy.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-057",
@@ -1069,7 +1481,11 @@
             "polish": "kamizelka ratunkowa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Osobisty środek ratunkowy zapewniający wyporność i właściwe ułożenie osoby w wodzie.",
+            "application_pl": "Znajdź przydzieloną kamizelkę, sprawdź sposób założenia oraz obecność światła i gwizdka, jeśli są wymagane.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-058",
@@ -1078,7 +1494,11 @@
             "polish": "zdalne zatrzymanie",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Funkcja umożliwiająca zatrzymanie urządzenia z miejsca oddalonego od jego lokalnego sterowania.",
+            "application_pl": "Testuj zgodnie z procedurą, potwierdzając właściwy odbiornik, priorytet sygnału, alarm i sposób resetu.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-059",
@@ -1087,7 +1507,11 @@
             "polish": "instalacja chłodnicza",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Zespół urządzeń realizujący obieg chłodniczy w celu odbierania ciepła z chłodzonej przestrzeni lub medium.",
+            "application_pl": "Analizuj sprężarkę, skraplacz, zawór rozprężny, parownik, zabezpieczenia ciśnieniowe i sterowanie.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-060",
@@ -1096,7 +1520,11 @@
             "polish": "sprężarka",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Maszyna zwiększająca ciśnienie gazu przez dostarczenie mu energii mechanicznej.",
+            "application_pl": "Przed startem sprawdź smarowanie, chłodzenie, zawory, odciążenie, presostaty i zabezpieczenia silnika.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-061",
@@ -1105,7 +1533,11 @@
             "polish": "parownik",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Wymiennik ciepła, w którym czynnik chłodniczy odparowuje, odbierając ciepło od chłodzonego medium.",
+            "application_pl": "Obserwuj temperaturę, ciśnienie, przepływ powietrza lub cieczy oraz oznaki oblodzenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-062",
@@ -1114,7 +1546,11 @@
             "polish": "skraplacz",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Wymiennik ciepła, w którym para czynnika chłodniczego skrapla się, oddając ciepło do otoczenia.",
+            "application_pl": "Sprawdź przepływ medium chłodzącego, czystość powierzchni, ciśnienie skraplania i pracę wentylatorów lub pomp.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-063",
@@ -1123,7 +1559,11 @@
             "polish": "zawór elektromagnetyczny",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Zawór uruchamiany elektromagnesem, który po podaniu lub zaniku napięcia zmienia drogę przepływu.",
+            "application_pl": "Ustal napięcie cewki, pozycję beznapięciową, kierunek przepływu i możliwość ręcznego przesterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-064",
@@ -1132,7 +1572,11 @@
             "polish": "echosonda",
             "domain": "research",
             "domain_label": "Systemy badawcze",
-            "evidence_basis": "Nawigacja i systemy specjalne"
+            "evidence_basis": "Nawigacja i systemy specjalne",
+            "definition_pl": "Urządzenie mierzące głębokość przez wysłanie impulsu akustycznego i pomiar czasu powrotu echa od dna.",
+            "application_pl": "Wynik zależy od ustawień, prędkości dźwięku, położenia przetwornika i przyjętego punktu odniesienia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-065",
@@ -1141,7 +1585,11 @@
             "polish": "sonar",
             "domain": "research",
             "domain_label": "Systemy badawcze",
-            "evidence_basis": "Nawigacja i systemy specjalne"
+            "evidence_basis": "Nawigacja i systemy specjalne",
+            "definition_pl": "System wykorzystujący fale akustyczne do wykrywania, lokalizacji lub obrazowania obiektów pod wodą.",
+            "application_pl": "Instalacja obejmuje przetworniki, elektronikę nadawczo-odbiorczą, przetwarzanie sygnału i interfejs operatorski.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-066",
@@ -1150,7 +1598,11 @@
             "polish": "przetwornik hydroakustyczny",
             "domain": "research",
             "domain_label": "Systemy badawcze",
-            "evidence_basis": "Nawigacja i systemy specjalne"
+            "evidence_basis": "Nawigacja i systemy specjalne",
+            "definition_pl": "Element zamieniający energię lub wielkość fizyczną z jednej postaci na inną; w hydroakustyce zamienia sygnał elektryczny i falę akustyczną.",
+            "application_pl": "Sprawdź typ, częstotliwość, orientację, sposób montażu, ekranowanie kabla i zgodność z elektroniką.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-067",
@@ -1159,7 +1611,11 @@
             "polish": "hydrofon",
             "domain": "research",
             "domain_label": "Systemy badawcze",
-            "evidence_basis": "Nawigacja i systemy specjalne"
+            "evidence_basis": "Nawigacja i systemy specjalne",
+            "definition_pl": "Podwodny przetwornik odbiorczy zamieniający ciśnienie akustyczne na sygnał elektryczny.",
+            "application_pl": "Szczególne znaczenie mają niski poziom zakłóceń, ekranowanie, szczelność i odsprzęgnięcie od drgań kadłuba.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-068",
@@ -1168,7 +1624,11 @@
             "polish": "wciągarka/winda",
             "domain": "research",
             "domain_label": "Systemy badawcze",
-            "evidence_basis": "Nawigacja i systemy specjalne"
+            "evidence_basis": "Nawigacja i systemy specjalne",
+            "definition_pl": "Napędzane urządzenie nawijające linę lub kabel na bęben w celu podnoszenia, holowania albo obsługi wyposażenia.",
+            "application_pl": "Przed ruchem sprawdź strefę niebezpieczną, hamulec, krańcówki, awaryjne zatrzymanie i komunikację operatorów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-074",
@@ -1177,7 +1637,11 @@
             "polish": "rysunek powykonawczy",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Rysunek zaktualizowany do rzeczywistego, zaakceptowanego sposobu wykonania instalacji po zakończeniu prac.",
+            "application_pl": "Nie każda czerwona poprawka jest as-built; potwierdź numer dokumentu, rewizję i status zatwierdzenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-075",
@@ -1186,7 +1650,11 @@
             "polish": "lista kablowa",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Wykaz kabli zawierający ich identyfikatory, typy, przekroje, punkty FROM–TO i inne dane instalacyjne.",
+            "application_pl": "To podstawowe źródło do sprawdzania trasy i zakończeń; zdjęcie nie zastępuje aktualnej listy kablowej.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-076",
@@ -1195,7 +1663,11 @@
             "polish": "rewizja rysunku",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Oznaczona wersja dokumentu pokazująca kontrolowany etap zmian względem wcześniejszego wydania.",
+            "application_pl": "Przed pracą potwierdź numer rewizji, status dokumentu, datę i zgodność z rejestrem dokumentacji.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-077",
@@ -1204,7 +1676,11 @@
             "polish": "identyfikowalność",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Możliwość odtworzenia pochodzenia, historii, zmian i powiązań elementu, dokumentu lub wyniku pomiaru.",
+            "application_pl": "Łącz tag urządzenia, kabel, rysunek, rewizję, protokół, datę i osobę zatwierdzającą bez publikowania danych prywatnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           }
         ]
       },
@@ -1279,7 +1755,11 @@
             "polish": "jednostka/statek",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Jednostka pływająca zaprojektowana do poruszania się lub wykonywania określonych zadań na wodzie.",
+            "application_pl": "Najpierw ustal typ jednostki, jej przeznaczenie i wymagania klasyfikacyjne, bo wpływają na wszystkie systemy pokładowe.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-002",
@@ -1288,7 +1768,11 @@
             "polish": "maszynownia",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Wydzielona przestrzeń statku mieszcząca główne urządzenia napędowe, energetyczne i pomocnicze.",
+            "application_pl": "Przed wejściem sprawdź zasady dostępu, hałas, gorące powierzchnie, drogi ewakuacji i aktualny stan pracy urządzeń.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-003",
@@ -1297,7 +1781,11 @@
             "polish": "mostek",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Stanowisko dowodzenia, z którego prowadzi się nawigację i nadzoruje ruch oraz podstawowe funkcje statku.",
+            "application_pl": "Instalacje na mostku obejmują m.in. zasilanie, nawigację, łączność, alarmy i interfejsy monitoringu.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-004",
@@ -1306,7 +1794,11 @@
             "polish": "pokład główny",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Podstawowy ciągły pokład konstrukcyjny statku, zwykle stanowiący ważny poziom odniesienia dla rozmieszczenia wyposażenia.",
+            "application_pl": "Numer pokładu i oznaczenie wręgi pomagają jednoznacznie lokalizować kable, urządzenia i przejścia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-005",
@@ -1315,7 +1807,11 @@
             "polish": "gródź",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Pionowa przegroda dzieląca kadłub na pomieszczenia lub przedziały, czasem o wymaganej szczelności albo odporności ogniowej.",
+            "application_pl": "Każde przejście kablowe lub rurowe przez gródź musi zachować wymaganą klasę przegrody.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-006",
@@ -1324,7 +1820,11 @@
             "polish": "drzwi wodoszczelne",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Zamykane przejście w grodzi wodoszczelnej, które po prawidłowym zamknięciu zachowuje podział wodoszczelny statku.",
+            "application_pl": "Nie blokuj drzwi i nie ingeruj w krańcówki, napęd ani alarm bez zatwierdzonej procedury.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-007",
@@ -1333,7 +1833,11 @@
             "polish": "instalacja zęzowa",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Układ zbierający i usuwający wodę, przecieki oraz inne ciecze gromadzące się w zęzach statku.",
+            "application_pl": "Przy analizie sprawdza się pompy, zawory, czujniki poziomu, alarmy i prawidłową drogę tłoczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-008",
@@ -1342,7 +1846,11 @@
             "polish": "instalacja balastowa",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Układ przyjmowania, przemieszczania i usuwania wody balastowej w celu regulacji zanurzenia, przegłębienia i stateczności.",
+            "application_pl": "Sterowanie zaworami i pompami musi odpowiadać zatwierdzonemu planowi oraz zabezpieczeniom przed błędną operacją.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-009",
@@ -1351,7 +1859,11 @@
             "polish": "silnik główny",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Podstawowa maszyna wytwarzająca moc mechaniczną potrzebną do napędu statku.",
+            "application_pl": "Elektryk spotyka tu układy rozruchu, smarowania, chłodzenia, zabezpieczeń, alarmów i sterowania napędem.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-010",
@@ -1360,7 +1872,11 @@
             "polish": "silnik pomocniczy",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Silnik napędzający prądnicę lub urządzenie pomocnicze, niezależnie od głównego napędu statku.",
+            "application_pl": "Przy agregacie sprawdza się sekwencję startu, synchronizację, zabezpieczenia i wymianę sygnałów z PMS.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-011",
@@ -1369,7 +1885,11 @@
             "polish": "maszyna sterowa",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Zespół urządzeń zmieniających położenie steru zgodnie z poleceniem ze stanowiska sterowania.",
+            "application_pl": "Kluczowe są zasilania podstawowe i rezerwowe, sterowanie lokalne/zdalne, alarmy oraz próby awaryjne.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-012",
@@ -1378,7 +1898,11 @@
             "polish": "ster strumieniowy dziobowy",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Poprzeczny pędnik w części dziobowej wspomagający manewrowanie statkiem przy małych prędkościach.",
+            "application_pl": "Sprawdza się blokady, chłodzenie, smarowanie, sprzężenia zwrotne i ograniczenia czasu pracy.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-013",
@@ -1387,7 +1911,11 @@
             "polish": "pompa",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Maszyna przekazująca energię cieczy w celu uzyskania wymaganego przepływu lub ciśnienia.",
+            "application_pl": "Przed uruchomieniem potwierdź drogę przepływu, zalanie, kierunek obrotów, stan zaworów i zabezpieczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-014",
@@ -1396,7 +1924,11 @@
             "polish": "zawór",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Element instalacji rurowej służący do otwierania, zamykania albo regulacji przepływu medium.",
+            "application_pl": "Ustal pozycję bezpieczną, sposób napędu, oznaczenie oraz sygnały potwierdzenia położenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-015",
@@ -1405,7 +1937,11 @@
             "polish": "instalacja rurowa",
             "domain": "machinery",
             "domain_label": "Maszyny",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Powiązany układ rur, armatury, podpór i urządzeń transportujący określone medium.",
+            "application_pl": "Identyfikuj medium, kierunek przepływu, granice systemu i zależności z automatyką przed oceną działania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-016",
@@ -1414,7 +1950,11 @@
             "polish": "rozdzielnica główna",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Główna rozdzielnica odbierająca energię z podstawowych źródeł i rozdzielająca ją do głównych odbiorów oraz podrozdzielnic.",
+            "application_pl": "Praca wymaga znajomości układu szyn, generatorów, zabezpieczeń, synchronizacji i procedur łączeniowych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-017",
@@ -1423,7 +1963,11 @@
             "polish": "rozdzielnica awaryjna",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Rozdzielnica zasilająca wymagane odbiory awaryjne z niezależnego źródła po zaniku zasilania podstawowego.",
+            "application_pl": "Podczas testu potwierdza się automatyczne przełączenie, czas dostępności i listę rzeczywiście zasilonych odbiorów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-018",
@@ -1432,7 +1976,11 @@
             "polish": "rozdzielnica",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Rozdzielnica rozprowadzająca energię do grup odbiorów końcowych lub kolejnych obwodów rozdzielczych.",
+            "application_pl": "Porównaj opis pól, schemat jednokreskowy, zabezpieczenia i oznaczenia kabli z wykonaniem.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-019",
@@ -1441,7 +1989,11 @@
             "polish": "szafa rozdzielcza",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Obudowana szafa zawierająca aparaturę służącą głównie do rozdziału energii elektrycznej.",
+            "application_pl": "Sprawdza się stopień ochrony, uziemienie obudowy, dławnice, zapas miejsca i zgodność wyposażenia z dokumentacją.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-020",
@@ -1450,7 +2002,11 @@
             "polish": "szafa sterownicza",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Szafa mieszcząca aparaturę sterowania, automatyki i interfejsy wejść/wyjść danego układu.",
+            "application_pl": "Śledź tor od zasilania i zabezpieczeń przez PLC/przekaźniki do zacisków oraz urządzeń polowych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-021",
@@ -1459,7 +2015,11 @@
             "polish": "szyna zbiorcza",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Sztywny przewodnik o dużej obciążalności służący do wspólnego rozdziału energii pomiędzy wieloma polami lub obwodami.",
+            "application_pl": "Weryfikuje się przekrój, izolację, odstępy, połączenia, kolejność faz i zdolność zwarciową.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-022",
@@ -1468,7 +2028,11 @@
             "polish": "wyłącznik mocy / nadprądowy",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Łącznik zdolny załączać i wyłączać prąd roboczy oraz samoczynnie przerwać prąd w określonych warunkach uszkodzeniowych.",
+            "application_pl": "Dobór i nastawy muszą odpowiadać obciążeniu, prądom zwarciowym, selektywności i dokumentacji zatwierdzonej.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-023",
@@ -1477,7 +2041,11 @@
             "polish": "bezpiecznik",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Aparat zabezpieczający, którego element topikowy przerywa obwód po przekroczeniu zależności prąd–czas.",
+            "application_pl": "Po zadziałaniu usuń przyczynę i zastosuj wkładkę dokładnie właściwego typu, prądu, napięcia i charakterystyki.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-024",
@@ -1486,7 +2054,11 @@
             "polish": "stycznik",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Elektromagnetycznie sterowany łącznik przeznaczony do częstego załączania i wyłączania obwodów roboczych.",
+            "application_pl": "Sprawdza się napięcie cewki, styki pomocnicze, blokady i kategorię użytkowania dla danego odbioru.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-025",
@@ -1495,7 +2067,11 @@
             "polish": "przekaźnik zabezpieczeniowy",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Urządzenie oceniające wielkości elektryczne i inicjujące sygnał alarmowy lub wyłączenie po rozpoznaniu zakłócenia.",
+            "application_pl": "Nie zmieniaj nastaw bez zatwierdzonej koordynacji zabezpieczeń i zapisu poprzedniej konfiguracji.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-026",
@@ -1504,7 +2080,11 @@
             "polish": "listwa/złączka zaciskowa",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Izolowany element zaciskowy umożliwiający uporządkowane i rozłączne łączenie przewodów w szafie lub puszce.",
+            "application_pl": "Numer zacisku, mostki, przekrój przewodu i oznaczniki muszą zgadzać się ze schematem połączeń.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-027",
@@ -1513,7 +2093,11 @@
             "polish": "przewód ochronny PE",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Przewód łączący dostępne części przewodzące z układem ochronnym, aby ograniczyć niebezpieczne napięcie dotykowe.",
+            "application_pl": "Potwierdź ciągłość, przekrój, oznaczenie PE i trwałe połączenie z punktem wyrównawczym lub kadłubem.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-028",
@@ -1522,7 +2106,11 @@
             "polish": "połączenie wyrównawcze",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Połączenie przewodzących części w celu zmniejszenia różnicy potencjałów między nimi.",
+            "application_pl": "Na statku obejmuje m.in. obudowy, konstrukcję i wybrane instalacje; jakość połączenia potwierdza się pomiarem.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-029",
@@ -1531,7 +2119,11 @@
             "polish": "uziemienie",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Celowe połączenie punktu obwodu lub części przewodzącej z kadłubem albo innym przyjętym punktem odniesienia potencjału.",
+            "application_pl": "Nie zakładaj rozwiązania sieci na podstawie koloru przewodu; sprawdź schemat uziemienia konkretnej instalacji.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-030",
@@ -1540,7 +2132,11 @@
             "polish": "drabina/trasa kablowa",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "System wsporczy prowadzący i podtrzymujący kable w uporządkowanej trasie.",
+            "application_pl": "Kontroluj promienie gięcia, mocowanie, separację obwodów, przejścia, rezerwę i połączenia wyrównawcze trasy.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-031",
@@ -1549,7 +2145,11 @@
             "polish": "dławik/przepust kablowy",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Element wprowadzenia kabla do obudowy zapewniający zamocowanie, uszczelnienie i wymagany stopień ochrony.",
+            "application_pl": "Typ dławika musi pasować do średnicy i konstrukcji kabla, środowiska oraz ewentualnych wymagań EMC lub Ex.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-032",
@@ -1558,7 +2158,11 @@
             "polish": "prąd zwarciowy",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Prąd płynący wskutek zwarcia, ograniczony impedancją źródła, sieci i miejsca uszkodzenia.",
+            "application_pl": "Wyznacza wymaganą zdolność wyłączania aparatury, wytrzymałość szyn i parametry ochrony kabli.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-033",
@@ -1567,7 +2171,11 @@
             "polish": "selektywność zabezpieczeń",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Koordynacja zabezpieczeń powodująca, że zakłócony obwód wyłącza zabezpieczenie najbliższe miejscu uszkodzenia.",
+            "application_pl": "Weryfikacja wymaga charakterystyk czasowo-prądowych, nastaw i obliczonych poziomów zwarciowych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-034",
@@ -1576,7 +2184,11 @@
             "polish": "rezystancja izolacji",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Rezystancja izolacji między przewodnikami lub między przewodnikiem a ziemią, oceniana określonym napięciem pomiarowym.",
+            "application_pl": "Przed pomiarem odłącz wrażliwą elektronikę i stosuj napięcie oraz kryterium właściwe dla badanego obwodu.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-035",
@@ -1585,7 +2197,11 @@
             "polish": "pomiar ciągłości",
             "domain": "electrical",
             "domain_label": "Elektrotechnika",
-            "evidence_basis": "Rozdział energii"
+            "evidence_basis": "Rozdział energii",
+            "definition_pl": "Pomiar potwierdzający istnienie nieprzerwanej, dostatecznie niskorezystancyjnej drogi przewodzącej.",
+            "application_pl": "Stosuje się go m.in. do PE i połączeń wyrównawczych, zapisując punkty pomiaru, przyrząd i wynik.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-036",
@@ -1594,7 +2210,11 @@
             "polish": "przemiennik częstotliwości",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Przekształtnik regulujący prędkość i moment silnika AC przez zmianę częstotliwości oraz napięcia zasilania.",
+            "application_pl": "Sprawdź dane silnika, kierunek, rampy, limity, chłodzenie, EMC i sygnały sterujące przed próbą funkcjonalną.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-037",
@@ -1603,7 +2223,11 @@
             "polish": "sterownik PLC",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Programowalny sterownik przemysłowy realizujący logikę sterowania na podstawie programu oraz sygnałów wejściowych i wyjściowych.",
+            "application_pl": "Diagnozę prowadź od statusu CPU i zasilania przez I/O, sieć, logikę programu aż do elementu wykonawczego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-038",
@@ -1612,7 +2236,11 @@
             "polish": "panel operatorski HMI",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Interfejs człowiek–maszyna wyświetlający stan procesu i umożliwiający operatorowi wydawanie dozwolonych poleceń.",
+            "application_pl": "Ekran nie jest sam w sobie dowodem stanu fizycznego; krytyczne wskazania porównuj z sygnałem źródłowym.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-039",
@@ -1621,7 +2249,11 @@
             "polish": "wejście/wyjście",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Punkt wymiany sygnału między sterownikiem a urządzeniem zewnętrznym: wejście odbiera informację, a wyjście steruje.",
+            "application_pl": "Ustal typ sygnału, adres, zakres, stan bezpieczny i miejsce zakończenia przewodów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-040",
@@ -1630,7 +2262,11 @@
             "polish": "lista wejść i wyjść",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Kontrolowany wykaz wszystkich sygnałów systemu automatyki z adresami, typami, opisami i powiązaniem z urządzeniami.",
+            "application_pl": "Służy do trasowania sygnału, kontroli okablowania i planowania testów loop-check oraz funkcjonalnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-041",
@@ -1639,7 +2275,11 @@
             "polish": "czujnik",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Element wykrywający wielkość fizyczną lub stan i przekształcający go w użyteczny sygnał.",
+            "application_pl": "Sprawdź zasadę działania, zakres, zasilanie, montaż i warunki środowiskowe czujnika.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-042",
@@ -1648,7 +2288,11 @@
             "polish": "przetwornik pomiarowy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Przetwornik pomiarowy zamieniający mierzoną wielkość na standaryzowany sygnał przesyłany do układu sterowania.",
+            "application_pl": "Weryfikuje się zakres, jednostkę, zero, zasilanie pętli i skalowanie kanału wejściowego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-043",
@@ -1657,7 +2301,11 @@
             "polish": "element wykonawczy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Element wykonawczy zamieniający sygnał sterujący na ruch lub inną zmianę fizyczną w procesie.",
+            "application_pl": "Przed próbą potwierdź energię pomocniczą, kierunek ruchu, położenia krańcowe i bezpieczną reakcję na zanik sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-044",
@@ -1666,7 +2314,11 @@
             "polish": "wyłącznik krańcowy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Łącznik położeniowy zmieniający stan elektryczny po osiągnięciu przez mechanizm określonego położenia.",
+            "application_pl": "Sprawdź mechaniczne zadziałanie, regulację, styki NO/NC i zgodność sygnału w PLC/HMI.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-045",
@@ -1675,7 +2327,11 @@
             "polish": "presostat",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Łącznik zmieniający stan styku po przekroczeniu ustawionego progu ciśnienia.",
+            "application_pl": "Test obejmuje rzeczywisty próg zadziałania, histerezę, powrót i reakcję układu sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-046",
@@ -1684,7 +2340,11 @@
             "polish": "wartość zadana",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Wartość zadana, do której regulator lub logika sterowania porównuje wartość mierzoną.",
+            "application_pl": "Zapisuj jednostkę, dopuszczalny zakres, źródło nastawy i wpływ jej zmiany na zabezpieczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-047",
@@ -1693,7 +2353,11 @@
             "polish": "blokada funkcjonalna",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Warunek logiczny lub sprzętowy blokujący niedozwoloną operację albo wymuszający bezpieczną kolejność działań.",
+            "application_pl": "Testuj osobno warunek aktywacji, blokowaną funkcję, alarm, reset i zachowanie po zaniku zasilania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-048",
@@ -1702,7 +2366,11 @@
             "polish": "stan bezpieczny przy uszkodzeniu",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Zdefiniowany stan, do którego układ powinien przejść po określonym uszkodzeniu lub utracie energii sterującej, aby ograniczyć ryzyko.",
+            "application_pl": "Stan bezpieczny zależy od procesu; zawór nie zawsze ma się zamknąć, dlatego sprawdź filozofię sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-049",
@@ -1711,7 +2379,11 @@
             "polish": "plan ochrony przeciwpożarowej i bezpieczeństwa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Zatwierdzony plan pokazujący rozmieszczenie ochrony przeciwpożarowej, dróg ewakuacji i wyposażenia pożarowego statku.",
+            "application_pl": "Używaj aktualnej rewizji i porównuj oznaczenia planu z rzeczywistym rozmieszczeniem wyposażenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-050",
@@ -1720,7 +2392,11 @@
             "polish": "system sygnalizacji pożaru",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Układ czujek, central, sygnalizatorów i połączeń służący do wykrycia pożaru oraz ogłoszenia alarmu.",
+            "application_pl": "Próba powinna potwierdzić detekcję, właściwą strefę, alarmy, uszkodzenia i wymagane funkcje wykonawcze.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-051",
@@ -1729,7 +2405,11 @@
             "polish": "pompa pożarowa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Pompa dostarczająca wodę do statkowej instalacji przeciwpożarowej przy wymaganym ciśnieniu i wydajności.",
+            "application_pl": "Sprawdza się uruchomienie lokalne/zdalne, zasilanie, ssanie, ciśnienie oraz dostępność hydrantów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-052",
@@ -1738,7 +2418,11 @@
             "polish": "gaśnica",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Przenośne lub przewoźne urządzenie zawierające środek gaśniczy przeznaczony do gaszenia określonych klas pożaru.",
+            "application_pl": "Potwierdź typ, plombę, termin przeglądu, dostępność i dopasowanie środka do zagrożenia elektrycznego lub paliwowego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-053",
@@ -1747,7 +2431,11 @@
             "polish": "stała instalacja gaśnicza",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Stała instalacja podająca środek gaśniczy do chronionej przestrzeni lub urządzenia.",
+            "application_pl": "Nie wykonuj prób wyzwolenia bez procedury; kluczowe są alarm wstępny, blokady, odcięcia wentylacji i ewakuacja.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-054",
@@ -1756,7 +2444,11 @@
             "polish": "wyjście awaryjne",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Wyznaczone przejście prowadzące z zagrożonej przestrzeni do bezpiecznej drogi ewakuacji.",
+            "application_pl": "Musi pozostać dostępne, oznakowane, oświetlone i możliwe do użycia w przewidzianych warunkach awaryjnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-055",
@@ -1765,7 +2457,11 @@
             "polish": "miejsce zbiórki",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Wyznaczone miejsce zbiórki osób podczas alarmu, przypisane w planie alarmowym statku.",
+            "application_pl": "Po wejściu na statek ustal swoją stację zbiórki, drogę dojścia i obowiązki alarmowe.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-056",
@@ -1774,7 +2470,11 @@
             "polish": "tratwa ratunkowa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Nadmuchiwana lub sztywna tratwa ratunkowa stanowiąca środek przetrwania po opuszczeniu statku.",
+            "application_pl": "Nie zasłaniaj dostępu ani zwalniaka; kontroluj oznaczenie, pojemność, mocowanie i termin serwisowy.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-057",
@@ -1783,7 +2483,11 @@
             "polish": "kamizelka ratunkowa",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Osobisty środek ratunkowy zapewniający wyporność i właściwe ułożenie osoby w wodzie.",
+            "application_pl": "Znajdź przydzieloną kamizelkę, sprawdź sposób założenia oraz obecność światła i gwizdka, jeśli są wymagane.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-058",
@@ -1792,7 +2496,11 @@
             "polish": "zdalne zatrzymanie",
             "domain": "safety",
             "domain_label": "Bezpieczeństwo",
-            "evidence_basis": "Bezpieczeństwo i LSA"
+            "evidence_basis": "Bezpieczeństwo i LSA",
+            "definition_pl": "Funkcja umożliwiająca zatrzymanie urządzenia z miejsca oddalonego od jego lokalnego sterowania.",
+            "application_pl": "Testuj zgodnie z procedurą, potwierdzając właściwy odbiornik, priorytet sygnału, alarm i sposób resetu.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-059",
@@ -1801,7 +2509,11 @@
             "polish": "instalacja chłodnicza",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Zespół urządzeń realizujący obieg chłodniczy w celu odbierania ciepła z chłodzonej przestrzeni lub medium.",
+            "application_pl": "Analizuj sprężarkę, skraplacz, zawór rozprężny, parownik, zabezpieczenia ciśnieniowe i sterowanie.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-060",
@@ -1810,7 +2522,11 @@
             "polish": "sprężarka",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Maszyna zwiększająca ciśnienie gazu przez dostarczenie mu energii mechanicznej.",
+            "application_pl": "Przed startem sprawdź smarowanie, chłodzenie, zawory, odciążenie, presostaty i zabezpieczenia silnika.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-061",
@@ -1819,7 +2535,11 @@
             "polish": "parownik",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Wymiennik ciepła, w którym czynnik chłodniczy odparowuje, odbierając ciepło od chłodzonego medium.",
+            "application_pl": "Obserwuj temperaturę, ciśnienie, przepływ powietrza lub cieczy oraz oznaki oblodzenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-062",
@@ -1828,7 +2548,11 @@
             "polish": "skraplacz",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Wymiennik ciepła, w którym para czynnika chłodniczego skrapla się, oddając ciepło do otoczenia.",
+            "application_pl": "Sprawdź przepływ medium chłodzącego, czystość powierzchni, ciśnienie skraplania i pracę wentylatorów lub pomp.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-063",
@@ -1837,7 +2561,11 @@
             "polish": "zawór elektromagnetyczny",
             "domain": "process",
             "domain_label": "Proces i chłodnictwo",
-            "evidence_basis": "Maszyny i instalacje"
+            "evidence_basis": "Maszyny i instalacje",
+            "definition_pl": "Zawór uruchamiany elektromagnesem, który po podaniu lub zaniku napięcia zmienia drogę przepływu.",
+            "application_pl": "Ustal napięcie cewki, pozycję beznapięciową, kierunek przepływu i możliwość ręcznego przesterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-069",
@@ -1846,7 +2574,11 @@
             "polish": "uruchomienie",
             "domain": "commissioning",
             "domain_label": "Commissioning",
-            "evidence_basis": "Commissioning i testy"
+            "evidence_basis": "Commissioning i testy",
+            "definition_pl": "Kontrolowany proces potwierdzania, że zainstalowany system jest kompletny, poprawnie skonfigurowany i działa zgodnie z wymaganiami.",
+            "application_pl": "Każda próba powinna mieć warunki wstępne, kroki, kryteria akceptacji, wynik, odstępstwa i dowód.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-070",
@@ -1855,7 +2587,11 @@
             "polish": "test funkcjonalny",
             "domain": "commissioning",
             "domain_label": "Commissioning",
-            "evidence_basis": "Commissioning i testy"
+            "evidence_basis": "Commissioning i testy",
+            "definition_pl": "Próba potwierdzająca, że określona funkcja reaguje poprawnie na zadane wejścia i warunki.",
+            "application_pl": "Zapisuj stan początkowy, wymuszenie, oczekiwaną reakcję, wynik rzeczywisty i identyfikację przyrządów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-071",
@@ -1864,7 +2600,11 @@
             "polish": "odbiór fabryczny FAT",
             "domain": "commissioning",
             "domain_label": "Commissioning",
-            "evidence_basis": "Commissioning i testy"
+            "evidence_basis": "Commissioning i testy",
+            "definition_pl": "Formalny odbiór urządzenia lub systemu u producenta przed wysyłką, wykonywany według zatwierdzonego programu FAT.",
+            "application_pl": "Wyniki, odstępstwa i punch list z FAT stanowią punkt odniesienia dla montażu i późniejszego SAT.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-072",
@@ -1873,7 +2613,11 @@
             "polish": "odbiór SAT na obiekcie",
             "domain": "commissioning",
             "domain_label": "Commissioning",
-            "evidence_basis": "Commissioning i testy"
+            "evidence_basis": "Commissioning i testy",
+            "definition_pl": "Formalny odbiór po instalacji na obiekcie, potwierdzający działanie urządzenia w docelowym środowisku i z jego interfejsami.",
+            "application_pl": "SAT obejmuje rzeczywiste zasilanie, okablowanie, komunikację, urządzenia polowe i uzgodnione funkcje systemowe.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-073",
@@ -1882,7 +2626,11 @@
             "polish": "lista usterek/braków",
             "domain": "commissioning",
             "domain_label": "Commissioning",
-            "evidence_basis": "Commissioning i testy"
+            "evidence_basis": "Commissioning i testy",
+            "definition_pl": "Kontrolowany wykaz usterek, braków i prac pozostałych do zamknięcia przed odbiorem końcowym.",
+            "application_pl": "Każda pozycja powinna mieć właściciela, priorytet, termin, dowód usunięcia i status akceptacji.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-074",
@@ -1891,7 +2639,11 @@
             "polish": "rysunek powykonawczy",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Rysunek zaktualizowany do rzeczywistego, zaakceptowanego sposobu wykonania instalacji po zakończeniu prac.",
+            "application_pl": "Nie każda czerwona poprawka jest as-built; potwierdź numer dokumentu, rewizję i status zatwierdzenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-075",
@@ -1900,7 +2652,11 @@
             "polish": "lista kablowa",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Wykaz kabli zawierający ich identyfikatory, typy, przekroje, punkty FROM–TO i inne dane instalacyjne.",
+            "application_pl": "To podstawowe źródło do sprawdzania trasy i zakończeń; zdjęcie nie zastępuje aktualnej listy kablowej.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-076",
@@ -1909,7 +2665,11 @@
             "polish": "rewizja rysunku",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Oznaczona wersja dokumentu pokazująca kontrolowany etap zmian względem wcześniejszego wydania.",
+            "application_pl": "Przed pracą potwierdź numer rewizji, status dokumentu, datę i zgodność z rejestrem dokumentacji.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-077",
@@ -1918,7 +2678,11 @@
             "polish": "identyfikowalność",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Możliwość odtworzenia pochodzenia, historii, zmian i powiązań elementu, dokumentu lub wyniku pomiaru.",
+            "application_pl": "Łącz tag urządzenia, kabel, rysunek, rewizję, protokół, datę i osobę zatwierdzającą bez publikowania danych prywatnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           }
         ]
       },
@@ -1973,7 +2737,11 @@
             "polish": "jednostka/statek",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Jednostka pływająca zaprojektowana do poruszania się lub wykonywania określonych zadań na wodzie.",
+            "application_pl": "Najpierw ustal typ jednostki, jej przeznaczenie i wymagania klasyfikacyjne, bo wpływają na wszystkie systemy pokładowe.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-002",
@@ -1982,7 +2750,11 @@
             "polish": "maszynownia",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Wydzielona przestrzeń statku mieszcząca główne urządzenia napędowe, energetyczne i pomocnicze.",
+            "application_pl": "Przed wejściem sprawdź zasady dostępu, hałas, gorące powierzchnie, drogi ewakuacji i aktualny stan pracy urządzeń.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-003",
@@ -1991,7 +2763,11 @@
             "polish": "mostek",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Stanowisko dowodzenia, z którego prowadzi się nawigację i nadzoruje ruch oraz podstawowe funkcje statku.",
+            "application_pl": "Instalacje na mostku obejmują m.in. zasilanie, nawigację, łączność, alarmy i interfejsy monitoringu.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-004",
@@ -2000,7 +2776,11 @@
             "polish": "pokład główny",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Podstawowy ciągły pokład konstrukcyjny statku, zwykle stanowiący ważny poziom odniesienia dla rozmieszczenia wyposażenia.",
+            "application_pl": "Numer pokładu i oznaczenie wręgi pomagają jednoznacznie lokalizować kable, urządzenia i przejścia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-005",
@@ -2009,7 +2789,11 @@
             "polish": "gródź",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Pionowa przegroda dzieląca kadłub na pomieszczenia lub przedziały, czasem o wymaganej szczelności albo odporności ogniowej.",
+            "application_pl": "Każde przejście kablowe lub rurowe przez gródź musi zachować wymaganą klasę przegrody.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-006",
@@ -2018,7 +2802,11 @@
             "polish": "drzwi wodoszczelne",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Zamykane przejście w grodzi wodoszczelnej, które po prawidłowym zamknięciu zachowuje podział wodoszczelny statku.",
+            "application_pl": "Nie blokuj drzwi i nie ingeruj w krańcówki, napęd ani alarm bez zatwierdzonej procedury.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-007",
@@ -2027,7 +2815,11 @@
             "polish": "instalacja zęzowa",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Układ zbierający i usuwający wodę, przecieki oraz inne ciecze gromadzące się w zęzach statku.",
+            "application_pl": "Przy analizie sprawdza się pompy, zawory, czujniki poziomu, alarmy i prawidłową drogę tłoczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-008",
@@ -2036,7 +2828,11 @@
             "polish": "instalacja balastowa",
             "domain": "general",
             "domain_label": "Statek i przestrzenie",
-            "evidence_basis": "Kontekst ogólnookrętowy projektu"
+            "evidence_basis": "Kontekst ogólnookrętowy projektu",
+            "definition_pl": "Układ przyjmowania, przemieszczania i usuwania wody balastowej w celu regulacji zanurzenia, przegłębienia i stateczności.",
+            "application_pl": "Sterowanie zaworami i pompami musi odpowiadać zatwierdzonemu planowi oraz zabezpieczeniom przed błędną operacją.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-036",
@@ -2045,7 +2841,11 @@
             "polish": "przemiennik częstotliwości",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Przekształtnik regulujący prędkość i moment silnika AC przez zmianę częstotliwości oraz napięcia zasilania.",
+            "application_pl": "Sprawdź dane silnika, kierunek, rampy, limity, chłodzenie, EMC i sygnały sterujące przed próbą funkcjonalną.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-037",
@@ -2054,7 +2854,11 @@
             "polish": "sterownik PLC",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Programowalny sterownik przemysłowy realizujący logikę sterowania na podstawie programu oraz sygnałów wejściowych i wyjściowych.",
+            "application_pl": "Diagnozę prowadź od statusu CPU i zasilania przez I/O, sieć, logikę programu aż do elementu wykonawczego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-038",
@@ -2063,7 +2867,11 @@
             "polish": "panel operatorski HMI",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Interfejs człowiek–maszyna wyświetlający stan procesu i umożliwiający operatorowi wydawanie dozwolonych poleceń.",
+            "application_pl": "Ekran nie jest sam w sobie dowodem stanu fizycznego; krytyczne wskazania porównuj z sygnałem źródłowym.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-039",
@@ -2072,7 +2880,11 @@
             "polish": "wejście/wyjście",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Punkt wymiany sygnału między sterownikiem a urządzeniem zewnętrznym: wejście odbiera informację, a wyjście steruje.",
+            "application_pl": "Ustal typ sygnału, adres, zakres, stan bezpieczny i miejsce zakończenia przewodów.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-040",
@@ -2081,7 +2893,11 @@
             "polish": "lista wejść i wyjść",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Kontrolowany wykaz wszystkich sygnałów systemu automatyki z adresami, typami, opisami i powiązaniem z urządzeniami.",
+            "application_pl": "Służy do trasowania sygnału, kontroli okablowania i planowania testów loop-check oraz funkcjonalnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-041",
@@ -2090,7 +2906,11 @@
             "polish": "czujnik",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Element wykrywający wielkość fizyczną lub stan i przekształcający go w użyteczny sygnał.",
+            "application_pl": "Sprawdź zasadę działania, zakres, zasilanie, montaż i warunki środowiskowe czujnika.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-042",
@@ -2099,7 +2919,11 @@
             "polish": "przetwornik pomiarowy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Przetwornik pomiarowy zamieniający mierzoną wielkość na standaryzowany sygnał przesyłany do układu sterowania.",
+            "application_pl": "Weryfikuje się zakres, jednostkę, zero, zasilanie pętli i skalowanie kanału wejściowego.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-043",
@@ -2108,7 +2932,11 @@
             "polish": "element wykonawczy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Element wykonawczy zamieniający sygnał sterujący na ruch lub inną zmianę fizyczną w procesie.",
+            "application_pl": "Przed próbą potwierdź energię pomocniczą, kierunek ruchu, położenia krańcowe i bezpieczną reakcję na zanik sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-044",
@@ -2117,7 +2945,11 @@
             "polish": "wyłącznik krańcowy",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Łącznik położeniowy zmieniający stan elektryczny po osiągnięciu przez mechanizm określonego położenia.",
+            "application_pl": "Sprawdź mechaniczne zadziałanie, regulację, styki NO/NC i zgodność sygnału w PLC/HMI.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-045",
@@ -2126,7 +2958,11 @@
             "polish": "presostat",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Łącznik zmieniający stan styku po przekroczeniu ustawionego progu ciśnienia.",
+            "application_pl": "Test obejmuje rzeczywisty próg zadziałania, histerezę, powrót i reakcję układu sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-046",
@@ -2135,7 +2971,11 @@
             "polish": "wartość zadana",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Wartość zadana, do której regulator lub logika sterowania porównuje wartość mierzoną.",
+            "application_pl": "Zapisuj jednostkę, dopuszczalny zakres, źródło nastawy i wpływ jej zmiany na zabezpieczenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-047",
@@ -2144,7 +2984,11 @@
             "polish": "blokada funkcjonalna",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Warunek logiczny lub sprzętowy blokujący niedozwoloną operację albo wymuszający bezpieczną kolejność działań.",
+            "application_pl": "Testuj osobno warunek aktywacji, blokowaną funkcję, alarm, reset i zachowanie po zaniku zasilania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-048",
@@ -2153,7 +2997,11 @@
             "polish": "stan bezpieczny przy uszkodzeniu",
             "domain": "automation",
             "domain_label": "Automatyka",
-            "evidence_basis": "Automatyka i pomiary"
+            "evidence_basis": "Automatyka i pomiary",
+            "definition_pl": "Zdefiniowany stan, do którego układ powinien przejść po określonym uszkodzeniu lub utracie energii sterującej, aby ograniczyć ryzyko.",
+            "application_pl": "Stan bezpieczny zależy od procesu; zawór nie zawsze ma się zamknąć, dlatego sprawdź filozofię sterowania.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-074",
@@ -2162,7 +3010,11 @@
             "polish": "rysunek powykonawczy",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Rysunek zaktualizowany do rzeczywistego, zaakceptowanego sposobu wykonania instalacji po zakończeniu prac.",
+            "application_pl": "Nie każda czerwona poprawka jest as-built; potwierdź numer dokumentu, rewizję i status zatwierdzenia.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-075",
@@ -2171,7 +3023,11 @@
             "polish": "lista kablowa",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Wykaz kabli zawierający ich identyfikatory, typy, przekroje, punkty FROM–TO i inne dane instalacyjne.",
+            "application_pl": "To podstawowe źródło do sprawdzania trasy i zakończeń; zdjęcie nie zastępuje aktualnej listy kablowej.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-076",
@@ -2180,7 +3036,11 @@
             "polish": "rewizja rysunku",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Oznaczona wersja dokumentu pokazująca kontrolowany etap zmian względem wcześniejszego wydania.",
+            "application_pl": "Przed pracą potwierdź numer rewizji, status dokumentu, datę i zgodność z rejestrem dokumentacji.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           },
           {
             "id": "term-077",
@@ -2189,7 +3049,11 @@
             "polish": "identyfikowalność",
             "domain": "documentation",
             "domain_label": "Dokumentacja",
-            "evidence_basis": "Rysunki i as-built"
+            "evidence_basis": "Rysunki i as-built",
+            "definition_pl": "Możliwość odtworzenia pochodzenia, historii, zmian i powiązań elementu, dokumentu lub wyniku pomiaru.",
+            "application_pl": "Łącz tag urządzenia, kabel, rysunek, rewizję, protokół, datę i osobę zatwierdzającą bez publikowania danych prywatnych.",
+            "definition_added_on": "2026-10-07",
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu"
           }
         ]
       },
@@ -2268,12 +3132,47 @@
   ],
   "language_learning": {
     "source_terms": 77,
+    "defined_terms": 77,
     "languages": [
       "English",
       "Norsk",
       "Polski"
     ],
-    "assignment_rule": "Termin trafia do projektu, gdy odpowiada kategorii technicznej obecnej w jego zweryfikowanym rejestrze zdjęć."
+    "definitions_added_on": "2026-10-07",
+    "definition_note": "Definicje są autorskim opisem edukacyjnym. Nie zastępują instrukcji producenta, aktualnych rysunków, procedur stoczni ani wymagań klasyfikacyjnych.",
+    "assignment_rule": "Termin trafia do projektu, gdy odpowiada kategorii technicznej obecnej w jego zweryfikowanym rejestrze zdjęć.",
+    "reference_sources": [
+      {
+        "title": "IEC Electropedia — International Electrotechnical Vocabulary",
+        "url": "https://www.electropedia.org/",
+        "scope": "terminologia elektrotechniczna",
+        "accessed_on": "2026-10-07"
+      },
+      {
+        "title": "IMO — SOLAS 1974",
+        "url": "https://www.imo.org/en/about/conventions/pages/international-convention-for-the-safety-of-life-at-sea-%28solas%29%2C-1974.aspx",
+        "scope": "bezpieczeństwo statku, ochrona pożarowa i środki ratunkowe",
+        "accessed_on": "2026-10-07"
+      },
+      {
+        "title": "IMO — Life-saving appliances",
+        "url": "https://www.imo.org/en/ourwork/safety/pages/lifesavingappliances-default.aspx",
+        "scope": "wyposażenie ratunkowe i kod LSA",
+        "accessed_on": "2026-10-07"
+      },
+      {
+        "title": "DNV — Rules and standards",
+        "url": "https://www.dnv.com/rules-standards/",
+        "scope": "kontekst klasyfikacyjny systemów okrętowych",
+        "accessed_on": "2026-10-07"
+      },
+      {
+        "title": "ABB — Technical guide No. 9",
+        "url": "https://library.e.abb.com/public/84352e619dba456689ed2688017c9f56/Technical_guide_No_9_3AFE68695201_RevC_EN.pdf",
+        "scope": "napędy, HMI i automatyka",
+        "accessed_on": "2026-10-07"
+      }
+    ]
   },
   "methodology": {
     "facts": "Dane widoczne w rejestrach projektu lub bezpośrednio na materiale źródłowym.",

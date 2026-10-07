@@ -20,6 +20,11 @@
           <span>Project intelligence</span>
         </div>
       </div>
+      <nav class="quick-nav" aria-label="Główne sekcje">
+        <a href="#language-lab">Słownik</a>
+        <a href="#field-journal">Dziennik</a>
+        <a href="#ship-guide">Poradnik</a>
+      </nav>
       <div class="snapshot" aria-live="polite">
         <span>Stan danych</span>
         <strong id="snapshot-date">—</strong>
@@ -30,8 +35,8 @@
       <section class="intro" aria-labelledby="page-title">
         <div class="intro-copy">
           <p class="eyebrow">Rejestr projektów okrętowych</p>
-          <h1 id="page-title">Wiedza z pracy stoczniowej, uporządkowana jako materiał inżynierski.</h1>
-          <p class="lead">Bieżący obraz projektów, obszarów technicznych i jakości dowodów. Publiczna wersja pokazuje wyłącznie bezpieczne agregaty.</p>
+          <h1 id="page-title">Słownik, dziennik i poradnik z pracy przy systemach okrętowych.</h1>
+          <p class="lead">Bieżący obraz projektów połączony z nauką pojęć i metodycznym zapisem doświadczeń. Publiczna wersja pokazuje wyłącznie bezpieczne agregaty.</p>
           <div class="scope-note">
             <span class="scope-dot" aria-hidden="true"></span>
             <div>
@@ -112,6 +117,8 @@
           <div class="language-summary"><strong id="language-term-count">—</strong><span id="language-term-label">terminy w projekcie</span></div>
         </div>
 
+        <div class="definition-note" id="definition-note"></div>
+
         <div class="domain-filters" id="domain-filters" aria-label="Filtr dziedziny"></div>
 
         <div class="learning-grid">
@@ -162,11 +169,90 @@
             </div>
             <div class="vocabulary-table-wrap">
               <table class="vocabulary-table">
-                <thead><tr><th>English</th><th>Norsk</th><th>Polski</th><th>Podstawa</th></tr></thead>
+                <thead><tr><th>English</th><th>Norsk</th><th>Polski</th><th>Definicja i użycie na statku</th></tr></thead>
                 <tbody id="vocabulary-body"></tbody>
               </table>
             </div>
           </article>
+        </div>
+
+        <aside class="source-box" aria-labelledby="sources-title">
+          <div>
+            <p class="eyebrow">Podstawa opracowania</p>
+            <h3 id="sources-title">Źródła referencyjne definicji</h3>
+          </div>
+          <ul id="definition-sources"></ul>
+        </aside>
+      </section>
+
+      <section class="field-journal" id="field-journal" aria-labelledby="journal-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Prywatny zapis w tej przeglądarce</p>
+            <h2 id="journal-title">Dziennik nauki i pracy na statku</h2>
+            <p class="section-copy">Zapisuj obserwację wraz z datą źródłową i oddzielaj fakt od wniosku. Wpisy nie są wysyłane do GitHuba ani do serwera.</p>
+          </div>
+          <button class="action-button" id="export-journal" type="button">Eksportuj Markdown</button>
+        </div>
+
+        <div class="journal-grid">
+          <form class="journal-form panel" id="journal-form">
+            <div class="form-grid">
+              <label>Rodzaj wpisu
+                <select id="journal-type" required>
+                  <option value="Fakt">Fakt</option>
+                  <option value="Interpretacja">Interpretacja</option>
+                  <option value="Do weryfikacji">Do weryfikacji</option>
+                  <option value="Lekcja">Lekcja</option>
+                </select>
+              </label>
+              <label>Projekt
+                <select id="journal-project" required></select>
+              </label>
+              <label>Data zdarzenia lub źródła
+                <input id="journal-source-date" type="date" required />
+              </label>
+              <label>Obszar
+                <select id="journal-domain" required></select>
+              </label>
+            </div>
+            <label>Notatka
+              <textarea id="journal-text" rows="6" maxlength="3000" required placeholder="Co dokładnie zaobserwowałem? Jaki tag lub dokument to potwierdza? Co wymaga dalszej weryfikacji?"></textarea>
+            </label>
+            <div class="journal-form-actions">
+              <button class="action-button primary" type="submit">Zapisz wpis z datą</button>
+              <button class="action-button" id="note-current-term" type="button">Dodaj obecną fiszkę</button>
+            </div>
+            <p class="privacy-warning">Nie wpisuj nazwisk, danych dostępowych, prywatnych dokumentów ani szczegółów mogących ujawnić zabezpieczenia lub dokładną konfigurację jednostki.</p>
+            <p class="form-status" id="journal-status" role="status"></p>
+          </form>
+
+          <article class="journal-entries panel" aria-labelledby="entries-title">
+            <div class="panel-head compact">
+              <div>
+                <p class="eyebrow">Chronologia</p>
+                <h3 id="entries-title">Moje wpisy</h3>
+              </div>
+              <span id="journal-count">0 wpisów</span>
+            </div>
+            <ol id="journal-list" class="journal-list"></ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="ship-guide" id="ship-guide" aria-labelledby="guide-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Schemat pracy inżynierskiej</p>
+            <h2 id="guide-title">Jak zamienić dzień na statku w użyteczną wiedzę</h2>
+          </div>
+        </div>
+        <div class="guide-flow">
+          <article><span>01</span><h3>Zlokalizuj</h3><p>Projekt, pokład, pomieszczenie, wręga, tag urządzenia i data obserwacji.</p></article>
+          <article><span>02</span><h3>Opisz fakt</h3><p>Zapisz tylko to, co widzisz na urządzeniu, kablu, schemacie lub ekranie.</p></article>
+          <article><span>03</span><h3>Połącz system</h3><p>Ustal funkcję, zasilanie, wejścia/wyjścia, odbiornik i zależności procesowe.</p></article>
+          <article><span>04</span><h3>Zweryfikuj</h3><p>Sprawdź aktualny rysunek, rewizję, listę kablową, instrukcję i procedurę testu.</p></article>
+          <article><span>05</span><h3>Zamknij lekcję</h3><p>Zapisz wniosek, ograniczenie, kolejne pytanie oraz dowód potrzebny do potwierdzenia.</p></article>
         </div>
       </section>
 

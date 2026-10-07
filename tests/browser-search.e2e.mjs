@@ -97,7 +97,9 @@ try {
     const result = document.querySelector('[data-search-result]');
     return JSON.stringify({ count: state.searchResults.length, title: result?.querySelector('strong')?.textContent, type: result?.dataset.resultType });
   })()`));
-  assert.deepEqual(resultPreview, { count: 1, title: "earthing", type: "term" });
+  assert.ok(resultPreview.count >= 1);
+  assert.equal(resultPreview.title, "earthing");
+  assert.equal(resultPreview.type, "term");
 
   await evaluate("document.querySelector('[data-search-result]').click(); true");
   await sleep(250);
@@ -113,8 +115,43 @@ try {
   assert.equal(opened.domain, "electrical");
   assert.equal(opened.question, "earthing");
   assert.match(opened.answer, /uziemienie/);
+  assert.match(opened.answer, /Celowe połączenie punktu obwodu/);
   assert.equal(opened.answerHidden, false);
   assert.equal(opened.resultsHidden, true);
+
+  const definitionCoverage = JSON.parse(await evaluate(`JSON.stringify({
+    terms: new Map(state.data.projects.flatMap((project) => project.language_learning.terms).map((term) => [term.id, term])).size,
+    definitions: new Map(state.data.projects.flatMap((project) => project.language_learning.terms).filter((term) => term.definition_pl && term.application_pl).map((term) => [term.id, term])).size,
+    dated: state.data.projects.every((project) => project.language_learning.terms.every((term) => term.definition_added_on === '2026-10-07'))
+  })`));
+  assert.deepEqual(definitionCoverage, { terms: 77, definitions: 77, dated: true });
+
+  const journal = JSON.parse(await evaluate(`(() => {
+    document.getElementById('journal-type').value = 'Fakt';
+    document.getElementById('journal-text').value = 'Test lokalnego zapisu — bez publikacji.';
+    document.getElementById('journal-form').requestSubmit();
+    return JSON.stringify({
+      stored: JSON.parse(localStorage.getItem('battbyg-field-journal-v1') || '[]').length,
+      rendered: document.querySelectorAll('.journal-entry').length,
+      markdown: journalAsMarkdown(state.journalEntries).includes('Test lokalnego zapisu'),
+      noOverflow: document.documentElement.scrollWidth <= document.documentElement.clientWidth
+    });
+  })()`));
+  assert.deepEqual(journal, { stored: 1, rendered: 1, markdown: true, noOverflow: true });
+  await evaluate("localStorage.removeItem('battbyg-field-journal-v1'); true");
+
+  await command("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
+  await sleep(150);
+  const mobileLayout = JSON.parse(await evaluate(`JSON.stringify({
+    viewport: document.documentElement.clientWidth,
+    content: document.documentElement.scrollWidth,
+    noHorizontalOverflow: document.documentElement.scrollWidth <= document.documentElement.clientWidth,
+    journalColumns: getComputedStyle(document.querySelector('.journal-grid')).gridTemplateColumns,
+    guideColumns: getComputedStyle(document.querySelector('.guide-flow')).gridTemplateColumns
+  })`));
+  assert.equal(mobileLayout.noHorizontalOverflow, true);
+  assert.equal(mobileLayout.journalColumns.split(" ").length, 1);
+  assert.equal(mobileLayout.guideColumns.split(" ").length, 1);
 
   console.log("BROWSER_SEARCH_E2E_OK");
 } finally {

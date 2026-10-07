@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT.parent / "battbygg"
 OUTPUT = ROOT / "docs" / "data" / "site-data.json"
 TERMINOLOGY = SOURCE / "output" / "pdf" / "BATTBYG_learning_package" / "terminology_EN_NO_PL.csv"
+DEFINITIONS = ROOT / "knowledge" / "definitions_PL.csv"
+DEFINITIONS_ADDED_ON = "2026-10-07"
 
 CATEGORY_LABELS = {
     "00_Project_identity_context": "Identyfikacja projektu",
@@ -110,7 +112,9 @@ def active_domains(categories: Counter[str]) -> set[str]:
 
 
 def vocabulary_payload(
-    terminology: list[dict[str, str]], categories: Counter[str]
+    terminology: list[dict[str, str]],
+    definitions: dict[str, dict[str, str]],
+    categories: Counter[str],
 ) -> list[dict[str, str]]:
     domains = active_domains(categories)
     return [
@@ -122,6 +126,10 @@ def vocabulary_payload(
             "domain": row["domain"],
             "domain_label": DOMAIN_LABELS[row["domain"]],
             "evidence_basis": DOMAIN_EVIDENCE[row["domain"]],
+            "definition_pl": definitions[row["english"]]["definition_pl"],
+            "application_pl": definitions[row["english"]]["application_pl"],
+            "definition_added_on": DEFINITIONS_ADDED_ON,
+            "definition_status": "opis edukacyjny — potwierdź zastosowanie w aktualnej dokumentacji projektu",
         }
         for index, row in enumerate(terminology, start=1)
         if row["domain"] in domains
@@ -137,6 +145,18 @@ def build() -> dict[str, object]:
         raise RuntimeError(f"Oczekiwano 77 terminów, znaleziono {len(terminology)}")
     if any(row["domain"] not in DOMAIN_LABELS for row in terminology):
         raise RuntimeError("Glosariusz zawiera nieznaną domenę")
+
+    definition_rows = read_csv(DEFINITIONS)
+    definitions = {row["english"]: row for row in definition_rows}
+    terminology_keys = {row["english"] for row in terminology}
+    if len(definition_rows) != 77 or len(definitions) != 77:
+        raise RuntimeError("Oczekiwano 77 unikalnych definicji")
+    if set(definitions) != terminology_keys:
+        missing = sorted(terminology_keys - set(definitions))
+        extra = sorted(set(definitions) - terminology_keys)
+        raise RuntimeError(f"Niezgodne definicje; brak={missing}, nadmiar={extra}")
+    if any(not row["definition_pl"].strip() or not row["application_pl"].strip() for row in definition_rows):
+        raise RuntimeError("Glosariusz zawiera pustą definicję lub kontekst praktyczny")
 
     projects = []
     total_categories: Counter[str] = Counter()
@@ -161,7 +181,7 @@ def build() -> dict[str, object]:
         total_medium += confidence.get("medium", 0)
         total_categories.update(public_categories)
 
-        vocabulary = vocabulary_payload(terminology, public_categories)
+        vocabulary = vocabulary_payload(terminology, definitions, public_categories)
         projects.append(
             {
                 "id": project_id,
@@ -231,11 +251,49 @@ def build() -> dict[str, object]:
         "updates": updates,
         "language_learning": {
             "source_terms": len(terminology),
+            "defined_terms": len(definitions),
             "languages": ["English", "Norsk", "Polski"],
+            "definitions_added_on": DEFINITIONS_ADDED_ON,
+            "definition_note": (
+                "Definicje są autorskim opisem edukacyjnym. Nie zastępują instrukcji producenta, "
+                "aktualnych rysunków, procedur stoczni ani wymagań klasyfikacyjnych."
+            ),
             "assignment_rule": (
                 "Termin trafia do projektu, gdy odpowiada kategorii technicznej "
                 "obecnej w jego zweryfikowanym rejestrze zdjęć."
             ),
+            "reference_sources": [
+                {
+                    "title": "IEC Electropedia — International Electrotechnical Vocabulary",
+                    "url": "https://www.electropedia.org/",
+                    "scope": "terminologia elektrotechniczna",
+                    "accessed_on": DEFINITIONS_ADDED_ON,
+                },
+                {
+                    "title": "IMO — SOLAS 1974",
+                    "url": "https://www.imo.org/en/about/conventions/pages/international-convention-for-the-safety-of-life-at-sea-%28solas%29%2C-1974.aspx",
+                    "scope": "bezpieczeństwo statku, ochrona pożarowa i środki ratunkowe",
+                    "accessed_on": DEFINITIONS_ADDED_ON,
+                },
+                {
+                    "title": "IMO — Life-saving appliances",
+                    "url": "https://www.imo.org/en/ourwork/safety/pages/lifesavingappliances-default.aspx",
+                    "scope": "wyposażenie ratunkowe i kod LSA",
+                    "accessed_on": DEFINITIONS_ADDED_ON,
+                },
+                {
+                    "title": "DNV — Rules and standards",
+                    "url": "https://www.dnv.com/rules-standards/",
+                    "scope": "kontekst klasyfikacyjny systemów okrętowych",
+                    "accessed_on": DEFINITIONS_ADDED_ON,
+                },
+                {
+                    "title": "ABB — Technical guide No. 9",
+                    "url": "https://library.e.abb.com/public/84352e619dba456689ed2688017c9f56/Technical_guide_No_9_3AFE68695201_RevC_EN.pdf",
+                    "scope": "napędy, HMI i automatyka",
+                    "accessed_on": DEFINITIONS_ADDED_ON,
+                },
+            ],
         },
         "methodology": {
             "facts": "Dane widoczne w rejestrach projektu lub bezpośrednio na materiale źródłowym.",

@@ -10,7 +10,10 @@ const state = {
   voices: [],
   searchIndex: [],
   searchResults: [],
+  journalEntries: [],
 };
+
+const JOURNAL_STORAGE_KEY = "battbyg-field-journal-v1";
 
 const byId = (id) => document.getElementById(id);
 const number = (value) => new Intl.NumberFormat("pl-PL").format(value);
@@ -68,7 +71,15 @@ function buildSearchIndex(data) {
           domain: term.domain,
           projectIds: [],
           projectNames: [],
-          searchValues: [term.english, term.norwegian, term.polish, term.domain_label, term.evidence_basis],
+          searchValues: [
+            term.english,
+            term.norwegian,
+            term.polish,
+            term.domain_label,
+            term.evidence_basis,
+            term.definition_pl,
+            term.application_pl,
+          ],
         });
       }
       const entry = termsById.get(term.id);
@@ -426,8 +437,10 @@ function renderFlashcard(project) {
   byId("flashcard-answer").innerHTML = `
     <div><span>Polski</span><strong>${term.polish}</strong></div>
     <div><span>${companionLabel}</span><strong lang="${state.language === "english" ? "no" : "en"}">${companionValue}</strong></div>
+    <div class="flashcard-definition"><span>Definicja</span><p>${term.definition_pl}</p></div>
+    <div class="flashcard-definition"><span>Na statku</span><p>${term.application_pl}</p></div>
   `;
-  byId("flashcard-evidence").textContent = `Podstawa w dokumentacji: ${term.evidence_basis}.`;
+  byId("flashcard-evidence").textContent = `Podstawa przypisania: ${term.evidence_basis}. Definicja dodana: ${date(term.definition_added_on)}.`;
   byId("reveal-card").textContent = state.revealed ? "Ukryj odpowiedź" : "Pokaż odpowiedź";
 }
 
@@ -439,7 +452,12 @@ function renderVocabulary(project) {
       <td lang="en">${term.english}</td>
       <td lang="no">${term.norwegian}</td>
       <td>${term.polish}</td>
-      <td><span class="domain-pill">${term.domain_label}</span>${term.evidence_basis}</td>
+      <td class="definition-cell">
+        <span class="domain-pill">${term.domain_label}</span>
+        <strong>${term.definition_pl}</strong>
+        <span>${term.application_pl}</span>
+        <small>Dodano ${date(term.definition_added_on)} · ${term.definition_status}</small>
+      </td>
     </tr>
   `).join("");
 }
@@ -450,6 +468,10 @@ function renderLanguage(data) {
   byId("language-term-count").textContent = number(project.language_learning.term_count);
   byId("language-term-label").textContent = `${plural(project.language_learning.term_count, "termin", "terminy", "terminów")} w projekcie`;
   byId("language-rule").textContent = data.language_learning.assignment_rule;
+  byId("definition-note").innerHTML = `<strong>${number(data.language_learning.defined_terms)} / ${number(data.language_learning.source_terms)} pojęć ma definicję.</strong> ${escapeHTML(data.language_learning.definition_note)} Stan opracowania: ${date(data.language_learning.definitions_added_on)}.`;
+  byId("definition-sources").innerHTML = data.language_learning.reference_sources.map((source) => `
+    <li><a href="${escapeHTML(source.url)}" target="_blank" rel="noreferrer">${escapeHTML(source.title)}</a><span>${escapeHTML(source.scope)} · dostęp ${date(source.accessed_on)}</span></li>
+  `).join("");
   renderLanguageSwitch();
   renderAudioSupport();
   renderDomainFilters(project);
@@ -506,6 +528,110 @@ function renderMethod(data) {
   byId("method-facts").textContent = data.methodology.facts;
   byId("method-interpretations").textContent = data.methodology.interpretations;
   byId("method-limitations").textContent = data.methodology.limitations;
+}
+
+function localDateValue(value = new Date()) {
+  const offset = value.getTimezoneOffset() * 60_000;
+  return new Date(value.getTime() - offset).toISOString().slice(0, 10);
+}
+
+function loadJournalEntries() {
+  try {
+    const parsed = JSON.parse(window.localStorage.getItem(JOURNAL_STORAGE_KEY) || "[]");
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((entry) => entry && entry.text && entry.created_at && entry.source_date).slice(0, 500);
+  } catch {
+    return [];
+  }
+}
+
+function persistJournalEntries() {
+  try {
+    window.localStorage.setItem(JOURNAL_STORAGE_KEY, JSON.stringify(state.journalEntries));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function renderJournal() {
+  const list = byId("journal-list");
+  const entries = [...state.journalEntries].sort((a, b) => b.created_at.localeCompare(a.created_at));
+  byId("journal-count").textContent = `${number(entries.length)} ${plural(entries.length, "wpis", "wpisy", "wpisów")}`;
+  byId("export-journal").disabled = entries.length === 0;
+  if (entries.length === 0) {
+    list.innerHTML = '<li class="journal-empty">Brak wpisów. Pierwszą notatkę możesz utworzyć ręcznie albo z obecnej fiszki.</li>';
+    return;
+  }
+  list.innerHTML = entries.map((entry) => `
+    <li class="journal-entry">
+      <div><span class="journal-type">${escapeHTML(entry.type)}</span><time datetime="${escapeHTML(entry.source_date)}">zdarzenie: ${date(entry.source_date)}</time></div>
+      <strong>${escapeHTML(entry.project)} · ${escapeHTML(entry.domain)}</strong>
+      <p>${escapeHTML(entry.text).replace(/\n/g, "<br>")}</p>
+      <small>Zapis lokalny: ${new Intl.DateTimeFormat("pl-PL", { dateStyle: "medium", timeStyle: "short" }).format(new Date(entry.created_at))}</small>
+    </li>
+  `).join("");
+}
+
+function renderJournalControls(data) {
+  const projectSelect = byId("journal-project");
+  const previousProject = projectSelect.value;
+  projectSelect.innerHTML = data.projects.map((project) => `<option value="${escapeHTML(project.id)}">${escapeHTML(project.name)}</option>`).join("");
+  projectSelect.value = data.projects.some((project) => project.id === previousProject)
+    ? previousProject
+    : activeProject(data).id;
+
+  const domainSelect = byId("journal-domain");
+  const previousDomain = domainSelect.value;
+  const domains = [...new Map(data.projects.flatMap((project) => project.language_learning.terms).map((term) => [term.domain, term.domain_label])).entries()];
+  domainSelect.innerHTML = domains.map(([key, label]) => `<option value="${escapeHTML(key)}">${escapeHTML(label)}</option>`).join("");
+  domainSelect.value = domains.some(([key]) => key === previousDomain) ? previousDomain : "general";
+  if (!byId("journal-source-date").value) byId("journal-source-date").value = localDateValue();
+}
+
+function currentTerm() {
+  const project = activeProject(state.data);
+  return languageTerms(project)[state.cardIndex];
+}
+
+function fillJournalFromCurrentTerm() {
+  const project = activeProject(state.data);
+  const term = currentTerm();
+  byId("journal-type").value = "Lekcja";
+  byId("journal-project").value = project.id;
+  byId("journal-domain").value = term.domain;
+  byId("journal-source-date").value = localDateValue();
+  byId("journal-text").value = `${term.english} / ${term.norwegian} / ${term.polish}\nDefinicja: ${term.definition_pl}\nNa statku: ${term.application_pl}\nDo sprawdzenia w projekcie: `;
+  byId("journal-text").focus();
+  byId("journal-status").textContent = "Fiszka została przepisana do formularza. Uzupełnij własną obserwację przed zapisem.";
+  byId("field-journal").scrollIntoView({ block: "start", behavior: "smooth" });
+}
+
+function journalAsMarkdown(entries) {
+  const lines = [
+    "# BATTBYG — dziennik nauki i pracy na statku",
+    "",
+    `Eksport: ${new Date().toISOString()}`,
+    "",
+    "> Prywatny zapis edukacyjny. Fakt, interpretacja i element do weryfikacji nie są równoważne.",
+    "",
+  ];
+  [...entries].sort((a, b) => b.created_at.localeCompare(a.created_at)).forEach((entry) => {
+    lines.push(`## ${entry.source_date} · ${entry.type}`, "", `- Projekt: ${entry.project}`, `- Obszar: ${entry.domain}`, `- Zapis lokalny: ${entry.created_at}`, "", entry.text, "");
+  });
+  return lines.join("\n");
+}
+
+function exportJournal() {
+  if (state.journalEntries.length === 0) return;
+  const blob = new Blob([journalAsMarkdown(state.journalEntries)], { type: "text/markdown;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `BATTBYG_dziennik_${localDateValue()}.md`;
+  link.click();
+  URL.revokeObjectURL(url);
+  byId("journal-status").textContent = "Dziennik wyeksportowano do pliku Markdown.";
 }
 
 function render() {
@@ -603,7 +729,41 @@ document.addEventListener("click", (event) => {
 
   if (event.target.closest("#speak-norwegian")) {
     speakTerm("norwegian");
+    return;
   }
+
+  if (event.target.closest("#note-current-term")) {
+    fillJournalFromCurrentTerm();
+    return;
+  }
+
+  if (event.target.closest("#export-journal")) {
+    exportJournal();
+  }
+});
+
+byId("journal-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const project = state.data.projects.find((item) => item.id === byId("journal-project").value);
+  const domainOption = byId("journal-domain").selectedOptions[0];
+  const entry = {
+    type: byId("journal-type").value,
+    project: project?.name || byId("journal-project").value,
+    domain: domainOption?.textContent || byId("journal-domain").value,
+    source_date: byId("journal-source-date").value,
+    text: byId("journal-text").value.trim(),
+    created_at: new Date().toISOString(),
+  };
+  if (!entry.text || !entry.source_date) return;
+  state.journalEntries.push(entry);
+  if (!persistJournalEntries()) {
+    state.journalEntries.pop();
+    byId("journal-status").textContent = "Nie udało się zapisać wpisu w tej przeglądarce. Wyeksportuj istniejące notatki i sprawdź ustawienia pamięci witryny.";
+    return;
+  }
+  renderJournal();
+  byId("journal-text").value = "";
+  byId("journal-status").textContent = `Zapisano lokalnie: ${entry.type.toLowerCase()} z ${date(entry.source_date)}.`;
 });
 
 byId("global-search").addEventListener("input", (event) => renderSearch(event.target.value));
@@ -641,9 +801,12 @@ fetch("data/site-data.json")
   .then((data) => {
     state.data = data;
     state.searchIndex = buildSearchIndex(data);
+    state.journalEntries = loadJournalEntries();
     renderMetrics(data);
     renderUpdates(data);
     renderMethod(data);
+    renderJournalControls(data);
+    renderJournal();
     render();
     const initialQuery = new URLSearchParams(window.location.search).get("q");
     if (initialQuery) {
