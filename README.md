@@ -2,6 +2,12 @@
 
 Publiczny, zanonimizowany panel wiedzy o projektach okrętowych BATTBYG.
 
+Strona udostępnia jedną wyszukiwarkę projektów, obszarów technicznych i pojęć
+EN–NO–PL. Wynik pojęcia prowadzi bezpośrednio do właściwej fiszki z widocznym
+tłumaczeniem. Grafika stoczniowa w nagłówku jest wygenerowaną ilustracją
+kontekstową i nie przedstawia żadnego konkretnego projektu ani materiału
+dowodowego BATTBYG.
+
 ## Aktualizacja danych
 
 ```powershell

@@ -8,11 +8,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 DATA = DOCS / "data" / "site-data.json"
+HERO = DOCS / "assets" / "shipyard-hero.webp"
 
 REQUIRED = [
     DOCS / "index.html",
     DOCS / "assets" / "styles.css",
     DOCS / "assets" / "app.js",
+    HERO,
     DATA,
     DOCS / ".nojekyll",
 ]
@@ -57,10 +59,11 @@ def main() -> None:
     if len(all_terms) != 77:
         raise SystemExit("Nie wszystkie terminy są dostępne w projektach")
 
+    text_suffixes = {"", ".html", ".css", ".js", ".json", ".svg", ".txt"}
     published = "\n".join(
         path.read_text(encoding="utf-8", errors="strict")
         for path in DOCS.rglob("*")
-        if path.is_file()
+        if path.is_file() and path.suffix.lower() in text_suffixes
     )
     banned = [
         r"99_Restricted_sensitive",
@@ -73,10 +76,18 @@ def main() -> None:
         if re.search(pattern, published):
             raise SystemExit(f"Niedozwolona treść publiczna: {pattern}")
 
-    forbidden_suffixes = {".jpg", ".jpeg", ".png", ".pdf", ".csv", ".xlsx"}
-    leaked = [str(path.relative_to(DOCS)) for path in DOCS.rglob("*") if path.suffix.lower() in forbidden_suffixes]
+    forbidden_suffixes = {".jpg", ".jpeg", ".png", ".webp", ".pdf", ".csv", ".xlsx"}
+    allowed_binary_assets = {HERO.resolve()}
+    leaked = [
+        str(path.relative_to(DOCS))
+        for path in DOCS.rglob("*")
+        if path.suffix.lower() in forbidden_suffixes and path.resolve() not in allowed_binary_assets
+    ]
     if leaked:
         raise SystemExit(f"Niedozwolone artefakty w publikacji: {leaked}")
+    hero_bytes = HERO.read_bytes()
+    if len(hero_bytes) > 500_000 or hero_bytes[:4] != b"RIFF" or hero_bytes[8:12] != b"WEBP":
+        raise SystemExit("Nieprawidłowa lub zbyt duża ilustracja publiczna")
 
     html = (DOCS / "index.html").read_text(encoding="utf-8")
     required_ui = [
@@ -89,9 +100,17 @@ def main() -> None:
         "voice-english",
         "voice-norwegian",
         "speech-rate",
+        "global-search",
+        "search-results",
+        "shipyard-hero.webp",
     ]
     if any(marker not in html for marker in required_ui):
         raise SystemExit("Brak kompletnego interfejsu nauki języków")
+
+    script = (DOCS / "assets" / "app.js").read_text(encoding="utf-8")
+    required_search_logic = ["buildSearchIndex", "findSearchResults", "normalizeSearch", "openSearchResult"]
+    if any(marker not in script for marker in required_search_logic):
+        raise SystemExit("Brak kompletnej logiki wyszukiwarki")
 
     print("SITE_VALIDATION_OK")
     assignments = sum(project["language_learning"]["term_count"] for project in payload["projects"])
