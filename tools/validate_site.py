@@ -57,7 +57,7 @@ def main() -> None:
 
     updates = payload.get("updates", [])
     update_fields = {"date", "time", "tag_pl", "tag_en", "title_pl", "title_en", "detail_pl", "detail_en"}
-    if len(updates) < 10 or any(any(not item.get(field) for field in update_fields) for item in updates):
+    if len(updates) < 9 or any(any(not item.get(field) for field in update_fields) for item in updates):
         raise SystemExit("Historia rozwoju jest zbyt krótka lub niekompletna")
     update_dates = [datetime.fromisoformat(f"{item['date']}T{item['time']}") for item in updates]
     if update_dates != sorted(update_dates, reverse=True):
@@ -169,7 +169,7 @@ def main() -> None:
         "data-ui-language=\"pl\"",
         "data-ui-language=\"en\"",
         "assets/i18n.js",
-        "20261030-history10",
+        "20261030-history9a",
     ]
     if any(marker not in html for marker in required_ui):
         raise SystemExit("Brak kompletnego interfejsu nauki języków")
@@ -205,7 +205,7 @@ def main() -> None:
     required_search_logic = ["buildSearchIndex", "findSearchResults", "normalizeSearch", "openSearchResult"]
     if any(marker not in script for marker in required_search_logic):
         raise SystemExit("Brak kompletnej logiki wyszukiwarki")
-    if 'PUBLIC_DATA_VERSION = "20261030-history10"' not in script or 'cache: "no-store"' not in script:
+    if 'PUBLIC_DATA_VERSION = "20261030-history9a"' not in script or 'cache: "no-store"' not in script:
         raise SystemExit("Brak wersjonowania publicznego pliku danych")
     required_journal_logic = ["loadJournalEntries", "persistJournalEntries", "journalAsMarkdown", "exportJournal"]
     if any(marker not in script for marker in required_journal_logic):

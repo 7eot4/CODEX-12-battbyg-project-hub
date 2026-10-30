@@ -3,7 +3,7 @@
     "title": "BATTBYG Project Hub",
     "description": "Osobisty warsztat nauki zawodowej w środowisku stoczniowym BATTBYG.",
     "data_snapshot": "2026-10-30",
-    "generated_at": "2026-10-30T11:46:42+01:00",
+    "generated_at": "2026-10-30T11:48:06+01:00",
     "publication_mode": "public-sanitized"
   },
   "summary": {
@@ -3112,16 +3112,6 @@
     }
   ],
   "updates": [
-    {
-      "date": "2026-10-30",
-      "time": "11:42",
-      "tag_pl": "Dziennik rozwoju",
-      "tag_en": "Progress log",
-      "title_pl": "Rozbudowano datowaną historię warsztatu.",
-      "title_en": "The dated workspace history was expanded.",
-      "detail_pl": "Zebrano potwierdzone etapy rozwoju strony i narzędzi do nauki w jednej chronologii.",
-      "detail_en": "Verified stages in the development of the page and learning tools were brought together in one timeline."
-    },
     {
       "date": "2026-10-30",
       "time": "11:36",

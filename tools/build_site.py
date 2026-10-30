@@ -181,16 +181,6 @@ def build() -> dict[str, object]:
     updates = [
         {
             "date": PUBLIC_UPDATE_DATE,
-            "time": "11:42",
-            "tag_pl": "Dziennik rozwoju",
-            "tag_en": "Progress log",
-            "title_pl": "Rozbudowano datowaną historię warsztatu.",
-            "title_en": "The dated workspace history was expanded.",
-            "detail_pl": "Zebrano potwierdzone etapy rozwoju strony i narzędzi do nauki w jednej chronologii.",
-            "detail_en": "Verified stages in the development of the page and learning tools were brought together in one timeline.",
-        },
-        {
-            "date": PUBLIC_UPDATE_DATE,
             "time": "11:36",
             "tag_pl": "Profil edukacyjny",
             "tag_en": "Learning profile",

@@ -5,7 +5,7 @@ Osobisty warsztat nauki zawodowej w środowisku stoczniowym BATTBYG.
 Strona łączy samodzielnie redagowany słownik EN–NO–PL, autorskie definicje,
 fiszki, prywatny dziennik przeglądarkowy i prosty poradnik pracy inżynierskiej.
 Wpisy słownikowe, objaśnienia oraz konteksty nauki są dodawane ręcznie.
-Datowany dziennik rozwoju pokazuje dziesięć etapów budowy warsztatu od pierwszej
+Datowany dziennik rozwoju pokazuje dziewięć etapów budowy warsztatu od pierwszej
 wersji i automatycznej publikacji przez fiszki i definicje po pełny interfejs PL/EN.
 
 Grafika w nagłówku jest wygenerowaną ilustracją i nie przedstawia konkretnego

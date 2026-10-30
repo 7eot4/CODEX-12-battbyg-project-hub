@@ -12,7 +12,7 @@ materiałów źródłowych; słownik, definicje i przypisania są prezentowane j
 ręcznie redagowana baza edukacyjna.
 
 Aktualizacja historii: **2026-10-30** — publiczny dziennik rozwoju rozszerzono do
-dziesięciu potwierdzonych etapów z 6–30 października 2026 r., zgodnych z historią
+dziewięciu potwierdzonych etapów z 6–30 października 2026 r., zgodnych z historią
 wdrożeń strony i faktycznie dodanymi funkcjami. Dodano wspólne wersjonowanie
 interfejsu i danych, aby wyeliminować wyświetlanie starej osi z pamięci cache.
 

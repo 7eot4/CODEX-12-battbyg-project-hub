@@ -14,7 +14,7 @@ const state = {
 };
 
 const JOURNAL_STORAGE_KEY = "battbyg-field-journal-v1";
-const PUBLIC_DATA_VERSION = "20261030-history10";
+const PUBLIC_DATA_VERSION = "20261030-history9a";
 const ui = window.BattbygI18n;
 ui.apply();
 
