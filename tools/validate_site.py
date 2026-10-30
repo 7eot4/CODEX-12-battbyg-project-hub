@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 import re
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 
@@ -56,10 +56,10 @@ def main() -> None:
         raise SystemExit(f"Publiczne dane zawierają metadane materiału źródłowego: {forbidden_paths[:5]}")
 
     updates = payload.get("updates", [])
-    update_fields = {"date", "tag_pl", "tag_en", "title_pl", "title_en", "detail_pl", "detail_en"}
-    if len(updates) < 6 or any(any(not item.get(field) for field in update_fields) for item in updates):
+    update_fields = {"date", "time", "tag_pl", "tag_en", "title_pl", "title_en", "detail_pl", "detail_en"}
+    if len(updates) < 10 or any(any(not item.get(field) for field in update_fields) for item in updates):
         raise SystemExit("Historia rozwoju jest zbyt krótka lub niekompletna")
-    update_dates = [date.fromisoformat(item["date"]) for item in updates]
+    update_dates = [datetime.fromisoformat(f"{item['date']}T{item['time']}") for item in updates]
     if update_dates != sorted(update_dates, reverse=True):
         raise SystemExit("Historia rozwoju nie jest ułożona od najnowszego wpisu")
 
@@ -169,6 +169,7 @@ def main() -> None:
         "data-ui-language=\"pl\"",
         "data-ui-language=\"en\"",
         "assets/i18n.js",
+        "20261030-history10",
     ]
     if any(marker not in html for marker in required_ui):
         raise SystemExit("Brak kompletnego interfejsu nauki języków")
@@ -204,6 +205,8 @@ def main() -> None:
     required_search_logic = ["buildSearchIndex", "findSearchResults", "normalizeSearch", "openSearchResult"]
     if any(marker not in script for marker in required_search_logic):
         raise SystemExit("Brak kompletnej logiki wyszukiwarki")
+    if 'PUBLIC_DATA_VERSION = "20261030-history10"' not in script or 'cache: "no-store"' not in script:
+        raise SystemExit("Brak wersjonowania publicznego pliku danych")
     required_journal_logic = ["loadJournalEntries", "persistJournalEntries", "journalAsMarkdown", "exportJournal"]
     if any(marker not in script for marker in required_journal_logic):
         raise SystemExit("Brak kompletnej logiki lokalnego dziennika")

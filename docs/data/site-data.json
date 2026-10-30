@@ -3,7 +3,7 @@
     "title": "BATTBYG Project Hub",
     "description": "Osobisty warsztat nauki zawodowej w środowisku stoczniowym BATTBYG.",
     "data_snapshot": "2026-10-30",
-    "generated_at": "2026-10-30T11:42:09+01:00",
+    "generated_at": "2026-10-30T11:46:42+01:00",
     "publication_mode": "public-sanitized"
   },
   "summary": {
@@ -3114,6 +3114,17 @@
   "updates": [
     {
       "date": "2026-10-30",
+      "time": "11:42",
+      "tag_pl": "Dziennik rozwoju",
+      "tag_en": "Progress log",
+      "title_pl": "Rozbudowano datowaną historię warsztatu.",
+      "title_en": "The dated workspace history was expanded.",
+      "detail_pl": "Zebrano potwierdzone etapy rozwoju strony i narzędzi do nauki w jednej chronologii.",
+      "detail_en": "Verified stages in the development of the page and learning tools were brought together in one timeline."
+    },
+    {
+      "date": "2026-10-30",
+      "time": "11:36",
       "tag_pl": "Profil edukacyjny",
       "tag_en": "Learning profile",
       "title_pl": "Doprecyzowano cel i granice publicznej strony.",
@@ -3123,6 +3134,7 @@
     },
     {
       "date": "2026-10-30",
+      "time": "11:04",
       "tag_pl": "Interfejs PL/EN",
       "tag_en": "PL/EN interface",
       "title_pl": "Dodano pełną angielską wersję interfejsu.",
@@ -3132,24 +3144,37 @@
     },
     {
       "date": "2026-10-07",
-      "tag_pl": "Definicje",
-      "tag_en": "Definitions",
-      "title_pl": "Dodano autorskie definicje do 77 pojęć.",
-      "title_en": "Original definitions were added to 77 terms.",
-      "detail_pl": "Każdy wpis otrzymał datę opracowania, kontekst praktyczny i źródła referencyjne.",
-      "detail_en": "Each entry received a preparation date, practical context and reference sources."
+      "time": "22:13",
+      "tag_pl": "Definicje i dziennik",
+      "tag_en": "Definitions and journal",
+      "title_pl": "Uzupełniono 77 definicji i dodano prywatny dziennik.",
+      "title_en": "All 77 definitions and a private journal were added.",
+      "detail_pl": "Każdy wpis otrzymał datę, kontekst praktyczny i źródła, a notatki można zapisywać lokalnie i eksportować do Markdown.",
+      "detail_en": "Each entry received a date, practical context and sources, while notes can be stored locally and exported to Markdown."
     },
     {
       "date": "2026-10-07",
-      "tag_pl": "Narzędzia nauki",
-      "tag_en": "Learning tools",
-      "title_pl": "Uruchomiono wyszukiwarkę wiedzy i prywatny dziennik.",
-      "title_en": "Knowledge search and a private journal were introduced.",
-      "detail_pl": "Wyszukiwanie łączy terminy, systemy i konteksty jednostek, a datowane notatki pozostają wyłącznie w przeglądarce.",
-      "detail_en": "Search connects terms, systems and vessel contexts, while dated notes remain only in the browser."
+      "time": "19:17",
+      "tag_pl": "Kontrola jakości",
+      "tag_en": "Quality control",
+      "title_pl": "Odświeżono i zweryfikowano publiczny zestaw wiedzy.",
+      "title_en": "The public knowledge set was refreshed and validated.",
+      "detail_pl": "Sprawdzono spójność przypisań, kompletność danych językowych i bezpieczny zakres publikacji.",
+      "detail_en": "Assignment consistency, language-data completeness and the safe publication scope were checked."
+    },
+    {
+      "date": "2026-10-07",
+      "time": "19:14",
+      "tag_pl": "Wyszukiwarka",
+      "tag_en": "Knowledge search",
+      "title_pl": "Dodano globalne wyszukiwanie i wizualny nagłówek.",
+      "title_en": "Global knowledge search and a visual header were added.",
+      "detail_pl": "Jedno pole wyszukiwania połączyło terminy, systemy, obszary techniczne i konteksty jednostek.",
+      "detail_en": "One search field connected terms, systems, technical areas and vessel contexts."
     },
     {
       "date": "2026-10-06",
+      "time": "21:19",
       "tag_pl": "Fiszki EN–NO–PL",
       "tag_en": "EN–NO–PL flashcards",
       "title_pl": "Rozbudowano naukę języka technicznego.",
@@ -3159,6 +3184,27 @@
     },
     {
       "date": "2026-10-06",
+      "time": "15:29",
+      "tag_pl": "Sekcje językowe",
+      "tag_en": "Language sections",
+      "title_pl": "Dodano osobne sekcje nauki EN–NO–PL.",
+      "title_en": "Dedicated EN–NO–PL learning sections were added.",
+      "detail_pl": "Pojęcia techniczne uporządkowano według kontekstów jednostek i dziedzin zawodowych.",
+      "detail_en": "Technical terms were organised by vessel context and professional domain."
+    },
+    {
+      "date": "2026-10-06",
+      "time": "15:13",
+      "tag_pl": "Publikacja",
+      "tag_en": "Publishing",
+      "title_pl": "Uruchomiono automatyczną publikację GitHub Pages.",
+      "title_en": "Automated GitHub Pages publishing was enabled.",
+      "detail_pl": "Każda zatwierdzona wersja może przejść walidację i zostać wdrożona w powtarzalnym procesie.",
+      "detail_en": "Each approved version can be validated and deployed through a repeatable process."
+    },
+    {
+      "date": "2026-10-06",
+      "time": "15:11",
       "tag_pl": "Początek warsztatu",
       "tag_en": "Workspace launch",
       "title_pl": "Powstała pierwsza wersja BATTBYG Project Hub.",

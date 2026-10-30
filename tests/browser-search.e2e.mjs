@@ -99,7 +99,7 @@ try {
   assert.equal(layout.heroLoaded, true);
   assert.equal(layout.noHorizontalOverflow, true);
   assert.match(layout.disclaimer, /nie jest zdjęciem z projektu/);
-  assert.ok(layout.developmentEntries >= 6);
+  assert.ok(layout.developmentEntries >= 10);
   assert.equal(layout.developmentTitle, "Historia rozwoju warsztatu nauki");
   const publicPositioning = JSON.parse(await evaluate(`JSON.stringify({
     personal: document.querySelector('[data-i18n="hero.publicTitle"]').textContent,

@@ -376,6 +376,7 @@ h3 { font-size: 1.05rem; }
 .timeline strong { margin: .2rem 0; }
 .timeline span { color: var(--muted); font-size: .86rem; }
 .timeline-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
+.timeline .timeline-time { display: inline-block; color: #78949a; font-size: .72rem; font-variant-numeric: tabular-nums; }
 .timeline .timeline-tag { display: inline-block; padding: .18rem .45rem; border: 1px solid rgba(255,155,97,.35); border-radius: 999px; background: var(--orange-soft); color: #ffc29e; font-size: .68rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }

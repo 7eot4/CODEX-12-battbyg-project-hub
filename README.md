@@ -5,8 +5,8 @@ Osobisty warsztat nauki zawodowej w środowisku stoczniowym BATTBYG.
 Strona łączy samodzielnie redagowany słownik EN–NO–PL, autorskie definicje,
 fiszki, prywatny dziennik przeglądarkowy i prosty poradnik pracy inżynierskiej.
 Wpisy słownikowe, objaśnienia oraz konteksty nauki są dodawane ręcznie.
-Datowany dziennik rozwoju pokazuje kolejne etapy budowy warsztatu od pierwszej
-wersji przez fiszki i definicje po pełny interfejs PL/EN.
+Datowany dziennik rozwoju pokazuje dziesięć etapów budowy warsztatu od pierwszej
+wersji i automatycznej publikacji przez fiszki i definicje po pełny interfejs PL/EN.
 
 Grafika w nagłówku jest wygenerowaną ilustracją i nie przedstawia konkretnego
 projektu. Publiczna strona nie zawiera dokumentacji klienta, danych prywatnych,
@@ -25,6 +25,8 @@ powershell -ExecutionPolicy Bypass -File tools\Update-BattbygSite.ps1
 Generator łączy ręcznie określone konteksty jednostek, bazowy słownik oraz
 autorskie definicje i zapisuje publiczny model do `docs/data/site-data.json`.
 Model publiczny nie zawiera liczników ani metadanych materiałów źródłowych.
+Pliki interfejsu i danych mają wspólny numer wersji, dlatego przeglądarka nie
+powinna wyświetlać nieaktualnej historii po kolejnym wdrożeniu.
 
 ## Nauka języków technicznych
 

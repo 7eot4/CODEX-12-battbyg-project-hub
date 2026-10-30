@@ -14,6 +14,7 @@ const state = {
 };
 
 const JOURNAL_STORAGE_KEY = "battbyg-field-journal-v1";
+const PUBLIC_DATA_VERSION = "20261030-history10";
 const ui = window.BattbygI18n;
 ui.apply();
 
@@ -577,7 +578,7 @@ function renderBars(data) {
 function renderUpdates(data) {
   byId("update-timeline").innerHTML = data.updates.map((item) => `
     <li>
-      <div class="timeline-meta"><time datetime="${item.date}">${date(item.date)}</time><span class="timeline-tag">${escapeHTML(ui.get() === "en" ? item.tag_en : item.tag_pl)}</span></div>
+      <div class="timeline-meta"><time datetime="${item.date}T${item.time}">${date(item.date)}</time><span class="timeline-time">${escapeHTML(item.time)}</span><span class="timeline-tag">${escapeHTML(ui.get() === "en" ? item.tag_en : item.tag_pl)}</span></div>
       <strong>${escapeHTML(t("updates.line", { title: ui.get() === "en" ? item.title_en : item.title_pl }))}</strong>
       <span>${escapeHTML(t("updates.detail", { detail: ui.get() === "en" ? item.detail_en : item.detail_pl }))}</span>
     </li>
@@ -901,7 +902,7 @@ window.addEventListener("battbyg:languagechange", () => {
   if ("speechSynthesis" in window) loadVoices();
 });
 
-fetch("data/site-data.json")
+fetch(`data/site-data.json?v=${PUBLIC_DATA_VERSION}`, { cache: "no-store" })
   .then((response) => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return response.json();
