@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { mkdtemp } from "node:fs/promises";
 import net from "node:net";
 import os from "node:os";
@@ -25,9 +25,12 @@ const freePort = () => new Promise((resolve, reject) => {
 
 const port = await freePort();
 const profile = await mkdtemp(path.join(os.tmpdir(), "battbyg-search-e2e-"));
+const screenshotDir = process.env.BATTBYG_SCREENSHOT_DIR;
+if (screenshotDir) mkdirSync(screenshotDir, { recursive: true });
 const browser = spawn(edge, [
   "--headless=new",
   "--disable-gpu",
+  "--window-size=1440,1100",
   `--remote-debugging-port=${port}`,
   `--user-data-dir=${profile}`,
   "http://127.0.0.1:4174/",
@@ -72,6 +75,11 @@ try {
     if (response.exceptionDetails) throw new Error(response.exceptionDetails.text);
     return response.result.value;
   };
+  const capture = async (name) => {
+    if (!screenshotDir) return;
+    const screenshot = await command("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
+    writeFileSync(path.join(screenshotDir, name), Buffer.from(screenshot.data, "base64"));
+  };
 
   let ready = false;
   for (let attempt = 0; attempt < 60; attempt += 1) {
@@ -89,6 +97,7 @@ try {
   assert.equal(layout.heroLoaded, true);
   assert.equal(layout.noHorizontalOverflow, true);
   assert.match(layout.disclaimer, /nie jest materiałem dowodowym/);
+  await capture("battbyg-pl-desktop.png");
 
   const resultPreview = JSON.parse(await evaluate(`(() => {
     const input = document.getElementById('global-search');
@@ -119,6 +128,34 @@ try {
   assert.equal(opened.answerHidden, false);
   assert.equal(opened.resultsHidden, true);
 
+  const englishUi = JSON.parse(await evaluate(`(() => {
+    document.querySelector('[data-ui-language="en"]').click();
+    const input = document.getElementById('global-search');
+    input.value = 'power distribution';
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    return JSON.stringify({
+      lang: document.documentElement.lang,
+      hero: document.getElementById('page-title').textContent,
+      journal: document.getElementById('journal-title').textContent,
+      searchType: document.querySelector('[data-search-result]')?.dataset.resultType,
+      searchTitle: document.querySelector('[data-search-result]')?.querySelector('strong')?.textContent,
+      storedLanguage: localStorage.getItem('battbyg-ui-language-v1'),
+      sourcesCollapsed: !document.querySelector('.source-box').open
+    });
+  })()`));
+  assert.deepEqual(englishUi, {
+    lang: "en",
+    hero: "Turn shipboard observations into structured knowledge.",
+    journal: "Shipboard learning and work journal",
+    searchType: "topic",
+    searchTitle: "Power distribution",
+    storedLanguage: "en",
+    sourcesCollapsed: true,
+  });
+  await evaluate("window.scrollTo(0, 0); true");
+  await sleep(100);
+  await capture("battbyg-en-desktop.png");
+
   const definitionCoverage = JSON.parse(await evaluate(`JSON.stringify({
     terms: new Map(state.data.projects.flatMap((project) => project.language_learning.terms).map((term) => [term.id, term])).size,
     definitions: new Map(state.data.projects.flatMap((project) => project.language_learning.terms).filter((term) => term.definition_pl && term.application_pl).map((term) => [term.id, term])).size,
@@ -127,7 +164,7 @@ try {
   assert.deepEqual(definitionCoverage, { terms: 77, definitions: 77, dated: true });
 
   const journal = JSON.parse(await evaluate(`(() => {
-    document.getElementById('journal-type').value = 'Fakt';
+    document.getElementById('journal-type').value = 'fact';
     document.getElementById('journal-text').value = 'Test lokalnego zapisu — bez publikacji.';
     document.getElementById('journal-form').requestSubmit();
     return JSON.stringify({
@@ -152,6 +189,9 @@ try {
   assert.equal(mobileLayout.noHorizontalOverflow, true);
   assert.equal(mobileLayout.journalColumns.split(" ").length, 1);
   assert.equal(mobileLayout.guideColumns.split(" ").length, 1);
+  await evaluate("window.scrollTo(0, 0); true");
+  await sleep(100);
+  await capture("battbyg-en-mobile.png");
 
   console.log("BROWSER_SEARCH_E2E_OK");
 } finally {

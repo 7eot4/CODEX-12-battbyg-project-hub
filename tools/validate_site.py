@@ -14,6 +14,7 @@ HERO = DOCS / "assets" / "shipyard-hero.webp"
 REQUIRED = [
     DOCS / "index.html",
     DOCS / "assets" / "styles.css",
+    DOCS / "assets" / "i18n.js",
     DOCS / "assets" / "app.js",
     HERO,
     DATA,
@@ -131,11 +132,32 @@ def main() -> None:
         "journal-form",
         "export-journal",
         "ship-guide",
+        "data-ui-language=\"pl\"",
+        "data-ui-language=\"en\"",
+        "assets/i18n.js",
     ]
     if any(marker not in html for marker in required_ui):
         raise SystemExit("Brak kompletnego interfejsu nauki języków")
 
     script = (DOCS / "assets" / "app.js").read_text(encoding="utf-8")
+    translations = (DOCS / "assets" / "i18n.js").read_text(encoding="utf-8")
+    required_translation_logic = ["battbyg-ui-language-v1", "BattbygI18n", "battbyg:languagechange"]
+    if any(marker not in translations for marker in required_translation_logic):
+        raise SystemExit("Brak kompletnej obsługi języka interfejsu")
+    required_english_ui = [
+        '"hero.title": "Turn shipboard observations into structured knowledge."',
+        '"journal.title": "Shipboard learning and work journal"',
+        '"guide.title": "Turn a day on board into useful knowledge"',
+    ]
+    if any(marker not in translations for marker in required_english_ui):
+        raise SystemExit("Niepełne angielskie tłumaczenie interfejsu")
+    used_translation_keys = set(re.findall(r'data-i18n(?:-[a-z]+)?="([^"]+)"', html))
+    used_translation_keys.update(re.findall(r'\bt\("([^"$]+)"', script))
+    missing_translation_keys = sorted(
+        key for key in used_translation_keys if translations.count(f'"{key}":') < 2
+    )
+    if missing_translation_keys:
+        raise SystemExit(f"Brak tłumaczenia PL/EN dla kluczy: {missing_translation_keys}")
     required_search_logic = ["buildSearchIndex", "findSearchResults", "normalizeSearch", "openSearchResult"]
     if any(marker not in script for marker in required_search_logic):
         raise SystemExit("Brak kompletnej logiki wyszukiwarki")

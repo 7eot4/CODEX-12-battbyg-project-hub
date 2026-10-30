@@ -2,6 +2,10 @@
 
 Stan analizy: **2026-10-07**.
 
+Aktualizacja interfejsu: **2026-10-30** — uporządkowano hierarchię wizualną,
+zmniejszono nagłówek, ujednolicono sekcje, zwinięto źródła referencyjne i dodano
+pełną obsługę interfejsu PL/EN z zapamiętywaniem wyboru w przeglądarce.
+
 ## Wniosek
 
 Największą luką strony był brak przejścia od tłumaczenia terminu do zrozumienia

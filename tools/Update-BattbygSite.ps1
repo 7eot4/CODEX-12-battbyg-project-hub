@@ -16,6 +16,11 @@ try {
         throw "Site validation failed."
     }
 
+    node --check docs\assets\i18n.js
+    if ($LASTEXITCODE -ne 0) {
+        throw "Interface translation syntax validation failed."
+    }
+
     node --check docs\assets\app.js
     if ($LASTEXITCODE -ne 0) {
         throw "JavaScript syntax validation failed."

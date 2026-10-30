@@ -8,297 +8,197 @@
     <title>BATTBYG Project Hub</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307191f'/%3E%3Cpath d='M16 17h24a9 9 0 0 1 0 18H28v12h12' fill='none' stroke='%232dd4bf' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='47' cy='47' r='5' fill='%23ff9b61'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/i18n.js" defer></script>
     <script src="assets/app.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Przejdź do treści</a>
+
     <header class="topbar">
-      <div class="brand">
+      <a class="brand" href="#main" aria-label="BATTBYG Project Hub">
         <span class="brand-mark" aria-hidden="true">B</span>
-        <div>
+        <span class="brand-copy">
           <strong>BATTBYG</strong>
           <span>Project intelligence</span>
-        </div>
-      </div>
-      <nav class="quick-nav" aria-label="Główne sekcje">
-        <a href="#language-lab">Słownik</a>
-        <a href="#field-journal">Dziennik</a>
-        <a href="#ship-guide">Poradnik</a>
+        </span>
+      </a>
+      <nav class="quick-nav" data-i18n-aria="nav.aria" aria-label="Główne sekcje">
+        <a href="#projects" data-i18n="nav.projects">Projekty</a>
+        <a href="#language-lab" data-i18n="nav.learn">Nauka</a>
+        <a href="#field-journal" data-i18n="nav.journal">Dziennik</a>
+        <a href="#ship-guide" data-i18n="nav.guide">Poradnik</a>
       </nav>
-      <div class="snapshot" aria-live="polite">
-        <span>Stan danych</span>
-        <strong id="snapshot-date">—</strong>
+      <div class="topbar-tools">
+        <div class="ui-language" role="group" data-i18n-aria="language.label" aria-label="Język interfejsu">
+          <button class="active" type="button" data-ui-language="pl" aria-pressed="true">PL</button>
+          <button type="button" data-ui-language="en" aria-pressed="false">EN</button>
+        </div>
+        <div class="snapshot" aria-live="polite">
+          <span data-i18n="snapshot.label">Stan danych</span>
+          <strong id="snapshot-date">—</strong>
+        </div>
       </div>
     </header>
 
     <main id="main">
       <section class="intro" aria-labelledby="page-title">
         <div class="intro-copy">
-          <p class="eyebrow">Rejestr projektów okrętowych</p>
-          <h1 id="page-title">Słownik, dziennik i poradnik z pracy przy systemach okrętowych.</h1>
-          <p class="lead">Bieżący obraz projektów połączony z nauką pojęć i metodycznym zapisem doświadczeń. Publiczna wersja pokazuje wyłącznie bezpieczne agregaty.</p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Warsztat wiedzy stoczniowej</p>
+          <h1 id="page-title" data-i18n="hero.title">Od obserwacji na statku do uporządkowanej wiedzy.</h1>
+          <p class="lead" data-i18n="hero.lead">Projekty, pojęcia techniczne, fiszki i prywatny dziennik w jednym miejscu — z wyraźnym rozdzieleniem faktów, interpretacji i ograniczeń.</p>
+          <div class="hero-actions">
+            <a class="action-link primary" href="#language-lab" data-i18n="hero.ctaLearn">Przejdź do nauki</a>
+            <a class="action-link" href="#field-journal" data-i18n="hero.ctaJournal">Otwórz dziennik</a>
+          </div>
           <div class="scope-note">
             <span class="scope-dot" aria-hidden="true"></span>
             <div>
-              <strong>Tryb publiczny</strong>
-              <p>Bez zdjęć projektowych, rysunków, danych prywatnych i szczegółów wykonawczych.</p>
+              <strong data-i18n="hero.publicTitle">Bezpieczny tryb publiczny</strong>
+              <p data-i18n="hero.publicText">Bez zdjęć projektowych, rysunków, danych prywatnych i szczegółów wykonawczych.</p>
             </div>
           </div>
         </div>
         <figure class="hero-visual">
-          <img src="assets/shipyard-hero.webp" width="1991" height="790" alt="Ilustracyjny widok nowoczesnej stoczni, statku w budowie i szaf elektrycznych" fetchpriority="high" />
-          <figcaption>Ilustracja kontekstowa · nie jest materiałem dowodowym</figcaption>
+          <img src="assets/shipyard-hero.webp" width="1991" height="790" data-i18n-alt="hero.imageAlt" alt="Ilustracyjny widok nowoczesnej stoczni, statku w budowie i szaf elektrycznych" fetchpriority="high" />
+          <figcaption data-i18n="hero.caption">Ilustracja kontekstowa · nie jest materiałem dowodowym</figcaption>
         </figure>
       </section>
 
       <section class="knowledge-search" aria-labelledby="search-title">
         <div class="search-copy">
-          <p class="eyebrow">Szybki dostęp</p>
-          <h2 id="search-title">Znajdź pojęcie lub temat</h2>
-          <p>Przeszukaj projekty, obszary techniczne oraz słownik angielski, norweski i polski.</p>
+          <p class="eyebrow" data-i18n="search.eyebrow">Szybki dostęp</p>
+          <h2 id="search-title" data-i18n="search.title">Znajdź pojęcie, system albo projekt</h2>
+          <p data-i18n="search.copy">Jedno wyszukiwanie obejmuje projekty, obszary techniczne oraz słownik EN–NO–PL.</p>
         </div>
         <div class="search-interface">
           <form class="search-form" id="search-form" role="search">
-            <label for="global-search">Pojęcie, temat albo jednostka</label>
+            <label for="global-search" data-i18n="search.label">Pojęcie, temat albo jednostka</label>
             <div class="search-field">
               <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" /></svg>
-              <input id="global-search" type="search" inputmode="search" autocomplete="off" placeholder="np. uziemienie, control cabinet, automatyka…" aria-controls="search-results" aria-expanded="false" />
-              <button id="clear-search" type="button" hidden>Wyczyść</button>
+              <input id="global-search" type="search" inputmode="search" autocomplete="off" data-i18n-placeholder="search.placeholder" placeholder="np. uziemienie, control cabinet, automatyka…" aria-controls="search-results" aria-expanded="false" />
+              <button id="clear-search" type="button" hidden data-i18n="search.clear">Wyczyść</button>
             </div>
           </form>
-          <div class="search-suggestions" aria-label="Przykładowe wyszukiwania">
-            <span>Spróbuj:</span>
-            <button type="button" data-search-suggestion="uziemienie">uziemienie</button>
+          <div class="search-suggestions" data-i18n-aria="search.suggestionsAria" aria-label="Przykładowe wyszukiwania">
+            <span data-i18n="search.try">Spróbuj:</span>
+            <button type="button" data-search-suggestion="earthing">earthing</button>
             <button type="button" data-search-suggestion="control cabinet">control cabinet</button>
-            <button type="button" data-search-suggestion="automatyka">automatyka</button>
+            <button type="button" data-search-suggestion="automation">automation</button>
             <button type="button" data-search-suggestion="as-built">as-built</button>
           </div>
           <div class="search-results" id="search-results" aria-live="polite" hidden></div>
         </div>
       </section>
 
-      <section class="metrics" aria-label="Podsumowanie">
-        <article><span>Projekty</span><strong id="metric-projects">—</strong><small>jednostki w rejestrze</small></article>
-        <article><span>Materiał dowodowy</span><strong id="metric-photos">—</strong><small>zweryfikowane fotografie</small></article>
-        <article><span>Aktualizacje</span><strong id="metric-updates">—</strong><small>udokumentowane importy</small></article>
-        <article><span>Wysoka pewność</span><strong id="metric-confidence">—</strong><small>rekordy klasyfikacji</small></article>
+      <section class="metrics" data-i18n-aria="metrics.aria" aria-label="Podsumowanie">
+        <article><span data-i18n="metrics.projects">Projekty</span><strong id="metric-projects">—</strong><small data-i18n="metrics.projectsNote">jednostki w rejestrze</small></article>
+        <article><span data-i18n="metrics.evidence">Materiał dowodowy</span><strong id="metric-photos">—</strong><small data-i18n="metrics.evidenceNote">zweryfikowane fotografie</small></article>
+        <article><span data-i18n="metrics.updates">Aktualizacje</span><strong id="metric-updates">—</strong><small data-i18n="metrics.updatesNote">udokumentowane importy</small></article>
+        <article><span data-i18n="metrics.confidence">Wysoka pewność</span><strong id="metric-confidence">—</strong><small data-i18n="metrics.confidenceNote">rekordy klasyfikacji</small></article>
       </section>
 
-      <section class="workspace" aria-labelledby="projects-title">
+      <section class="workspace content-section" id="projects" aria-labelledby="projects-title">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">Flota projektowa</p>
-            <h2 id="projects-title">Jednostki i zakres wiedzy</h2>
-          </div>
-          <div class="filters" id="project-filters" aria-label="Filtr projektu"></div>
+          <div><p class="eyebrow" data-i18n="projects.eyebrow">Flota projektowa</p><h2 id="projects-title" data-i18n="projects.title">Jednostki i zakres wiedzy</h2></div>
+          <div class="filters" id="project-filters" data-i18n-aria="projects.filterAria" aria-label="Filtr projektu"></div>
         </div>
-
-        <div class="project-layout">
-          <div class="project-list" id="project-list"></div>
-          <aside class="detail-panel" id="project-detail" aria-live="polite"></aside>
-        </div>
+        <div class="project-layout"><div class="project-list" id="project-list"></div><aside class="detail-panel" id="project-detail" aria-live="polite"></aside></div>
       </section>
 
-      <section class="language-lab" id="language-lab" aria-labelledby="language-title">
+      <section class="language-lab content-section accent-section" id="language-lab" aria-labelledby="language-title">
         <div class="section-heading language-heading">
-          <div>
-            <p class="eyebrow">English · Norsk · Polski</p>
-            <h2 id="language-title">Języki techniczne z dokumentacji projektu</h2>
-            <p class="section-copy" id="language-rule"></p>
-          </div>
+          <div><p class="eyebrow" data-i18n="learn.eyebrow">English · Norsk · Polski</p><h2 id="language-title" data-i18n="learn.title">Techniczny język dokumentacji</h2><p class="section-copy" id="language-rule"></p></div>
           <div class="language-project" id="language-project-name">—</div>
         </div>
-
         <div class="language-toolbar">
-          <div class="language-switch" role="group" aria-label="Kierunek nauki">
-            <button class="language-button active" type="button" data-language="english" aria-pressed="true">Angielski → polski</button>
-            <button class="language-button" type="button" data-language="norwegian" aria-pressed="false">Norweski → polski</button>
+          <div class="language-switch" role="group" data-i18n-aria="learn.directionAria" aria-label="Kierunek nauki">
+            <button class="language-button active" type="button" data-language="english" aria-pressed="true" data-i18n="learn.english">Angielski → polski</button>
+            <button class="language-button" type="button" data-language="norwegian" aria-pressed="false" data-i18n="learn.norwegian">Norweski → polski</button>
           </div>
-          <div class="language-summary"><strong id="language-term-count">—</strong><span id="language-term-label">terminy w projekcie</span></div>
+          <div class="language-summary"><strong id="language-term-count">—</strong><span id="language-term-label" data-i18n="learn.initialTerms">terminy w projekcie</span></div>
         </div>
-
         <div class="definition-note" id="definition-note"></div>
-
-        <div class="domain-filters" id="domain-filters" aria-label="Filtr dziedziny"></div>
-
+        <div class="domain-filters" id="domain-filters" data-i18n-aria="learn.domainAria" aria-label="Filtr dziedziny"></div>
         <div class="learning-grid">
           <article class="flashcard-panel" aria-labelledby="flashcard-title">
-            <div class="flashcard-topline">
-              <span id="flashcard-domain">—</span>
-              <span id="flashcard-progress">—</span>
-            </div>
-            <h3 id="flashcard-title">Fiszka</h3>
-            <div class="flashcard" id="flashcard" tabindex="-1">
-              <span class="flashcard-label" id="flashcard-question-label">—</span>
-              <strong id="flashcard-question">—</strong>
-              <div class="flashcard-answer" id="flashcard-answer" hidden></div>
-            </div>
+            <div class="flashcard-topline"><span id="flashcard-domain">—</span><span id="flashcard-progress">—</span></div>
+            <h3 id="flashcard-title" data-i18n="flashcard.title">Fiszka</h3>
+            <div class="flashcard" id="flashcard" tabindex="-1"><span class="flashcard-label" id="flashcard-question-label">—</span><strong id="flashcard-question">—</strong><div class="flashcard-answer" id="flashcard-answer" hidden></div></div>
             <p class="evidence-line" id="flashcard-evidence"></p>
             <div class="voice-controls" aria-labelledby="voice-settings-title">
-              <div class="voice-controls-head">
-                <strong id="voice-settings-title">Lektor</strong>
-                <span id="voice-status" role="status">Sprawdzanie dostępnych głosów…</span>
-              </div>
-              <label>Głos angielski
-                <select id="voice-english" aria-label="Kobiecy głos angielski"></select>
-              </label>
-              <label>Głos norweski
-                <select id="voice-norwegian" aria-label="Kobiecy głos norweski"></select>
-              </label>
-              <label class="speech-rate-control">Tempo <output id="speech-rate-value" for="speech-rate">0,72×</output>
-                <input id="speech-rate" type="range" min="0.55" max="1" value="0.72" step="0.01">
-              </label>
+              <div class="voice-controls-head"><strong id="voice-settings-title" data-i18n="voice.title">Lektor</strong><span id="voice-status" role="status" data-i18n="voice.checking">Sprawdzanie dostępnych głosów…</span></div>
+              <label><span data-i18n="voice.english">Głos angielski</span><select id="voice-english" data-i18n-aria="voice.englishAria" aria-label="Kobiecy głos angielski"></select></label>
+              <label><span data-i18n="voice.norwegian">Głos norweski</span><select id="voice-norwegian" data-i18n-aria="voice.norwegianAria" aria-label="Kobiecy głos norweski"></select></label>
+              <label class="speech-rate-control"><span data-i18n="voice.rate">Tempo</span><output id="speech-rate-value" for="speech-rate">0,72×</output><input id="speech-rate" type="range" min="0.55" max="1" value="0.72" step="0.01" /></label>
             </div>
             <div class="flashcard-actions">
-              <button class="action-button primary" id="reveal-card" type="button">Pokaż odpowiedź</button>
-              <button class="action-button" id="speak-english" type="button">Odsłuchaj EN</button>
-              <button class="action-button" id="speak-norwegian" type="button">Odsłuchaj NO</button>
-              <button class="action-button" id="previous-card" type="button">Poprzednia fiszka</button>
-              <button class="action-button" id="next-card" type="button">Następna fiszka</button>
-              <button class="action-button" id="shuffle-cards" type="button">Losuj fiszki</button>
+              <button class="action-button primary" id="reveal-card" type="button" data-i18n="flashcard.reveal">Pokaż odpowiedź</button>
+              <button class="action-button" id="speak-english" type="button" data-i18n="flashcard.speakEn">Odsłuchaj EN</button>
+              <button class="action-button" id="speak-norwegian" type="button" data-i18n="flashcard.speakNo">Odsłuchaj NO</button>
+              <button class="action-button" id="previous-card" type="button" data-i18n="flashcard.previous">Poprzednia fiszka</button>
+              <button class="action-button" id="next-card" type="button" data-i18n="flashcard.next">Następna fiszka</button>
+              <button class="action-button" id="shuffle-cards" type="button" data-i18n="flashcard.shuffle">Losuj fiszki</button>
             </div>
           </article>
-
           <article class="vocabulary-panel" aria-labelledby="vocabulary-title">
-            <div class="panel-head compact">
-              <div>
-                <p class="eyebrow">Pełny materiał projektu</p>
-                <h3 id="vocabulary-title">Słownik EN–NO–PL</h3>
-              </div>
-              <span id="vocabulary-count">—</span>
-            </div>
-            <div class="vocabulary-table-wrap">
-              <table class="vocabulary-table">
-                <thead><tr><th>English</th><th>Norsk</th><th>Polski</th><th>Definicja i użycie na statku</th></tr></thead>
-                <tbody id="vocabulary-body"></tbody>
-              </table>
-            </div>
+            <div class="panel-head compact"><div><p class="eyebrow" data-i18n="vocabulary.eyebrow">Pełny materiał projektu</p><h3 id="vocabulary-title" data-i18n="vocabulary.title">Słownik EN–NO–PL</h3></div><span id="vocabulary-count">—</span></div>
+            <div class="vocabulary-table-wrap"><table class="vocabulary-table"><thead><tr><th data-i18n="vocabulary.english">English</th><th data-i18n="vocabulary.norwegian">Norsk</th><th data-i18n="vocabulary.polish">Polski</th><th data-i18n="vocabulary.definition">Definicja i użycie na statku</th></tr></thead><tbody id="vocabulary-body"></tbody></table></div>
           </article>
         </div>
-
-        <aside class="source-box" aria-labelledby="sources-title">
-          <div>
-            <p class="eyebrow">Podstawa opracowania</p>
-            <h3 id="sources-title">Źródła referencyjne definicji</h3>
-          </div>
-          <ul id="definition-sources"></ul>
-        </aside>
+        <details class="source-box">
+          <summary><span><span class="eyebrow" data-i18n="sources.eyebrow">Podstawa opracowania</span><strong id="sources-title" data-i18n="sources.title">Źródła referencyjne definicji</strong></span><span class="source-toggle" data-i18n="sources.toggle">Pokaż źródła</span></summary>
+          <ul id="definition-sources" aria-labelledby="sources-title"></ul>
+        </details>
       </section>
 
-      <section class="field-journal" id="field-journal" aria-labelledby="journal-title">
+      <section class="field-journal content-section" id="field-journal" aria-labelledby="journal-title">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">Prywatny zapis w tej przeglądarce</p>
-            <h2 id="journal-title">Dziennik nauki i pracy na statku</h2>
-            <p class="section-copy">Zapisuj obserwację wraz z datą źródłową i oddzielaj fakt od wniosku. Wpisy nie są wysyłane do GitHuba ani do serwera.</p>
-          </div>
-          <button class="action-button" id="export-journal" type="button">Eksportuj Markdown</button>
+          <div><p class="eyebrow" data-i18n="journal.eyebrow">Prywatny zapis w tej przeglądarce</p><h2 id="journal-title" data-i18n="journal.title">Dziennik nauki i pracy na statku</h2><p class="section-copy" data-i18n="journal.copy">Zapisuj obserwację z datą źródłową i oddzielaj fakt od wniosku. Wpisy nie są wysyłane do GitHuba ani do serwera.</p></div>
+          <button class="action-button" id="export-journal" type="button" data-i18n="journal.export">Eksportuj Markdown</button>
         </div>
-
         <div class="journal-grid">
           <form class="journal-form panel" id="journal-form">
             <div class="form-grid">
-              <label>Rodzaj wpisu
-                <select id="journal-type" required>
-                  <option value="Fakt">Fakt</option>
-                  <option value="Interpretacja">Interpretacja</option>
-                  <option value="Do weryfikacji">Do weryfikacji</option>
-                  <option value="Lekcja">Lekcja</option>
-                </select>
-              </label>
-              <label>Projekt
-                <select id="journal-project" required></select>
-              </label>
-              <label>Data zdarzenia lub źródła
-                <input id="journal-source-date" type="date" required />
-              </label>
-              <label>Obszar
-                <select id="journal-domain" required></select>
-              </label>
+              <label><span data-i18n="journal.type">Rodzaj wpisu</span><select id="journal-type" required><option value="fact" data-i18n="journal.typeFact">Fakt</option><option value="interpretation" data-i18n="journal.typeInterpretation">Interpretacja</option><option value="verify" data-i18n="journal.typeVerify">Do weryfikacji</option><option value="lesson" data-i18n="journal.typeLesson">Lekcja</option></select></label>
+              <label><span data-i18n="journal.project">Projekt</span><select id="journal-project" required></select></label>
+              <label><span data-i18n="journal.sourceDate">Data zdarzenia lub źródła</span><input id="journal-source-date" type="date" required /></label>
+              <label><span data-i18n="journal.domain">Obszar</span><select id="journal-domain" required></select></label>
             </div>
-            <label>Notatka
-              <textarea id="journal-text" rows="6" maxlength="3000" required placeholder="Co dokładnie zaobserwowałem? Jaki tag lub dokument to potwierdza? Co wymaga dalszej weryfikacji?"></textarea>
-            </label>
-            <div class="journal-form-actions">
-              <button class="action-button primary" type="submit">Zapisz wpis z datą</button>
-              <button class="action-button" id="note-current-term" type="button">Dodaj obecną fiszkę</button>
-            </div>
-            <p class="privacy-warning">Nie wpisuj nazwisk, danych dostępowych, prywatnych dokumentów ani szczegółów mogących ujawnić zabezpieczenia lub dokładną konfigurację jednostki.</p>
+            <label><span data-i18n="journal.note">Notatka</span><textarea id="journal-text" rows="6" maxlength="3000" required data-i18n-placeholder="journal.placeholder" placeholder="Co dokładnie zaobserwowałem? Jaki tag lub dokument to potwierdza? Co wymaga dalszej weryfikacji?"></textarea></label>
+            <div class="journal-form-actions"><button class="action-button primary" type="submit" data-i18n="journal.save">Zapisz wpis z datą</button><button class="action-button" id="note-current-term" type="button" data-i18n="journal.currentCard">Dodaj obecną fiszkę</button></div>
+            <p class="privacy-warning" data-i18n="journal.privacy">Nie wpisuj nazwisk, danych dostępowych, prywatnych dokumentów ani szczegółów mogących ujawnić zabezpieczenia lub dokładną konfigurację jednostki.</p>
             <p class="form-status" id="journal-status" role="status"></p>
           </form>
-
           <article class="journal-entries panel" aria-labelledby="entries-title">
-            <div class="panel-head compact">
-              <div>
-                <p class="eyebrow">Chronologia</p>
-                <h3 id="entries-title">Moje wpisy</h3>
-              </div>
-              <span id="journal-count">0 wpisów</span>
-            </div>
+            <div class="panel-head compact"><div><p class="eyebrow" data-i18n="journal.entriesEyebrow">Chronologia</p><h3 id="entries-title" data-i18n="journal.entries">Moje wpisy</h3></div><span id="journal-count" data-i18n="journal.initialCount">0 wpisów</span></div>
             <ol id="journal-list" class="journal-list"></ol>
           </article>
         </div>
       </section>
 
-      <section class="ship-guide" id="ship-guide" aria-labelledby="guide-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Schemat pracy inżynierskiej</p>
-            <h2 id="guide-title">Jak zamienić dzień na statku w użyteczną wiedzę</h2>
-          </div>
-        </div>
+      <section class="ship-guide content-section" id="ship-guide" aria-labelledby="guide-title">
+        <div class="section-heading"><div><p class="eyebrow" data-i18n="guide.eyebrow">Schemat pracy inżynierskiej</p><h2 id="guide-title" data-i18n="guide.title">Jak zamienić dzień na statku w użyteczną wiedzę</h2></div></div>
         <div class="guide-flow">
-          <article><span>01</span><h3>Zlokalizuj</h3><p>Projekt, pokład, pomieszczenie, wręga, tag urządzenia i data obserwacji.</p></article>
-          <article><span>02</span><h3>Opisz fakt</h3><p>Zapisz tylko to, co widzisz na urządzeniu, kablu, schemacie lub ekranie.</p></article>
-          <article><span>03</span><h3>Połącz system</h3><p>Ustal funkcję, zasilanie, wejścia/wyjścia, odbiornik i zależności procesowe.</p></article>
-          <article><span>04</span><h3>Zweryfikuj</h3><p>Sprawdź aktualny rysunek, rewizję, listę kablową, instrukcję i procedurę testu.</p></article>
-          <article><span>05</span><h3>Zamknij lekcję</h3><p>Zapisz wniosek, ograniczenie, kolejne pytanie oraz dowód potrzebny do potwierdzenia.</p></article>
+          <article><span>01</span><h3 data-i18n="guide.locate">Zlokalizuj</h3><p data-i18n="guide.locateCopy">Projekt, pokład, pomieszczenie, wręga, tag urządzenia i data obserwacji.</p></article>
+          <article><span>02</span><h3 data-i18n="guide.fact">Opisz fakt</h3><p data-i18n="guide.factCopy">Zapisz tylko to, co widzisz na urządzeniu, kablu, schemacie lub ekranie.</p></article>
+          <article><span>03</span><h3 data-i18n="guide.system">Połącz system</h3><p data-i18n="guide.systemCopy">Ustal funkcję, zasilanie, wejścia/wyjścia, odbiornik i zależności procesowe.</p></article>
+          <article><span>04</span><h3 data-i18n="guide.verify">Zweryfikuj</h3><p data-i18n="guide.verifyCopy">Sprawdź aktualny rysunek, rewizję, listę kablową, instrukcję i procedurę testu.</p></article>
+          <article><span>05</span><h3 data-i18n="guide.close">Zamknij lekcję</h3><p data-i18n="guide.closeCopy">Zapisz wniosek, ograniczenie, kolejne pytanie oraz dowód potrzebny do potwierdzenia.</p></article>
         </div>
       </section>
 
-      <section class="analysis-grid">
-        <article class="panel" aria-labelledby="areas-title">
-          <div class="panel-head">
-            <div>
-              <p class="eyebrow">Rozkład materiału</p>
-              <h2 id="areas-title">Obszary techniczne</h2>
-            </div>
-            <span id="area-context">Wszystkie projekty</span>
-          </div>
-          <div class="bars" id="category-bars"></div>
-        </article>
-
-        <article class="panel" aria-labelledby="updates-title">
-          <div class="panel-head">
-            <div>
-              <p class="eyebrow">Chronologia</p>
-              <h2 id="updates-title">Ostatnie aktualizacje</h2>
-            </div>
-          </div>
-          <ol class="timeline" id="update-timeline"></ol>
-        </article>
+      <section class="analysis-grid compact-analysis">
+        <article class="panel" aria-labelledby="areas-title"><div class="panel-head"><div><p class="eyebrow" data-i18n="areas.eyebrow">Rozkład materiału</p><h2 id="areas-title" data-i18n="areas.title">Obszary techniczne</h2></div><span id="area-context" data-i18n="areas.all">Wszystkie projekty</span></div><div class="bars" id="category-bars"></div></article>
+        <article class="panel" aria-labelledby="updates-title"><div class="panel-head"><div><p class="eyebrow" data-i18n="updates.eyebrow">Chronologia</p><h2 id="updates-title" data-i18n="updates.title">Ostatnie aktualizacje</h2></div></div><ol class="timeline" id="update-timeline"></ol></article>
       </section>
 
-      <section class="method" aria-labelledby="method-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Standard jakości</p>
-            <h2 id="method-title">Co uznajemy za wiedzę</h2>
-          </div>
-        </div>
-        <div class="method-grid">
-          <article><span>01</span><h3>Fakt</h3><p id="method-facts"></p></article>
-          <article><span>02</span><h3>Interpretacja</h3><p id="method-interpretations"></p></article>
-          <article><span>03</span><h3>Ograniczenie</h3><p id="method-limitations"></p></article>
-        </div>
+      <section class="method content-section" aria-labelledby="method-title">
+        <div class="section-heading"><div><p class="eyebrow" data-i18n="method.eyebrow">Standard jakości</p><h2 id="method-title" data-i18n="method.title">Co uznajemy za wiedzę</h2></div></div>
+        <div class="method-grid"><article><span>01</span><h3 data-i18n="method.fact">Fakt</h3><p id="method-facts"></p></article><article><span>02</span><h3 data-i18n="method.interpretation">Interpretacja</h3><p id="method-interpretations"></p></article><article><span>03</span><h3 data-i18n="method.limit">Ograniczenie</h3><p id="method-limitations"></p></article></div>
       </section>
     </main>
 
-    <footer>
-      <p>BATTBYG Project Hub · materiał szkoleniowy i ewidencyjny</p>
-      <p id="generated-at">—</p>
-    </footer>
-
-    <noscript>Do wyświetlenia danych projektowych wymagane jest włączenie JavaScript.</noscript>
+    <footer><p data-i18n="footer.copy">BATTBYG Project Hub · materiał szkoleniowy i ewidencyjny</p><p id="generated-at">—</p></footer>
+    <noscript data-i18n="noscript">Do wyświetlenia danych projektowych wymagane jest włączenie JavaScript.</noscript>
   </body>
 </html>

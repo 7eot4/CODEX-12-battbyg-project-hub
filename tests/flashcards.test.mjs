@@ -21,7 +21,12 @@ const element = (id) => {
   return elements.get(id);
 };
 
-let clickHandler;
+const storage = new Map();
+const localStorage = {
+  getItem: (key) => storage.get(key) ?? null,
+  setItem: (key, value) => storage.set(key, String(value)),
+};
+const clickHandlers = [];
 const context = vm.createContext({
   console,
   Intl,
@@ -29,16 +34,26 @@ const context = vm.createContext({
   Math,
   Uint32Array,
   Option: class Option { constructor(text, value) { this.text = text; this.value = value; } },
-  window: { crypto: globalThis.crypto },
+  CustomEvent: class CustomEvent { constructor(type, options = {}) { this.type = type; this.detail = options.detail; } },
+  window: {
+    crypto: globalThis.crypto,
+    localStorage,
+    addEventListener() {},
+    dispatchEvent() {},
+  },
   document: {
+    documentElement: { lang: "pl" },
     getElementById: element,
+    querySelector: () => null,
     querySelectorAll: () => [],
-    addEventListener(type, handler) { if (type === "click") clickHandler = handler; },
+    addEventListener(type, handler) { if (type === "click") clickHandlers.push(handler); },
   },
   fetch: () => new Promise(() => {}),
 });
 
+const i18nSource = fs.readFileSync(new URL("../docs/assets/i18n.js", import.meta.url), "utf8");
 const source = fs.readFileSync(new URL("../docs/assets/app.js", import.meta.url), "utf8");
+vm.runInContext(i18nSource, context);
 vm.runInContext(source, context);
 
 const term = (english) => ({
@@ -71,13 +86,18 @@ assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'con
 assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'utracie energii sterujacej')[0].title", context), "fail-safe state");
 assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'rozdzial energii')[0].title", context), "Rozdział energii");
 assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'fonnes')[0].title", context), "M/S FONNES");
+assert.equal(vm.runInContext("window.BattbygI18n.set('en'); window.BattbygI18n.get()", context), "en");
+assert.equal(vm.runInContext("document.documentElement.lang", context), "en");
+assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'power distribution')[0].title", context), "Power distribution");
+assert.equal(storage.get("battbyg-ui-language-v1"), "en");
+vm.runInContext("window.BattbygI18n.set('pl')", context);
 
 const before = project.language_learning.terms.map(({ english }) => english);
 const shuffled = vm.runInContext("shuffled(project.language_learning.terms).map((item) => item.english)", context);
 assert.deepEqual([...shuffled].sort(), [...before].sort());
 assert.deepEqual(project.language_learning.terms.map(({ english }) => english), before);
 
-const click = (selector) => clickHandler({ target: { closest: (query) => query === selector ? {} : null } });
+const click = (selector) => clickHandlers.forEach((handler) => handler({ target: { closest: (query) => query === selector ? {} : null } }));
 click("#previous-card");
 assert.equal(vm.runInContext("state.cardIndex", context), 2);
 click("#next-card");

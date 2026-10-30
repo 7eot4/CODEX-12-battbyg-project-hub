@@ -14,15 +14,74 @@ const state = {
 };
 
 const JOURNAL_STORAGE_KEY = "battbyg-field-journal-v1";
+const ui = window.BattbygI18n;
+ui.apply();
 
 const byId = (id) => document.getElementById(id);
-const number = (value) => new Intl.NumberFormat("pl-PL").format(value);
-const date = (value) => new Intl.DateTimeFormat("pl-PL", { dateStyle: "long" }).format(new Date(`${value}T12:00:00`));
+const t = (key, values) => ui.t(key, values);
+const number = (value) => new Intl.NumberFormat(ui.locale()).format(value);
+const date = (value) => new Intl.DateTimeFormat(ui.locale(), { dateStyle: "long" }).format(new Date(`${value}T12:00:00`));
 const plural = (value, one, few, many) => {
+  if (ui.get() === "en") return value === 1 ? one : many;
   const lastTwo = value % 100;
   if (value === 1) return one;
   if (value % 10 >= 2 && value % 10 <= 4 && (lastTwo < 12 || lastTwo > 14)) return few;
   return many;
+};
+
+const DOMAIN_LABELS_EN = {
+  general: "Ship and spaces",
+  machinery: "Machinery",
+  electrical: "Electrical engineering",
+  automation: "Automation",
+  safety: "Safety",
+  process: "Process and refrigeration",
+  research: "Research systems",
+  commissioning: "Commissioning",
+  documentation: "Documentation",
+};
+
+const CATEGORY_LABELS_EN = {
+  "00_Project_identity_context": "Project identification",
+  "10_Drawings_specs_asbuilt": "Drawings and as-built",
+  "20_Hull_deck_yard": "Hull, deck and shipyard",
+  "30_Safety_fire_LSA": "Safety, fire and LSA",
+  "40_Electrical_power_distribution": "Power distribution",
+  "50_Automation_control_instrumentation": "Automation and instrumentation",
+  "60_Machinery_auxiliaries_piping": "Machinery and piping",
+  "70_Navigation_scientific_mission": "Navigation and specialist systems",
+  "80_Commissioning_testing_closeout": "Commissioning and testing",
+};
+
+const EVIDENCE_LABELS_EN = {
+  general: "Project-wide vessel context",
+  machinery: "Machinery and systems",
+  electrical: "Power distribution",
+  automation: "Automation and instrumentation",
+  safety: "Safety and LSA",
+  process: "Machinery and systems",
+  research: "Navigation and specialist systems",
+  commissioning: "Commissioning and testing",
+  documentation: "Drawings and as-built",
+};
+
+const SOURCE_SCOPES_EN = [
+  "electrotechnical terminology",
+  "ship safety, fire protection and life-saving appliances",
+  "life-saving appliances and the LSA Code",
+  "classification context for ship systems",
+  "drives, HMI and automation",
+];
+
+const localizedDomain = (term) => ui.get() === "en" ? DOMAIN_LABELS_EN[term.domain] || term.domain_label : term.domain_label;
+const localizedCategory = (category) => ui.get() === "en" ? CATEGORY_LABELS_EN[category.key] || category.label : category.label;
+const localizedEvidence = (term) => ui.get() === "en" ? EVIDENCE_LABELS_EN[term.domain] || term.evidence_basis : term.evidence_basis;
+const projectFocus = (project) => ui.get() === "en" ? t(`project.focus.${project.id}`) : project.focus;
+const projectCode = (project) => {
+  if (ui.get() !== "en") return project.code;
+  if (project.code === "projekt badawczy") return t("project.codeResearch");
+  if (project.code === "projekt stoczniowy") return t("project.codeShipyard");
+  return project.code;
 };
 
 const escapeHTML = (value) => String(value).replace(/[&<>"]/g, (character) => ({
@@ -48,12 +107,12 @@ function buildSearchIndex(data) {
   const projects = data.projects.map((project) => ({
     id: `project:${project.id}`,
     type: "project",
-    typeLabel: "Projekt",
+    typeLabel: t("search.typeProject"),
     title: project.name,
-    subtitle: `${project.code} · ${project.focus}`,
-    meta: `${number(project.photos)} zdjęć · ${number(project.language_learning.term_count)} terminów`,
+    subtitle: `${projectCode(project)} · ${projectFocus(project)}`,
+    meta: `${number(project.photos)} ${t("general.photos")} · ${number(project.language_learning.term_count)} ${t("general.terms")}`,
     projectId: project.id,
-    searchValues: [project.name, project.code, project.focus],
+    searchValues: [project.name, project.code, project.focus, projectCode(project), projectFocus(project)],
   }));
 
   const termsById = new Map();
@@ -63,10 +122,10 @@ function buildSearchIndex(data) {
         termsById.set(term.id, {
           id: `term:${term.id}`,
           type: "term",
-          typeLabel: "Pojęcie",
+          typeLabel: t("search.typeTerm"),
           title: term.english,
           subtitle: `${term.norwegian} · ${term.polish}`,
-          meta: term.domain_label,
+          meta: localizedDomain(term),
           termId: term.id,
           domain: term.domain,
           projectIds: [],
@@ -97,12 +156,12 @@ function buildSearchIndex(data) {
     return {
       id: `topic:${category.key}`,
       type: "topic",
-      typeLabel: "Temat",
-      title: category.label,
-      subtitle: "Obszar techniczny w materiale projektowym",
-      meta: `${number(category.count)} zdjęć · ${matchingProjects.map((project) => project.name).join(", ")}`,
+      typeLabel: t("search.typeTopic"),
+      title: localizedCategory(category),
+      subtitle: t("search.topicSubtitle"),
+      meta: `${number(category.count)} ${t("general.photos")} · ${matchingProjects.map((project) => project.name).join(", ")}`,
       categoryKey: category.key,
-      searchValues: [category.label, category.key, ...matchingProjects.map((project) => project.focus)],
+      searchValues: [category.label, localizedCategory(category), category.key, ...matchingProjects.flatMap((project) => [project.focus, projectFocus(project)])],
     };
   });
 
@@ -130,7 +189,7 @@ function findSearchResults(index, query, limit = 12) {
       return { ...item, score };
     })
     .filter(Boolean)
-    .sort((a, b) => a.score - b.score || a.type.localeCompare(b.type, "pl") || a.title.localeCompare(b.title, "pl"))
+    .sort((a, b) => a.score - b.score || a.type.localeCompare(b.type, ui.locale()) || a.title.localeCompare(b.title, ui.locale()))
     .slice(0, limit);
 }
 
@@ -152,12 +211,12 @@ function renderSearch(query) {
   resultsPanel.hidden = false;
   input.setAttribute("aria-expanded", "true");
   if (state.searchResults.length === 0) {
-    resultsPanel.innerHTML = `<p class="search-empty">Brak wyniku dla „${escapeHTML(trimmed)}”. Spróbuj nazwy urządzenia, dziedziny albo projektu.</p>`;
+    resultsPanel.innerHTML = `<p class="search-empty">${escapeHTML(t("search.noResult", { query: trimmed }))}</p>`;
     return;
   }
 
   resultsPanel.innerHTML = `
-    <div class="search-results-head"><strong>${state.searchResults.length} ${plural(state.searchResults.length, "wynik", "wyniki", "wyników")}</strong><span>Wybierz, aby przejść do materiału</span></div>
+    <div class="search-results-head"><strong>${escapeHTML(t("search.results", { count: number(state.searchResults.length) }))}</strong><span>${escapeHTML(t("search.select"))}</span></div>
     ${state.searchResults.map((item) => `
       <button class="search-result" type="button" data-search-result="${escapeHTML(item.id)}" data-result-type="${item.type}">
         <span class="search-result-type">${item.typeLabel}</span>
@@ -225,11 +284,12 @@ function renderMetrics(data) {
   byId("metric-updates").textContent = number(data.summary.updates);
   byId("metric-confidence").textContent = number(data.summary.high_confidence);
   byId("snapshot-date").textContent = date(data.site.data_snapshot);
-  byId("generated-at").textContent = `Wygenerowano: ${new Intl.DateTimeFormat("pl-PL", { dateStyle: "medium", timeStyle: "short" }).format(new Date(data.site.generated_at))}`;
+  const generated = new Intl.DateTimeFormat(ui.locale(), { dateStyle: "medium", timeStyle: "short" }).format(new Date(data.site.generated_at));
+  byId("generated-at").textContent = t("generated", { date: generated });
 }
 
 function renderFilters(data) {
-  const filters = [{ id: "all", name: "Wszystkie" }, ...data.projects.map(({ id, name }) => ({ id, name }))];
+  const filters = [{ id: "all", name: t("general.all") }, ...data.projects.map(({ id, name }) => ({ id, name }))];
   byId("project-filters").innerHTML = filters.map((item) => `
     <button class="filter-button ${item.id === state.selected ? "active" : ""}" type="button" data-project="${item.id}" aria-pressed="${item.id === state.selected}">${item.name}</button>
   `).join("");
@@ -239,11 +299,11 @@ function projectCard(project) {
   return `
     <button class="project-card ${project.id === state.selected ? "active" : ""}" type="button" data-project="${project.id}">
       <header>
-        <div><h3>${project.name}</h3><span class="project-code">${project.code}</span></div>
+        <div><h3>${project.name}</h3><span class="project-code">${projectCode(project)}</span></div>
         <span class="project-count">${number(project.photos)}</span>
       </header>
-      <p>${project.focus}</p>
-      <span class="project-learning">${number(project.language_learning.term_count)} ${plural(project.language_learning.term_count, "termin", "terminy", "terminów")} EN/NO</span>
+      <p>${projectFocus(project)}</p>
+      <span class="project-learning">${number(project.language_learning.term_count)} ${t("general.terms")} EN/NO</span>
     </button>
   `;
 }
@@ -259,15 +319,15 @@ function renderProjects(data) {
   byId("project-list").innerHTML = data.projects.map(projectCard).join("");
   const project = activeProject(data);
   byId("project-detail").innerHTML = `
-    <span class="detail-label">${state.selected === "all" ? "Największy zbiór" : "Wybrany projekt"}</span>
+    <span class="detail-label">${state.selected === "all" ? t("project.largest") : t("project.selected")}</span>
     <h3>${project.name}</h3>
     <div class="detail-stats">
-      <div><span>Zdjęcia</span><strong>${number(project.photos)}</strong></div>
-      <div><span>Okres</span><strong>${project.date_from.slice(0, 7)} – ${project.date_to.slice(0, 7)}</strong></div>
-      <div><span>Wysoka pewność</span><strong>${number(project.confidence.high)}</strong></div>
-      <div><span>Średnia pewność</span><strong>${number(project.confidence.medium)}</strong></div>
+      <div><span>${t("project.photos")}</span><strong>${number(project.photos)}</strong></div>
+      <div><span>${t("project.period")}</span><strong>${project.date_from.slice(0, 7)} – ${project.date_to.slice(0, 7)}</strong></div>
+      <div><span>${t("project.high")}</span><strong>${number(project.confidence.high)}</strong></div>
+      <div><span>${t("project.medium")}</span><strong>${number(project.confidence.medium)}</strong></div>
     </div>
-    <p class="detail-note">${project.focus} Materiały wrażliwe pozostają poza publikacją.</p>
+    <p class="detail-note">${projectFocus(project)} ${t("project.sensitive")}</p>
   `;
 }
 
@@ -364,7 +424,7 @@ function populateVoiceSelect(language) {
   const voices = state.voices.filter((voice) => voiceLanguageMatches(voice, language));
   select.innerHTML = "";
   if (voices.length === 0) {
-    select.add(new Option("Brak głosu dla tego języka", ""));
+    select.add(new Option(t("voice.none"), ""));
     select.disabled = true;
     return false;
   }
@@ -381,11 +441,11 @@ function loadVoices() {
   const englishFemale = populateVoiceSelect("english");
   const norwegianFemale = populateVoiceSelect("norwegian");
   if (englishFemale && norwegianFemale) {
-    byId("voice-status").textContent = "Wybrano kobiece głosy EN i NO";
+    byId("voice-status").textContent = t("voice.selected");
   } else if (state.voices.length === 0) {
-    byId("voice-status").textContent = "Przeglądarka jeszcze ładuje głosy";
+    byId("voice-status").textContent = t("voice.loading");
   } else {
-    byId("voice-status").textContent = "Sprawdź wybór — brak rozpoznanego kobiecego głosu dla jednego z języków";
+    byId("voice-status").textContent = t("voice.warning");
   }
 }
 
@@ -399,21 +459,21 @@ function renderAudioSupport() {
   ["speak-english", "speak-norwegian"].forEach((id) => {
     const button = byId(id);
     button.disabled = !supported;
-    button.title = supported ? "" : "Odsłuch nie jest obsługiwany w tej przeglądarce";
+    button.title = supported ? "" : t("voice.unsupported");
   });
   byId("speech-rate").disabled = !supported;
   if (!supported) {
     ["voice-english", "voice-norwegian"].forEach((id) => { byId(id).disabled = true; });
-    byId("voice-status").textContent = "Odsłuch nie jest obsługiwany w tej przeglądarce";
+    byId("voice-status").textContent = t("voice.unsupported");
   }
 }
 
 function renderDomainFilters(project) {
-  const domains = [...new Map(project.language_learning.terms.map((item) => [item.domain, item.domain_label])).entries()];
+  const domains = [...new Map(project.language_learning.terms.map((item) => [item.domain, localizedDomain(item)])).entries()];
   if (state.domain !== "all" && !domains.some(([key]) => key === state.domain)) {
     state.domain = "all";
   }
-  const filters = [["all", "Wszystkie"], ...domains];
+  const filters = [["all", t("general.all")], ...domains];
   byId("domain-filters").innerHTML = filters.map(([key, label]) => `
     <button class="domain-button ${key === state.domain ? "active" : ""}" type="button" data-domain="${key}" aria-pressed="${key === state.domain}">${label}</button>
   `).join("");
@@ -428,35 +488,35 @@ function renderFlashcard(project) {
   const companionLabel = state.language === "english" ? "Norsk" : "English";
   const companionValue = state.language === "english" ? term.norwegian : term.english;
 
-  byId("flashcard-domain").textContent = term.domain_label;
+  byId("flashcard-domain").textContent = localizedDomain(term);
   byId("flashcard-progress").textContent = `${state.cardIndex + 1} / ${terms.length}`;
   byId("flashcard-question-label").textContent = questionLabel;
   byId("flashcard-question").textContent = question;
   byId("flashcard-question").lang = state.language === "english" ? "en" : "no";
   byId("flashcard-answer").hidden = !state.revealed;
   byId("flashcard-answer").innerHTML = `
-    <div><span>Polski</span><strong>${term.polish}</strong></div>
+    <div><span>${t("flashcard.polish")}</span><strong>${term.polish}</strong></div>
     <div><span>${companionLabel}</span><strong lang="${state.language === "english" ? "no" : "en"}">${companionValue}</strong></div>
-    <div class="flashcard-definition"><span>Definicja</span><p>${term.definition_pl}</p></div>
-    <div class="flashcard-definition"><span>Na statku</span><p>${term.application_pl}</p></div>
+    <div class="flashcard-definition"><span>${t("flashcard.definition")}</span><p>${term.definition_pl}</p></div>
+    <div class="flashcard-definition"><span>${t("flashcard.onShip")}</span><p>${term.application_pl}</p></div>
   `;
-  byId("flashcard-evidence").textContent = `Podstawa przypisania: ${term.evidence_basis}. Definicja dodana: ${date(term.definition_added_on)}.`;
-  byId("reveal-card").textContent = state.revealed ? "Ukryj odpowiedź" : "Pokaż odpowiedź";
+  byId("flashcard-evidence").textContent = t("flashcard.evidence", { basis: localizedEvidence(term), date: date(term.definition_added_on) });
+  byId("reveal-card").textContent = state.revealed ? t("flashcard.hide") : t("flashcard.reveal");
 }
 
 function renderVocabulary(project) {
   const terms = filteredTerms(project);
-  byId("vocabulary-count").textContent = `${number(terms.length)} ${plural(terms.length, "pozycja", "pozycje", "pozycji")}`;
+  byId("vocabulary-count").textContent = `${number(terms.length)} ${t("general.items")}`;
   byId("vocabulary-body").innerHTML = terms.map((term) => `
     <tr>
       <td lang="en">${term.english}</td>
       <td lang="no">${term.norwegian}</td>
       <td>${term.polish}</td>
       <td class="definition-cell">
-        <span class="domain-pill">${term.domain_label}</span>
+        <span class="domain-pill">${localizedDomain(term)}</span>
         <strong>${term.definition_pl}</strong>
         <span>${term.application_pl}</span>
-        <small>Dodano ${date(term.definition_added_on)} · ${term.definition_status}</small>
+        <small>${t("definition.added", { date: date(term.definition_added_on) })} · ${t("definition.status")}</small>
       </td>
     </tr>
   `).join("");
@@ -466,11 +526,13 @@ function renderLanguage(data) {
   const project = activeProject(data);
   byId("language-project-name").textContent = project.name;
   byId("language-term-count").textContent = number(project.language_learning.term_count);
-  byId("language-term-label").textContent = `${plural(project.language_learning.term_count, "termin", "terminy", "terminów")} w projekcie`;
-  byId("language-rule").textContent = data.language_learning.assignment_rule;
-  byId("definition-note").innerHTML = `<strong>${number(data.language_learning.defined_terms)} / ${number(data.language_learning.source_terms)} pojęć ma definicję.</strong> ${escapeHTML(data.language_learning.definition_note)} Stan opracowania: ${date(data.language_learning.definitions_added_on)}.`;
-  byId("definition-sources").innerHTML = data.language_learning.reference_sources.map((source) => `
-    <li><a href="${escapeHTML(source.url)}" target="_blank" rel="noreferrer">${escapeHTML(source.title)}</a><span>${escapeHTML(source.scope)} · dostęp ${date(source.accessed_on)}</span></li>
+  byId("language-term-label").textContent = ui.get() === "en" ? "terms in the project" : `${plural(project.language_learning.term_count, "termin", "terminy", "terminów")} w projekcie`;
+  byId("language-rule").textContent = ui.get() === "en"
+    ? "A term is assigned to a project when it matches a technical category present in that project's verified photo register."
+    : data.language_learning.assignment_rule;
+  byId("definition-note").innerHTML = `<strong>${escapeHTML(t("definition.coverage", { defined: number(data.language_learning.defined_terms), total: number(data.language_learning.source_terms) }))}</strong> ${escapeHTML(t("definition.note"))} ${escapeHTML(t("definition.state", { date: date(data.language_learning.definitions_added_on) }))}`;
+  byId("definition-sources").innerHTML = data.language_learning.reference_sources.map((source, index) => `
+    <li><a href="${escapeHTML(source.url)}" target="_blank" rel="noreferrer">${escapeHTML(source.title)}</a><span>${escapeHTML(ui.get() === "en" ? SOURCE_SCOPES_EN[index] : source.scope)} · ${escapeHTML(t("source.accessed", { date: date(source.accessed_on) }))}</span></li>
   `).join("");
   renderLanguageSwitch();
   renderAudioSupport();
@@ -504,10 +566,10 @@ function selectedCategories(data) {
 function renderBars(data) {
   const categories = selectedCategories(data);
   const max = Math.max(...categories.map((item) => item.count), 1);
-  byId("area-context").textContent = state.selected === "all" ? "Wszystkie projekty" : data.projects.find((item) => item.id === state.selected).name;
+  byId("area-context").textContent = state.selected === "all" ? t("areas.all") : data.projects.find((item) => item.id === state.selected).name;
   byId("category-bars").innerHTML = categories.map((item) => `
     <div class="bar-row" data-category="${item.key}">
-      <span class="bar-label">${item.label}</span>
+      <span class="bar-label">${localizedCategory(item)}</span>
       <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: ${(item.count / max * 100).toFixed(1)}%"></div></div>
       <span class="bar-value">${number(item.count)}</span>
     </div>
@@ -518,16 +580,16 @@ function renderUpdates(data) {
   byId("update-timeline").innerHTML = data.updates.map((item) => `
     <li>
       <time datetime="${item.date}">${date(item.date)}</time>
-      <strong>+${number(item.included)} rekordów · ${item.status}</strong>
-      <span>${item.projects.join(", ")} · odrzucono ${number(item.excluded)} plików spoza zakresu</span>
+      <strong>${escapeHTML(t("updates.line", { included: number(item.included), status: item.status === "zweryfikowana" ? t("updates.verified") : t("updates.progress") }))}</strong>
+      <span>${escapeHTML(t("updates.detail", { projects: item.projects.join(", "), excluded: number(item.excluded) }))}</span>
     </li>
   `).join("");
 }
 
 function renderMethod(data) {
-  byId("method-facts").textContent = data.methodology.facts;
-  byId("method-interpretations").textContent = data.methodology.interpretations;
-  byId("method-limitations").textContent = data.methodology.limitations;
+  byId("method-facts").textContent = ui.get() === "en" ? t("method.factsCopy") : data.methodology.facts;
+  byId("method-interpretations").textContent = ui.get() === "en" ? t("method.interpretationsCopy") : data.methodology.interpretations;
+  byId("method-limitations").textContent = ui.get() === "en" ? t("method.limitationsCopy") : data.methodology.limitations;
 }
 
 function localDateValue(value = new Date()) {
@@ -554,21 +616,43 @@ function persistJournalEntries() {
   }
 }
 
+function normalizeJournalType(value) {
+  return ({
+    Fakt: "fact",
+    Interpretation: "interpretation",
+    Interpretacja: "interpretation",
+    "Do weryfikacji": "verify",
+    "To verify": "verify",
+    Lekcja: "lesson",
+    Lesson: "lesson",
+  })[value] || value;
+}
+
+function journalTypeLabel(value) {
+  const key = normalizeJournalType(value);
+  return ({
+    fact: t("journal.typeFact"),
+    interpretation: t("journal.typeInterpretation"),
+    verify: t("journal.typeVerify"),
+    lesson: t("journal.typeLesson"),
+  })[key] || value;
+}
+
 function renderJournal() {
   const list = byId("journal-list");
   const entries = [...state.journalEntries].sort((a, b) => b.created_at.localeCompare(a.created_at));
-  byId("journal-count").textContent = `${number(entries.length)} ${plural(entries.length, "wpis", "wpisy", "wpisów")}`;
+  byId("journal-count").textContent = `${number(entries.length)} ${t("general.entries")}`;
   byId("export-journal").disabled = entries.length === 0;
   if (entries.length === 0) {
-    list.innerHTML = '<li class="journal-empty">Brak wpisów. Pierwszą notatkę możesz utworzyć ręcznie albo z obecnej fiszki.</li>';
+    list.innerHTML = `<li class="journal-empty">${escapeHTML(t("journal.empty"))}</li>`;
     return;
   }
   list.innerHTML = entries.map((entry) => `
     <li class="journal-entry">
-      <div><span class="journal-type">${escapeHTML(entry.type)}</span><time datetime="${escapeHTML(entry.source_date)}">zdarzenie: ${date(entry.source_date)}</time></div>
-      <strong>${escapeHTML(entry.project)} · ${escapeHTML(entry.domain)}</strong>
+      <div><span class="journal-type">${escapeHTML(journalTypeLabel(entry.type))}</span><time datetime="${escapeHTML(entry.source_date)}">${escapeHTML(t("journal.event", { date: date(entry.source_date) }))}</time></div>
+      <strong>${escapeHTML(entry.project)} · ${escapeHTML(entry.domain_key ? localizedDomain({ domain: entry.domain_key, domain_label: entry.domain }) : entry.domain)}</strong>
       <p>${escapeHTML(entry.text).replace(/\n/g, "<br>")}</p>
-      <small>Zapis lokalny: ${new Intl.DateTimeFormat("pl-PL", { dateStyle: "medium", timeStyle: "short" }).format(new Date(entry.created_at))}</small>
+      <small>${escapeHTML(t("journal.local", { date: new Intl.DateTimeFormat(ui.locale(), { dateStyle: "medium", timeStyle: "short" }).format(new Date(entry.created_at)) }))}</small>
     </li>
   `).join("");
 }
@@ -583,7 +667,7 @@ function renderJournalControls(data) {
 
   const domainSelect = byId("journal-domain");
   const previousDomain = domainSelect.value;
-  const domains = [...new Map(data.projects.flatMap((project) => project.language_learning.terms).map((term) => [term.domain, term.domain_label])).entries()];
+  const domains = [...new Map(data.projects.flatMap((project) => project.language_learning.terms).map((term) => [term.domain, localizedDomain(term)])).entries()];
   domainSelect.innerHTML = domains.map(([key, label]) => `<option value="${escapeHTML(key)}">${escapeHTML(label)}</option>`).join("");
   domainSelect.value = domains.some(([key]) => key === previousDomain) ? previousDomain : "general";
   if (!byId("journal-source-date").value) byId("journal-source-date").value = localDateValue();
@@ -597,27 +681,39 @@ function currentTerm() {
 function fillJournalFromCurrentTerm() {
   const project = activeProject(state.data);
   const term = currentTerm();
-  byId("journal-type").value = "Lekcja";
+  byId("journal-type").value = "lesson";
   byId("journal-project").value = project.id;
   byId("journal-domain").value = term.domain;
   byId("journal-source-date").value = localDateValue();
-  byId("journal-text").value = `${term.english} / ${term.norwegian} / ${term.polish}\nDefinicja: ${term.definition_pl}\nNa statku: ${term.application_pl}\nDo sprawdzenia w projekcie: `;
+  byId("journal-text").value = `${term.english} / ${term.norwegian} / ${term.polish}\n${t("journal.templateDefinition")}: ${term.definition_pl}\n${t("journal.templateOnShip")}: ${term.application_pl}\n${t("journal.templateCheck")}: `;
   byId("journal-text").focus();
-  byId("journal-status").textContent = "Fiszka została przepisana do formularza. Uzupełnij własną obserwację przed zapisem.";
+  byId("journal-status").textContent = t("journal.filled");
   byId("field-journal").scrollIntoView({ block: "start", behavior: "smooth" });
 }
 
 function journalAsMarkdown(entries) {
+  const english = ui.get() === "en";
   const lines = [
-    "# BATTBYG — dziennik nauki i pracy na statku",
+    english ? "# BATTBYG — shipboard learning and work journal" : "# BATTBYG — dziennik nauki i pracy na statku",
     "",
-    `Eksport: ${new Date().toISOString()}`,
+    `${english ? "Export" : "Eksport"}: ${new Date().toISOString()}`,
     "",
-    "> Prywatny zapis edukacyjny. Fakt, interpretacja i element do weryfikacji nie są równoważne.",
+    english
+      ? "> Private educational record. A fact, interpretation and item to verify are not equivalent."
+      : "> Prywatny zapis edukacyjny. Fakt, interpretacja i element do weryfikacji nie są równoważne.",
     "",
   ];
   [...entries].sort((a, b) => b.created_at.localeCompare(a.created_at)).forEach((entry) => {
-    lines.push(`## ${entry.source_date} · ${entry.type}`, "", `- Projekt: ${entry.project}`, `- Obszar: ${entry.domain}`, `- Zapis lokalny: ${entry.created_at}`, "", entry.text, "");
+    lines.push(
+      `## ${entry.source_date} · ${journalTypeLabel(entry.type)}`,
+      "",
+      `- ${english ? "Project" : "Projekt"}: ${entry.project}`,
+      `- ${english ? "Area" : "Obszar"}: ${entry.domain_key ? localizedDomain({ domain: entry.domain_key, domain_label: entry.domain }) : entry.domain}`,
+      `- ${english ? "Local record" : "Zapis lokalny"}: ${entry.created_at}`,
+      "",
+      entry.text,
+      "",
+    );
   });
   return lines.join("\n");
 }
@@ -628,10 +724,10 @@ function exportJournal() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `BATTBYG_dziennik_${localDateValue()}.md`;
+  link.download = `BATTBYG_${ui.get() === "en" ? "journal" : "dziennik"}_${localDateValue()}.md`;
   link.click();
   URL.revokeObjectURL(url);
-  byId("journal-status").textContent = "Dziennik wyeksportowano do pliku Markdown.";
+  byId("journal-status").textContent = t("journal.exported");
 }
 
 function render() {
@@ -750,6 +846,7 @@ byId("journal-form").addEventListener("submit", (event) => {
     type: byId("journal-type").value,
     project: project?.name || byId("journal-project").value,
     domain: domainOption?.textContent || byId("journal-domain").value,
+    domain_key: byId("journal-domain").value,
     source_date: byId("journal-source-date").value,
     text: byId("journal-text").value.trim(),
     created_at: new Date().toISOString(),
@@ -758,12 +855,12 @@ byId("journal-form").addEventListener("submit", (event) => {
   state.journalEntries.push(entry);
   if (!persistJournalEntries()) {
     state.journalEntries.pop();
-    byId("journal-status").textContent = "Nie udało się zapisać wpisu w tej przeglądarce. Wyeksportuj istniejące notatki i sprawdź ustawienia pamięci witryny.";
+    byId("journal-status").textContent = t("journal.saveFailed");
     return;
   }
   renderJournal();
   byId("journal-text").value = "";
-  byId("journal-status").textContent = `Zapisano lokalnie: ${entry.type.toLowerCase()} z ${date(entry.source_date)}.`;
+  byId("journal-status").textContent = t("journal.saved", { type: journalTypeLabel(entry.type).toLowerCase(), date: date(entry.source_date) });
 });
 
 byId("global-search").addEventListener("input", (event) => renderSearch(event.target.value));
@@ -779,12 +876,12 @@ byId("search-form").addEventListener("submit", (event) => {
 });
 
 byId("speech-rate").addEventListener("input", (event) => {
-  byId("speech-rate-value").value = `${Number(event.target.value).toLocaleString("pl-PL", { minimumFractionDigits: 2 })}×`;
+  byId("speech-rate-value").value = `${Number(event.target.value).toLocaleString(ui.locale(), { minimumFractionDigits: 2 })}×`;
 });
 
 ["voice-english", "voice-norwegian"].forEach((id) => {
   byId(id).addEventListener("change", () => {
-    byId("voice-status").textContent = "Głos wybrany ręcznie";
+    byId("voice-status").textContent = t("voice.manual");
   });
 });
 
@@ -792,6 +889,19 @@ if ("speechSynthesis" in window) {
   window.speechSynthesis.addEventListener("voiceschanged", loadVoices);
   loadVoices();
 }
+
+window.addEventListener("battbyg:languagechange", () => {
+  if (!state.data) return;
+  state.searchIndex = buildSearchIndex(state.data);
+  renderMetrics(state.data);
+  renderUpdates(state.data);
+  renderMethod(state.data);
+  renderJournalControls(state.data);
+  renderJournal();
+  render();
+  if (byId("global-search").value.trim()) renderSearch(byId("global-search").value);
+  if ("speechSynthesis" in window) loadVoices();
+});
 
 fetch("data/site-data.json")
   .then((response) => {
@@ -818,5 +928,5 @@ fetch("data/site-data.json")
     }
   })
   .catch(() => {
-    byId("main").innerHTML = "<section class='intro'><div><p class='eyebrow'>Błąd danych</p><h1>Nie udało się wczytać rejestru.</h1><p class='lead'>Spróbuj odświeżyć stronę. Jeżeli problem pozostaje, aktualizacja wymaga ponownej walidacji.</p></div></section>";
+    byId("main").innerHTML = `<section class="intro"><div><p class="eyebrow">${escapeHTML(t("data.errorEyebrow"))}</p><h1>${escapeHTML(t("data.errorTitle"))}</h1><p class="lead">${escapeHTML(t("data.errorCopy"))}</p></div></section>`;
   });

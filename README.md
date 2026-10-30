@@ -9,6 +9,12 @@ z rozdzieleniem faktu, interpretacji i elementu do weryfikacji oraz eksportem do
 Markdown. Grafika stoczniowa w nagłówku jest wygenerowaną ilustracją kontekstową
 i nie przedstawia żadnego konkretnego projektu ani materiału dowodowego BATTBYG.
 
+Interfejs działa po polsku i angielsku. Przełącznik `PL / EN` tłumaczy także
+dynamiczne komunikaty wyszukiwarki, fiszek, lektora, danych projektowych i
+dziennika; wybór jest zapamiętywany lokalnie w przeglądarce pod kluczem
+`battbyg-ui-language-v1`. Definicje i kontekst praktyczny pozostają po polsku,
+ponieważ są częścią materiału EN/NO → PL, a nie tekstem sterującym interfejsu.
+
 ## Aktualizacja danych
 
 ```powershell
