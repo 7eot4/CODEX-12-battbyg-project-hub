@@ -81,6 +81,8 @@ const siteData = JSON.parse(fs.readFileSync(new URL("../docs/data/site-data.json
 assert.equal("photos" in siteData.summary, false);
 assert.equal(siteData.projects.some((item) => "photos" in item || "confidence" in item), false);
 assert.equal(siteData.updates.some((item) => "included" in item || "excluded" in item), false);
+assert.ok(siteData.updates.length >= 6);
+assert.ok(siteData.updates.every((item) => item.tag_pl && item.tag_en && item.title_pl && item.title_en));
 assert.equal(siteData.categories.some((item) => "count" in item), false);
 context.siteData = siteData;
 assert.ok(vm.runInContext("buildSearchIndex(siteData).length", context) > 80);

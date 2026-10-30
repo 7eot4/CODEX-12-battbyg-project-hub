@@ -356,7 +356,7 @@ h3 { font-size: 1.05rem; }
 .guide-flow h3 { margin: .5rem 0; }
 .guide-flow p { margin: 0; color: var(--muted); font-size: .84rem; }
 
-.analysis-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(20rem, .65fr); gap: 1rem; padding-top: 1rem; }
+.analysis-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(24rem, 1.1fr); gap: 1rem; padding-top: 1rem; }
 .compact-analysis { margin-top: 1rem; }
 .panel { padding: 1.5rem; }
 .panel-head span { color: var(--muted); font-size: .82rem; }
@@ -375,6 +375,8 @@ h3 { font-size: 1.05rem; }
 .timeline strong, .timeline span { display: block; }
 .timeline strong { margin: .2rem 0; }
 .timeline span { color: var(--muted); font-size: .86rem; }
+.timeline-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
+.timeline .timeline-tag { display: inline-block; padding: .18rem .45rem; border: 1px solid rgba(255,155,97,.35); border-radius: 999px; background: var(--orange-soft); color: #ffc29e; font-size: .68rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .method-grid article { padding: 1.4rem; }

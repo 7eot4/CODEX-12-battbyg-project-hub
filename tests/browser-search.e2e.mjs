@@ -92,11 +92,15 @@ try {
   const layout = JSON.parse(await evaluate(`JSON.stringify({
     heroLoaded: document.querySelector('.hero-visual img').complete && document.querySelector('.hero-visual img').naturalWidth > 0,
     noHorizontalOverflow: document.documentElement.scrollWidth <= document.documentElement.clientWidth,
-    disclaimer: document.querySelector('.hero-visual figcaption').textContent
+    disclaimer: document.querySelector('.hero-visual figcaption').textContent,
+    developmentEntries: document.querySelectorAll('#update-timeline li').length,
+    developmentTitle: document.getElementById('updates-title').textContent
   })`));
   assert.equal(layout.heroLoaded, true);
   assert.equal(layout.noHorizontalOverflow, true);
   assert.match(layout.disclaimer, /nie jest zdjęciem z projektu/);
+  assert.ok(layout.developmentEntries >= 6);
+  assert.equal(layout.developmentTitle, "Historia rozwoju warsztatu nauki");
   const publicPositioning = JSON.parse(await evaluate(`JSON.stringify({
     personal: document.querySelector('[data-i18n="hero.publicTitle"]').textContent,
     manual: document.querySelector('[data-i18n="hero.publicText"]').textContent,
@@ -153,7 +157,8 @@ try {
       searchTitle: document.querySelector('[data-search-result]')?.querySelector('strong')?.textContent,
       storedLanguage: localStorage.getItem('battbyg-ui-language-v1'),
       sourcesCollapsed: !document.querySelector('.source-box').open,
-      manual: document.querySelector('[data-i18n="hero.publicText"]').textContent
+      manual: document.querySelector('[data-i18n="hero.publicText"]').textContent,
+      developmentTitle: document.getElementById('updates-title').textContent
     });
   })()`));
   assert.deepEqual(englishUi, {
@@ -165,10 +170,16 @@ try {
     storedLanguage: "en",
     sourcesCollapsed: true,
     manual: "I add the vocabulary entries and explanations manually. This page contains no project photographs, drawings, customer data or confidential technical documentation.",
+    developmentTitle: "Learning workspace evolution",
   });
   await evaluate("window.scrollTo(0, 0); true");
   await sleep(100);
   await capture("battbyg-en-desktop.png");
+
+  await evaluate("document.documentElement.style.scrollBehavior = 'auto'; document.getElementById('updates-title').scrollIntoView({ block: 'start' }); true");
+  await sleep(100);
+  assert.equal(await evaluate("document.documentElement.scrollWidth <= document.documentElement.clientWidth"), true);
+  await capture("battbyg-en-history.png");
 
   const definitionCoverage = JSON.parse(await evaluate(`JSON.stringify({
     terms: new Map(state.data.projects.flatMap((project) => project.language_learning.terms).map((term) => [term.id, term])).size,

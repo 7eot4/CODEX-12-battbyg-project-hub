@@ -577,7 +577,7 @@ function renderBars(data) {
 function renderUpdates(data) {
   byId("update-timeline").innerHTML = data.updates.map((item) => `
     <li>
-      <time datetime="${item.date}">${date(item.date)}</time>
+      <div class="timeline-meta"><time datetime="${item.date}">${date(item.date)}</time><span class="timeline-tag">${escapeHTML(ui.get() === "en" ? item.tag_en : item.tag_pl)}</span></div>
       <strong>${escapeHTML(t("updates.line", { title: ui.get() === "en" ? item.title_en : item.title_pl }))}</strong>
       <span>${escapeHTML(t("updates.detail", { detail: ui.get() === "en" ? item.detail_en : item.detail_pl }))}</span>
     </li>

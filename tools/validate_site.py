@@ -55,6 +55,14 @@ def main() -> None:
     if forbidden_paths:
         raise SystemExit(f"Publiczne dane zawierają metadane materiału źródłowego: {forbidden_paths[:5]}")
 
+    updates = payload.get("updates", [])
+    update_fields = {"date", "tag_pl", "tag_en", "title_pl", "title_en", "detail_pl", "detail_en"}
+    if len(updates) < 6 or any(any(not item.get(field) for field in update_fields) for item in updates):
+        raise SystemExit("Historia rozwoju jest zbyt krótka lub niekompletna")
+    update_dates = [date.fromisoformat(item["date"]) for item in updates]
+    if update_dates != sorted(update_dates, reverse=True):
+        raise SystemExit("Historia rozwoju nie jest ułożona od najnowszego wpisu")
+
     if payload.get("language_learning", {}).get("source_terms") != 77:
         raise SystemExit("Niepełny glosariusz źródłowy")
     if payload.get("language_learning", {}).get("defined_terms") != 77:
@@ -182,6 +190,7 @@ def main() -> None:
         '"hero.title": "Turn shipboard observations into structured knowledge."',
         '"journal.title": "Shipboard learning and work journal"',
         '"guide.title": "Turn a day on board into useful knowledge"',
+        '"updates.title": "Learning workspace evolution"',
     ]
     if any(marker not in translations for marker in required_english_ui):
         raise SystemExit("Niepełne angielskie tłumaczenie interfejsu")

@@ -11,6 +11,10 @@ jako osobisty warsztat nauki. Usunięto z publicznego modelu liczniki i metadane
 materiałów źródłowych; słownik, definicje i przypisania są prezentowane jako
 ręcznie redagowana baza edukacyjna.
 
+Aktualizacja historii: **2026-10-30** — publiczny dziennik rozwoju rozszerzono do
+sześciu potwierdzonych etapów z 6–30 października 2026 r., zgodnych z historią
+wdrożeń strony i faktycznie dodanymi funkcjami.
+
 ## Wniosek
 
 Największą luką strony był brak przejścia od tłumaczenia terminu do zrozumienia
