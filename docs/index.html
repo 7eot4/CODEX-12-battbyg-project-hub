@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Publiczny, zagregowany rejestr wiedzy z projektów okrętowych BATTBYG." />
+    <meta name="description" content="Osobisty warsztat nauki zawodowej w środowisku stoczniowym BATTBYG." />
     <meta name="theme-color" content="#07191f" />
     <title>BATTBYG Project Hub</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307191f'/%3E%3Cpath d='M16 17h24a9 9 0 0 1 0 18H28v12h12' fill='none' stroke='%232dd4bf' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='47' cy='47' r='5' fill='%23ff9b61'/%3E%3C/svg%3E" />
@@ -19,7 +19,7 @@
         <span class="brand-mark" aria-hidden="true">B</span>
         <span class="brand-copy">
           <strong>BATTBYG</strong>
-          <span>Project intelligence</span>
+          <span data-i18n="brand.subtitle">Personal learning workspace</span>
         </span>
       </a>
       <nav class="quick-nav" data-i18n-aria="nav.aria" aria-label="Główne sekcje">
@@ -45,7 +45,7 @@
         <div class="intro-copy">
           <p class="eyebrow" data-i18n="hero.eyebrow">Warsztat wiedzy stoczniowej</p>
           <h1 id="page-title" data-i18n="hero.title">Od obserwacji na statku do uporządkowanej wiedzy.</h1>
-          <p class="lead" data-i18n="hero.lead">Projekty, pojęcia techniczne, fiszki i prywatny dziennik w jednym miejscu — z wyraźnym rozdzieleniem faktów, interpretacji i ograniczeń.</p>
+          <p class="lead" data-i18n="hero.lead">Samodzielnie redaguję tu pojęcia techniczne, definicje, fiszki i prywatne notatki, aby rozwijać kompetencje w elektrotechnice i środowisku stoczniowym.</p>
           <div class="hero-actions">
             <a class="action-link primary" href="#language-lab" data-i18n="hero.ctaLearn">Przejdź do nauki</a>
             <a class="action-link" href="#field-journal" data-i18n="hero.ctaJournal">Otwórz dziennik</a>
@@ -53,14 +53,14 @@
           <div class="scope-note">
             <span class="scope-dot" aria-hidden="true"></span>
             <div>
-              <strong data-i18n="hero.publicTitle">Bezpieczny tryb publiczny</strong>
-              <p data-i18n="hero.publicText">Bez zdjęć projektowych, rysunków, danych prywatnych i szczegółów wykonawczych.</p>
+              <strong data-i18n="hero.publicTitle">Osobisty projekt edukacyjny</strong>
+              <p data-i18n="hero.publicText">Wpisy słownikowe i objaśnienia dodaję ręcznie. Strona nie zawiera zdjęć z projektów, rysunków, danych klienta ani poufnej dokumentacji technicznej.</p>
             </div>
           </div>
         </div>
         <figure class="hero-visual">
           <img src="assets/shipyard-hero.webp" width="1991" height="790" data-i18n-alt="hero.imageAlt" alt="Ilustracyjny widok nowoczesnej stoczni, statku w budowie i szaf elektrycznych" fetchpriority="high" />
-          <figcaption data-i18n="hero.caption">Ilustracja kontekstowa · nie jest materiałem dowodowym</figcaption>
+          <figcaption data-i18n="hero.caption">Ilustracja wygenerowana cyfrowo · nie jest zdjęciem z projektu</figcaption>
         </figure>
       </section>
 
@@ -91,15 +91,15 @@
       </section>
 
       <section class="metrics" data-i18n-aria="metrics.aria" aria-label="Podsumowanie">
-        <article><span data-i18n="metrics.projects">Projekty</span><strong id="metric-projects">—</strong><small data-i18n="metrics.projectsNote">jednostki w rejestrze</small></article>
-        <article><span data-i18n="metrics.evidence">Materiał dowodowy</span><strong id="metric-photos">—</strong><small data-i18n="metrics.evidenceNote">zweryfikowane fotografie</small></article>
-        <article><span data-i18n="metrics.updates">Aktualizacje</span><strong id="metric-updates">—</strong><small data-i18n="metrics.updatesNote">udokumentowane importy</small></article>
-        <article><span data-i18n="metrics.confidence">Wysoka pewność</span><strong id="metric-confidence">—</strong><small data-i18n="metrics.confidenceNote">rekordy klasyfikacji</small></article>
+        <article><span data-i18n="metrics.projects">Konteksty jednostek</span><strong id="metric-projects">—</strong><small data-i18n="metrics.projectsNote">obszary poznawane podczas pracy</small></article>
+        <article><span data-i18n="metrics.terms">Własne wpisy słownikowe</span><strong id="metric-terms">—</strong><small data-i18n="metrics.termsNote">opracowane ręcznie</small></article>
+        <article><span data-i18n="metrics.languages">Języki techniczne</span><strong id="metric-languages">—</strong><small data-i18n="metrics.languagesNote">English · Norsk · Polski</small></article>
+        <article><span data-i18n="metrics.journal">Prywatny dziennik</span><strong id="metric-journal">—</strong><small data-i18n="metrics.journalNote">zapis tylko w przeglądarce</small></article>
       </section>
 
       <section class="workspace content-section" id="projects" aria-labelledby="projects-title">
         <div class="section-heading">
-          <div><p class="eyebrow" data-i18n="projects.eyebrow">Flota projektowa</p><h2 id="projects-title" data-i18n="projects.title">Jednostki i zakres wiedzy</h2></div>
+          <div><p class="eyebrow" data-i18n="projects.eyebrow">Konteksty nauki</p><h2 id="projects-title" data-i18n="projects.title">Jednostki poznawane podczas pracy</h2></div>
           <div class="filters" id="project-filters" data-i18n-aria="projects.filterAria" aria-label="Filtr projektu"></div>
         </div>
         <div class="project-layout"><div class="project-list" id="project-list"></div><aside class="detail-panel" id="project-detail" aria-live="polite"></aside></div>
@@ -141,7 +141,7 @@
             </div>
           </article>
           <article class="vocabulary-panel" aria-labelledby="vocabulary-title">
-            <div class="panel-head compact"><div><p class="eyebrow" data-i18n="vocabulary.eyebrow">Pełny materiał projektu</p><h3 id="vocabulary-title" data-i18n="vocabulary.title">Słownik EN–NO–PL</h3></div><span id="vocabulary-count">—</span></div>
+            <div class="panel-head compact"><div><p class="eyebrow" data-i18n="vocabulary.eyebrow">Samodzielnie redagowana baza</p><h3 id="vocabulary-title" data-i18n="vocabulary.title">Słownik EN–NO–PL</h3></div><span id="vocabulary-count">—</span></div>
             <div class="vocabulary-table-wrap"><table class="vocabulary-table"><thead><tr><th data-i18n="vocabulary.english">English</th><th data-i18n="vocabulary.norwegian">Norsk</th><th data-i18n="vocabulary.polish">Polski</th><th data-i18n="vocabulary.definition">Definicja i użycie na statku</th></tr></thead><tbody id="vocabulary-body"></tbody></table></div>
           </article>
         </div>
@@ -188,8 +188,8 @@
       </section>
 
       <section class="analysis-grid compact-analysis">
-        <article class="panel" aria-labelledby="areas-title"><div class="panel-head"><div><p class="eyebrow" data-i18n="areas.eyebrow">Rozkład materiału</p><h2 id="areas-title" data-i18n="areas.title">Obszary techniczne</h2></div><span id="area-context" data-i18n="areas.all">Wszystkie projekty</span></div><div class="bars" id="category-bars"></div></article>
-        <article class="panel" aria-labelledby="updates-title"><div class="panel-head"><div><p class="eyebrow" data-i18n="updates.eyebrow">Chronologia</p><h2 id="updates-title" data-i18n="updates.title">Ostatnie aktualizacje</h2></div></div><ol class="timeline" id="update-timeline"></ol></article>
+        <article class="panel" aria-labelledby="areas-title"><div class="panel-head"><div><p class="eyebrow" data-i18n="areas.eyebrow">Zakres nauki</p><h2 id="areas-title" data-i18n="areas.title">Obszary techniczne</h2></div><span id="area-context" data-i18n="areas.all">Wszystkie konteksty</span></div><div class="bars" id="category-bars"></div></article>
+        <article class="panel" aria-labelledby="updates-title"><div class="panel-head"><div><p class="eyebrow" data-i18n="updates.eyebrow">Historia opracowania</p><h2 id="updates-title" data-i18n="updates.title">Rozwój materiału do nauki</h2></div></div><ol class="timeline" id="update-timeline"></ol></article>
       </section>
 
       <section class="method content-section" aria-labelledby="method-title">
@@ -198,7 +198,7 @@
       </section>
     </main>
 
-    <footer><p data-i18n="footer.copy">BATTBYG Project Hub · materiał szkoleniowy i ewidencyjny</p><p id="generated-at">—</p></footer>
+    <footer><p data-i18n="footer.copy">BATTBYG Project Hub · osobisty warsztat nauki zawodowej</p><p id="generated-at">—</p></footer>
     <noscript data-i18n="noscript">Do wyświetlenia danych projektowych wymagane jest włączenie JavaScript.</noscript>
   </body>
 </html>

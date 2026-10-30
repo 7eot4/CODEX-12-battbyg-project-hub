@@ -96,7 +96,19 @@ try {
   })`));
   assert.equal(layout.heroLoaded, true);
   assert.equal(layout.noHorizontalOverflow, true);
-  assert.match(layout.disclaimer, /nie jest materiałem dowodowym/);
+  assert.match(layout.disclaimer, /nie jest zdjęciem z projektu/);
+  const publicPositioning = JSON.parse(await evaluate(`JSON.stringify({
+    personal: document.querySelector('[data-i18n="hero.publicTitle"]').textContent,
+    manual: document.querySelector('[data-i18n="hero.publicText"]').textContent,
+    oldPhotoMetric: Boolean(document.getElementById('metric-photos')),
+    oldConfidenceMetric: Boolean(document.getElementById('metric-confidence')),
+    sourceCountsExposed: document.body.innerText.includes('1 370') || document.body.innerText.includes('1370')
+  })`));
+  assert.equal(publicPositioning.personal, "Osobisty projekt edukacyjny");
+  assert.match(publicPositioning.manual, /dodaję ręcznie/);
+  assert.equal(publicPositioning.oldPhotoMetric, false);
+  assert.equal(publicPositioning.oldConfidenceMetric, false);
+  assert.equal(publicPositioning.sourceCountsExposed, false);
   await capture("battbyg-pl-desktop.png");
 
   const resultPreview = JSON.parse(await evaluate(`(() => {
@@ -140,7 +152,8 @@ try {
       searchType: document.querySelector('[data-search-result]')?.dataset.resultType,
       searchTitle: document.querySelector('[data-search-result]')?.querySelector('strong')?.textContent,
       storedLanguage: localStorage.getItem('battbyg-ui-language-v1'),
-      sourcesCollapsed: !document.querySelector('.source-box').open
+      sourcesCollapsed: !document.querySelector('.source-box').open,
+      manual: document.querySelector('[data-i18n="hero.publicText"]').textContent
     });
   })()`));
   assert.deepEqual(englishUi, {
@@ -151,6 +164,7 @@ try {
     searchTitle: "Power distribution",
     storedLanguage: "en",
     sourcesCollapsed: true,
+    manual: "I add the vocabulary entries and explanations manually. This page contains no project photographs, drawings, customer data or confidential technical documentation.",
   });
   await evaluate("window.scrollTo(0, 0); true");
   await sleep(100);

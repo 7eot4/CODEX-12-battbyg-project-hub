@@ -6,6 +6,11 @@ Aktualizacja interfejsu: **2026-10-30** — uporządkowano hierarchię wizualną
 zmniejszono nagłówek, ujednolicono sekcje, zwinięto źródła referencyjne i dodano
 pełną obsługę interfejsu PL/EN z zapamiętywaniem wyboru w przeglądarce.
 
+Aktualizacja zakresu publicznego: **2026-10-30** — stronę opisano jednoznacznie
+jako osobisty warsztat nauki. Usunięto z publicznego modelu liczniki i metadane
+materiałów źródłowych; słownik, definicje i przypisania są prezentowane jako
+ręcznie redagowana baza edukacyjna.
+
 ## Wniosek
 
 Największą luką strony był brak przejścia od tłumaczenia terminu do zrozumienia
@@ -48,7 +53,7 @@ prywatnych notatek.
 
 ## Granice
 
-Definicja edukacyjna nie jest instrukcją wykonawczą. Zdjęcie i notatka nie
+Definicja edukacyjna ani prywatna notatka nie są instrukcją wykonawczą i nie
 potwierdzają aktualnej rewizji, nastaw, wyniku testu ani stanu energetycznego.
 Przed pracą obowiązują zatwierdzone rysunki, instrukcje producenta, procedury
 stoczni i wymagania klasyfikacyjne.

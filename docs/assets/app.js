@@ -53,7 +53,7 @@ const CATEGORY_LABELS_EN = {
   "80_Commissioning_testing_closeout": "Commissioning and testing",
 };
 
-const EVIDENCE_LABELS_EN = {
+const LEARNING_CONTEXTS_EN = {
   general: "Project-wide vessel context",
   machinery: "Machinery and systems",
   electrical: "Power distribution",
@@ -75,7 +75,7 @@ const SOURCE_SCOPES_EN = [
 
 const localizedDomain = (term) => ui.get() === "en" ? DOMAIN_LABELS_EN[term.domain] || term.domain_label : term.domain_label;
 const localizedCategory = (category) => ui.get() === "en" ? CATEGORY_LABELS_EN[category.key] || category.label : category.label;
-const localizedEvidence = (term) => ui.get() === "en" ? EVIDENCE_LABELS_EN[term.domain] || term.evidence_basis : term.evidence_basis;
+const localizedLearningContext = (term) => ui.get() === "en" ? LEARNING_CONTEXTS_EN[term.domain] || term.learning_context : term.learning_context;
 const projectFocus = (project) => ui.get() === "en" ? t(`project.focus.${project.id}`) : project.focus;
 const projectCode = (project) => {
   if (ui.get() !== "en") return project.code;
@@ -110,7 +110,7 @@ function buildSearchIndex(data) {
     typeLabel: t("search.typeProject"),
     title: project.name,
     subtitle: `${projectCode(project)} · ${projectFocus(project)}`,
-    meta: `${number(project.photos)} ${t("general.photos")} · ${number(project.language_learning.term_count)} ${t("general.terms")}`,
+    meta: `${number(project.language_learning.term_count)} ${t("general.terms")} · EN/NO/PL`,
     projectId: project.id,
     searchValues: [project.name, project.code, project.focus, projectCode(project), projectFocus(project)],
   }));
@@ -135,7 +135,7 @@ function buildSearchIndex(data) {
             term.norwegian,
             term.polish,
             term.domain_label,
-            term.evidence_basis,
+            term.learning_context,
             term.definition_pl,
             term.application_pl,
           ],
@@ -159,7 +159,7 @@ function buildSearchIndex(data) {
       typeLabel: t("search.typeTopic"),
       title: localizedCategory(category),
       subtitle: t("search.topicSubtitle"),
-      meta: `${number(category.count)} ${t("general.photos")} · ${matchingProjects.map((project) => project.name).join(", ")}`,
+      meta: matchingProjects.map((project) => project.name).join(", "),
       categoryKey: category.key,
       searchValues: [category.label, localizedCategory(category), category.key, ...matchingProjects.flatMap((project) => [project.focus, projectFocus(project)])],
     };
@@ -280,9 +280,9 @@ function openSearchResult(result) {
 
 function renderMetrics(data) {
   byId("metric-projects").textContent = number(data.summary.projects);
-  byId("metric-photos").textContent = number(data.summary.photos);
-  byId("metric-updates").textContent = number(data.summary.updates);
-  byId("metric-confidence").textContent = number(data.summary.high_confidence);
+  byId("metric-terms").textContent = number(data.summary.terms);
+  byId("metric-languages").textContent = number(data.summary.languages);
+  byId("metric-journal").textContent = t("project.local").toUpperCase();
   byId("snapshot-date").textContent = date(data.site.data_snapshot);
   const generated = new Intl.DateTimeFormat(ui.locale(), { dateStyle: "medium", timeStyle: "short" }).format(new Date(data.site.generated_at));
   byId("generated-at").textContent = t("generated", { date: generated });
@@ -300,7 +300,7 @@ function projectCard(project) {
     <button class="project-card ${project.id === state.selected ? "active" : ""}" type="button" data-project="${project.id}">
       <header>
         <div><h3>${project.name}</h3><span class="project-code">${projectCode(project)}</span></div>
-        <span class="project-count">${number(project.photos)}</span>
+        <span class="project-count">${number(project.language_learning.term_count)}</span>
       </header>
       <p>${projectFocus(project)}</p>
       <span class="project-learning">${number(project.language_learning.term_count)} ${t("general.terms")} EN/NO</span>
@@ -312,7 +312,7 @@ function activeProject(data) {
   if (state.selected !== "all") {
     return data.projects.find((item) => item.id === state.selected);
   }
-  return data.projects.reduce((a, b) => a.photos > b.photos ? a : b);
+  return data.projects.reduce((a, b) => a.language_learning.term_count > b.language_learning.term_count ? a : b);
 }
 
 function renderProjects(data) {
@@ -322,10 +322,10 @@ function renderProjects(data) {
     <span class="detail-label">${state.selected === "all" ? t("project.largest") : t("project.selected")}</span>
     <h3>${project.name}</h3>
     <div class="detail-stats">
-      <div><span>${t("project.photos")}</span><strong>${number(project.photos)}</strong></div>
-      <div><span>${t("project.period")}</span><strong>${project.date_from.slice(0, 7)} – ${project.date_to.slice(0, 7)}</strong></div>
-      <div><span>${t("project.high")}</span><strong>${number(project.confidence.high)}</strong></div>
-      <div><span>${t("project.medium")}</span><strong>${number(project.confidence.medium)}</strong></div>
+      <div><span>${t("project.terms")}</span><strong>${number(project.language_learning.term_count)}</strong></div>
+      <div><span>${t("project.areas")}</span><strong>${number(project.language_learning.domains.length)}</strong></div>
+      <div><span>${t("project.languages")}</span><strong>EN / NO / PL</strong></div>
+      <div><span>${t("project.journal")}</span><strong>${t("project.local")}</strong></div>
     </div>
     <p class="detail-note">${projectFocus(project)} ${t("project.sensitive")}</p>
   `;
@@ -500,7 +500,7 @@ function renderFlashcard(project) {
     <div class="flashcard-definition"><span>${t("flashcard.definition")}</span><p>${term.definition_pl}</p></div>
     <div class="flashcard-definition"><span>${t("flashcard.onShip")}</span><p>${term.application_pl}</p></div>
   `;
-  byId("flashcard-evidence").textContent = t("flashcard.evidence", { basis: localizedEvidence(term), date: date(term.definition_added_on) });
+  byId("flashcard-evidence").textContent = t("flashcard.evidence", { basis: localizedLearningContext(term), date: date(term.definition_added_on) });
   byId("reveal-card").textContent = state.revealed ? t("flashcard.hide") : t("flashcard.reveal");
 }
 
@@ -528,7 +528,7 @@ function renderLanguage(data) {
   byId("language-term-count").textContent = number(project.language_learning.term_count);
   byId("language-term-label").textContent = ui.get() === "en" ? "terms in the project" : `${plural(project.language_learning.term_count, "termin", "terminy", "terminów")} w projekcie`;
   byId("language-rule").textContent = ui.get() === "en"
-    ? "A term is assigned to a project when it matches a technical category present in that project's verified photo register."
+    ? "I manually curate the terms and assign them to vessel contexts for my own professional learning."
     : data.language_learning.assignment_rule;
   byId("definition-note").innerHTML = `<strong>${escapeHTML(t("definition.coverage", { defined: number(data.language_learning.defined_terms), total: number(data.language_learning.source_terms) }))}</strong> ${escapeHTML(t("definition.note"))} ${escapeHTML(t("definition.state", { date: date(data.language_learning.definitions_added_on) }))}`;
   byId("definition-sources").innerHTML = data.language_learning.reference_sources.map((source, index) => `
@@ -565,13 +565,11 @@ function selectedCategories(data) {
 
 function renderBars(data) {
   const categories = selectedCategories(data);
-  const max = Math.max(...categories.map((item) => item.count), 1);
   byId("area-context").textContent = state.selected === "all" ? t("areas.all") : data.projects.find((item) => item.id === state.selected).name;
   byId("category-bars").innerHTML = categories.map((item) => `
     <div class="bar-row" data-category="${item.key}">
       <span class="bar-label">${localizedCategory(item)}</span>
-      <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: ${(item.count / max * 100).toFixed(1)}%"></div></div>
-      <span class="bar-value">${number(item.count)}</span>
+      <span class="bar-status">${t("areas.inPlan")}</span>
     </div>
   `).join("");
 }
@@ -580,8 +578,8 @@ function renderUpdates(data) {
   byId("update-timeline").innerHTML = data.updates.map((item) => `
     <li>
       <time datetime="${item.date}">${date(item.date)}</time>
-      <strong>${escapeHTML(t("updates.line", { included: number(item.included), status: item.status === "zweryfikowana" ? t("updates.verified") : t("updates.progress") }))}</strong>
-      <span>${escapeHTML(t("updates.detail", { projects: item.projects.join(", "), excluded: number(item.excluded) }))}</span>
+      <strong>${escapeHTML(t("updates.line", { title: ui.get() === "en" ? item.title_en : item.title_pl }))}</strong>
+      <span>${escapeHTML(t("updates.detail", { detail: ui.get() === "en" ? item.detail_en : item.detail_pl }))}</span>
     </li>
   `).join("");
 }

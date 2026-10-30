@@ -2,8 +2,8 @@
 
 ## Cel
 
-Repozytorium publikuje wyłącznie bezpieczne, zagregowane informacje o projektach
-okrętowych BATTBYG. Dane źródłowe pozostają lokalnie w `../battbygg`.
+Repozytorium publikuje osobisty warsztat nauki zawodowej: ręcznie redagowany
+słownik, definicje, fiszki i lokalny dziennik. Dane źródłowe pozostają poza stroną.
 
 ## Aktualizacja
 
@@ -15,21 +15,19 @@ okrętowych BATTBYG. Dane źródłowe pozostają lokalnie w `../battbygg`.
 
 ## Granica publikacji
 
-- Nie kopiuj zdjęć, rysunków, PDF-ów, pełnych rejestrów CSV ani pełnych SHA-256.
+- Nie kopiuj dokumentacji klienta, materiałów źródłowych, pełnych rejestrów ani SHA-256.
 - Nie publikuj danych prywatnych, kwalifikacyjnych, kontaktowych ani wrażliwych.
 - Nie publikuj dokładnych tras kablowych, nastaw, konfiguracji zabezpieczeń ani
   informacji mogących ułatwić dostęp do systemów jednostki.
-- Kategorie `99_Restricted_sensitive` pomijaj w publicznych rozkładach.
-- Wnioski oparte na zdjęciach oznaczaj jako robocze i wymagające potwierdzenia
-  zatwierdzoną dokumentacją.
+- Publiczny model nie może zawierać liczników ani metadanych materiałów źródłowych.
+- Wnioski techniczne oznaczaj jako edukacyjne i wymagające potwierdzenia
+  zatwierdzoną dokumentacją projektu.
 
 ## Źródło prawdy
 
-- `../battbygg/projects/*/project_register.csv` - liczniki projektów i kategorii;
-- `../battbygg/UPDATE_LOG.csv` - historia aktualizacji;
-- `../battbygg/PROJECT_GUIDELINES.md` - metodologia i ograniczenia.
+- `tools/build_site.py` - ręcznie określone konteksty jednostek i obszary nauki;
 - `../battbygg/output/pdf/BATTBYG_learning_package/terminology_EN_NO_PL.csv` -
-  słownik EN–NO–PL; terminy przypisuj do projektu wyłącznie przez obecne w jego
-  rejestrze kategorie techniczne.
+  bazowy słownik EN–NO–PL;
+- `knowledge/definitions_PL.csv` - autorskie definicje i kontekst praktyczny.
 
 Nie edytuj ręcznie `docs/data/site-data.json`; jest generowany ze źródeł.

@@ -30,10 +30,30 @@ def main() -> None:
     payload = json.loads(DATA.read_text(encoding="utf-8"))
     if payload["summary"]["projects"] != 4:
         raise SystemExit("Nieprawidłowa liczba projektów")
-    if payload["summary"]["photos"] != sum(item["photos"] for item in payload["projects"]):
-        raise SystemExit("Niespójny licznik zdjęć")
-    if any(item.get("restricted_material_published") for item in payload["projects"]):
-        raise SystemExit("Materiał wrażliwy oznaczony do publikacji")
+    if payload["summary"].get("terms") != 77 or payload["summary"].get("languages") != 3:
+        raise SystemExit("Niespójne podsumowanie materiału edukacyjnego")
+    if any(item.get("public_scope") != "personal-learning-only" for item in payload["projects"]):
+        raise SystemExit("Nieprawidłowy zakres publikacji projektu")
+
+    forbidden_public_keys = {
+        "photos", "confidence", "included", "excluded", "evidence_basis",
+        "date_from", "date_to", "high_confidence", "medium_confidence",
+    }
+    def find_forbidden_keys(value: object, path: str = "root") -> list[str]:
+        found: list[str] = []
+        if isinstance(value, dict):
+            for key, item in value.items():
+                if key in forbidden_public_keys:
+                    found.append(f"{path}.{key}")
+                found.extend(find_forbidden_keys(item, f"{path}.{key}"))
+        elif isinstance(value, list):
+            for index, item in enumerate(value):
+                found.extend(find_forbidden_keys(item, f"{path}[{index}]"))
+        return found
+
+    forbidden_paths = find_forbidden_keys(payload)
+    if forbidden_paths:
+        raise SystemExit(f"Publiczne dane zawierają metadane materiału źródłowego: {forbidden_paths[:5]}")
 
     if payload.get("language_learning", {}).get("source_terms") != 77:
         raise SystemExit("Niepełny glosariusz źródłowy")
@@ -68,7 +88,7 @@ def main() -> None:
                 "polish",
                 "domain",
                 "domain_label",
-                "evidence_basis",
+                "learning_context",
                 "definition_pl",
                 "application_pl",
                 "definition_added_on",
@@ -94,6 +114,12 @@ def main() -> None:
         r"photos[/\\]",
         r"project_register\.csv",
         r"[A-Fa-f0-9]{64}",
+        r'"photos"\s*:',
+        r"verified photo register",
+        r"Evidence material",
+        r"Materiał dowodowy",
+        r"High confidence",
+        r"Wysoka pewność",
     ]
     for pattern in banned:
         if re.search(pattern, published):
@@ -139,6 +165,14 @@ def main() -> None:
     if any(marker not in html for marker in required_ui):
         raise SystemExit("Brak kompletnego interfejsu nauki języków")
 
+    required_public_positioning = [
+        "Wpisy słownikowe i objaśnienia dodaję ręcznie.",
+        "I add the vocabulary entries and explanations manually.",
+        "personal-learning-only",
+    ]
+    if any(marker not in published for marker in required_public_positioning):
+        raise SystemExit("Brak jednoznacznego opisu osobistego warsztatu nauki")
+
     script = (DOCS / "assets" / "app.js").read_text(encoding="utf-8")
     translations = (DOCS / "assets" / "i18n.js").read_text(encoding="utf-8")
     required_translation_logic = ["battbyg-ui-language-v1", "BattbygI18n", "battbyg:languagechange"]
@@ -168,8 +202,8 @@ def main() -> None:
     print("SITE_VALIDATION_OK")
     assignments = sum(project["language_learning"]["term_count"] for project in payload["projects"])
     print(
-        f"projects={payload['summary']['projects']} photos={payload['summary']['photos']} "
-        f"updates={payload['summary']['updates']} source_terms={len(all_terms)} "
+        f"vessel_contexts={payload['summary']['projects']} terms={payload['summary']['terms']} "
+        f"learning_updates={len(payload['updates'])} source_terms={len(all_terms)} "
         f"project_assignments={assignments}"
     )
 

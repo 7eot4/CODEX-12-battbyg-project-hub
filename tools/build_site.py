@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import csv
 import json
-from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
@@ -13,6 +12,7 @@ OUTPUT = ROOT / "docs" / "data" / "site-data.json"
 TERMINOLOGY = SOURCE / "output" / "pdf" / "BATTBYG_learning_package" / "terminology_EN_NO_PL.csv"
 DEFINITIONS = ROOT / "knowledge" / "definitions_PL.csv"
 DEFINITIONS_ADDED_ON = "2026-10-07"
+PUBLIC_UPDATE_DATE = "2026-10-30"
 
 CATEGORY_LABELS = {
     "00_Project_identity_context": "Identyfikacja projektu",
@@ -31,21 +31,46 @@ PROJECTS = {
         "name": "M/S FONNES",
         "code": "NVC 315",
         "focus": "Automatyka, maszyny pomocnicze i dokumentacja systemowa.",
+        "learning_categories": [
+            "00_Project_identity_context", "10_Drawings_specs_asbuilt", "30_Safety_fire_LSA",
+            "50_Automation_control_instrumentation", "60_Machinery_auxiliaries_piping",
+        ],
+        "learning_domains": {"general", "machinery", "automation", "safety", "process", "documentation"},
     },
     "02_GO_SARS": {
         "name": "G.O. SARS",
         "code": "projekt badawczy",
         "focus": "Rozdział energii, automatyka, nawigacja i systemy specjalistyczne.",
+        "learning_categories": [
+            "00_Project_identity_context", "10_Drawings_specs_asbuilt", "30_Safety_fire_LSA",
+            "40_Electrical_power_distribution", "50_Automation_control_instrumentation",
+            "60_Machinery_auxiliaries_piping", "70_Navigation_scientific_mission",
+        ],
+        "learning_domains": {"general", "machinery", "electrical", "automation", "safety", "process", "research", "documentation"},
     },
     "03_MV_BATSFJORD": {
         "name": "M/V BÅTSFJORD",
         "code": "projekt stoczniowy",
         "focus": "Rysunki as-built, rozdział energii, automatyka i commissioning.",
+        "learning_categories": [
+            "00_Project_identity_context", "10_Drawings_specs_asbuilt", "20_Hull_deck_yard",
+            "30_Safety_fire_LSA", "40_Electrical_power_distribution",
+            "50_Automation_control_instrumentation", "60_Machinery_auxiliaries_piping",
+            "70_Navigation_scientific_mission", "80_Commissioning_testing_closeout",
+        ],
+        "learning_domains": {
+            "general", "machinery", "electrical", "automation", "safety",
+            "process", "research", "commissioning", "documentation",
+        },
     },
     "04_VESTFISK": {
         "name": "VESTFISK",
         "code": "projekt stoczniowy",
         "focus": "Automatyka, rysunki i identyfikacja wyposażenia.",
+        "learning_categories": [
+            "00_Project_identity_context", "10_Drawings_specs_asbuilt", "50_Automation_control_instrumentation",
+        ],
+        "learning_domains": {"general", "automation", "documentation"},
     },
 }
 
@@ -61,7 +86,7 @@ DOMAIN_LABELS = {
     "documentation": "Dokumentacja",
 }
 
-DOMAIN_EVIDENCE = {
+LEARNING_CONTEXTS = {
     "general": "Kontekst ogólnookrętowy projektu",
     "machinery": "Maszyny i instalacje",
     "electrical": "Rozdział energii",
@@ -73,50 +98,20 @@ DOMAIN_EVIDENCE = {
     "documentation": "Rysunki i as-built",
 }
 
-CATEGORY_DOMAINS = {
-    "30_Safety_fire_LSA": {"safety"},
-    "40_Electrical_power_distribution": {"electrical"},
-    "50_Automation_control_instrumentation": {"automation"},
-    "60_Machinery_auxiliaries_piping": {"machinery", "process"},
-    "70_Navigation_scientific_mission": {"research"},
-    "80_Commissioning_testing_closeout": {"commissioning"},
-}
-
-
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
 
 
-def parse_filename_date(name: str) -> str:
-    return datetime.strptime(name[:8], "%Y%m%d").date().isoformat()
-
-
-def category_payload(counter: Counter[str]) -> list[dict[str, object]]:
-    result = []
-    for key, count in counter.most_common():
-        if key not in CATEGORY_LABELS:
-            continue
-        result.append({"key": key, "label": CATEGORY_LABELS[key], "count": count})
-    return result
-
-
-def active_domains(categories: Counter[str]) -> set[str]:
-    domains = {"general"}
-    if categories.get("10_Drawings_specs_asbuilt", 0):
-        domains.add("documentation")
-    for category, mapped_domains in CATEGORY_DOMAINS.items():
-        if categories.get(category, 0):
-            domains.update(mapped_domains)
-    return domains
+def category_payload(keys: list[str]) -> list[dict[str, str]]:
+    return [{"key": key, "label": CATEGORY_LABELS[key]} for key in keys]
 
 
 def vocabulary_payload(
     terminology: list[dict[str, str]],
     definitions: dict[str, dict[str, str]],
-    categories: Counter[str],
+    domains: set[str],
 ) -> list[dict[str, str]]:
-    domains = active_domains(categories)
     return [
         {
             "id": f"term-{index:03d}",
@@ -125,7 +120,7 @@ def vocabulary_payload(
             "polish": row["polski"],
             "domain": row["domain"],
             "domain_label": DOMAIN_LABELS[row["domain"]],
-            "evidence_basis": DOMAIN_EVIDENCE[row["domain"]],
+            "learning_context": LEARNING_CONTEXTS[row["domain"]],
             "definition_pl": definitions[row["english"]]["definition_pl"],
             "application_pl": definitions[row["english"]]["application_pl"],
             "definition_added_on": DEFINITIONS_ADDED_ON,
@@ -159,43 +154,19 @@ def build() -> dict[str, object]:
         raise RuntimeError("Glosariusz zawiera pustą definicję lub kontekst praktyczny")
 
     projects = []
-    total_categories: Counter[str] = Counter()
-    total_photos = 0
-    total_high = 0
-    total_medium = 0
+    total_categories: list[str] = []
 
     for project_id, meta in PROJECTS.items():
-        register = SOURCE / "projects" / project_id / "project_register.csv"
-        rows = read_csv(register)
-        if not rows:
-            raise RuntimeError(f"Pusty rejestr: {register}")
-
-        categories = Counter(row["category"] for row in rows)
-        public_categories = Counter(
-            {key: value for key, value in categories.items() if key != "99_Restricted_sensitive"}
-        )
-        confidence = Counter(row["confidence"].strip().lower() for row in rows)
-        filenames = sorted(row["file_name"] for row in rows)
-        total_photos += len(rows)
-        total_high += confidence.get("high", 0)
-        total_medium += confidence.get("medium", 0)
-        total_categories.update(public_categories)
-
-        vocabulary = vocabulary_payload(terminology, definitions, public_categories)
+        categories = meta["learning_categories"]
+        total_categories.extend(key for key in categories if key not in total_categories)
+        vocabulary = vocabulary_payload(terminology, definitions, meta["learning_domains"])
         projects.append(
             {
                 "id": project_id,
                 "name": meta["name"],
                 "code": meta["code"],
                 "focus": meta["focus"],
-                "photos": len(rows),
-                "date_from": parse_filename_date(filenames[0]),
-                "date_to": parse_filename_date(filenames[-1]),
-                "confidence": {
-                    "high": confidence.get("high", 0),
-                    "medium": confidence.get("medium", 0),
-                },
-                "categories": category_payload(public_categories),
+                "categories": category_payload(categories),
                 "language_learning": {
                     "term_count": len(vocabulary),
                     "domains": sorted(
@@ -203,26 +174,26 @@ def build() -> dict[str, object]:
                     ),
                     "terms": vocabulary,
                 },
-                "restricted_material_published": False,
+                "public_scope": "personal-learning-only",
             }
         )
 
-    update_rows = read_csv(SOURCE / "UPDATE_LOG.csv")
-    updates = []
-    for row in sorted(update_rows, key=lambda item: item["update_date"], reverse=True):
-        targets = row["project"].split(";")
-        labels = [PROJECTS[item]["name"] for item in targets if item in PROJECTS]
-        updates.append(
-            {
-                "date": row["update_date"],
-                "included": int(row["included"]),
-                "excluded": int(row["excluded"]),
-                "projects": labels,
-                "status": "zweryfikowana" if row["status"] == "verified" else "w toku",
-            }
-        )
-
-    latest = max(row["update_date"] for row in update_rows)
+    updates = [
+        {
+            "date": PUBLIC_UPDATE_DATE,
+            "title_pl": "Uporządkowano publiczny warsztat nauki zawodowej.",
+            "title_en": "The public professional-learning workspace was refined.",
+            "detail_pl": "Ujednolicono opis samodzielnie redagowanego słownika, fiszek i prywatnego dziennika.",
+            "detail_en": "The independently curated glossary, flashcards and private journal were presented consistently.",
+        },
+        {
+            "date": DEFINITIONS_ADDED_ON,
+            "title_pl": "Dodano autorskie definicje do 77 pojęć.",
+            "title_en": "Original definitions were added to 77 terms.",
+            "detail_pl": "Każdy wpis otrzymał datę opracowania, kontekst praktyczny i źródła referencyjne.",
+            "detail_en": "Each entry received a preparation date, practical context and reference sources.",
+        },
+    ]
     published_terms = {
         item["english"]
         for project in projects
@@ -234,17 +205,16 @@ def build() -> dict[str, object]:
     return {
         "site": {
             "title": "BATTBYG Project Hub",
-            "description": "Publiczny, zagregowany rejestr wiedzy z projektów okrętowych BATTBYG.",
-            "data_snapshot": latest,
+            "description": "Osobisty warsztat nauki zawodowej w środowisku stoczniowym BATTBYG.",
+            "data_snapshot": PUBLIC_UPDATE_DATE,
             "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
             "publication_mode": "public-sanitized",
         },
         "summary": {
             "projects": len(projects),
-            "photos": total_photos,
-            "updates": len(updates),
-            "high_confidence": total_high,
-            "medium_confidence": total_medium,
+            "terms": len(terminology),
+            "languages": 3,
+            "journal": "local",
         },
         "projects": projects,
         "categories": category_payload(total_categories),
@@ -259,8 +229,8 @@ def build() -> dict[str, object]:
                 "aktualnych rysunków, procedur stoczni ani wymagań klasyfikacyjnych."
             ),
             "assignment_rule": (
-                "Termin trafia do projektu, gdy odpowiada kategorii technicznej "
-                "obecnej w jego zweryfikowanym rejestrze zdjęć."
+                "Pojęcia i ich przypisanie do kontekstów jednostek są redagowane ręcznie "
+                "na potrzeby własnej nauki zawodowej."
             ),
             "reference_sources": [
                 {
@@ -296,9 +266,9 @@ def build() -> dict[str, object]:
             ],
         },
         "methodology": {
-            "facts": "Dane widoczne w rejestrach projektu lub bezpośrednio na materiale źródłowym.",
-            "interpretations": "Robocze wnioski techniczne wymagające potwierdzenia dokumentacją.",
-            "limitations": "Zdjęcia nie potwierdzają rewizji, wyniku testu ani aktualnego stanu urządzenia.",
+            "facts": "Samodzielnie zapisane pojęcia i obserwacje przeznaczone do nauki zawodowej.",
+            "interpretations": "Robocze wnioski techniczne wymagające potwierdzenia w aktualnej dokumentacji.",
+            "limitations": "Strona nie jest dokumentacją projektu, instrukcją wykonawczą ani potwierdzeniem odbioru instalacji.",
         },
     }
 
@@ -308,7 +278,7 @@ def main() -> None:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wygenerowano: {OUTPUT}")
-    print(f"Projekty: {payload['summary']['projects']}; zdjęcia: {payload['summary']['photos']}")
+    print(f"Konteksty jednostek: {payload['summary']['projects']}; pojęcia: {payload['summary']['terms']}")
 
 
 if __name__ == "__main__":

@@ -62,7 +62,7 @@ const term = (english) => ({
   polish: `pl-${english}`,
   domain: "general",
   domain_label: "Ogólne",
-  evidence_basis: "test",
+  learning_context: "test",
   definition_pl: `definicja-${english}`,
   application_pl: `zastosowanie-${english}`,
   definition_added_on: "2026-10-07",
@@ -78,6 +78,10 @@ assert.equal(vm.runInContext("preferredVoiceIndex([{name:'Microsoft Finn Online'
 assert.equal(vm.runInContext("voiceLanguageMatches({lang:'no-NO'}, 'norwegian')", context), true);
 
 const siteData = JSON.parse(fs.readFileSync(new URL("../docs/data/site-data.json", import.meta.url), "utf8"));
+assert.equal("photos" in siteData.summary, false);
+assert.equal(siteData.projects.some((item) => "photos" in item || "confidence" in item), false);
+assert.equal(siteData.updates.some((item) => "included" in item || "excluded" in item), false);
+assert.equal(siteData.categories.some((item) => "count" in item), false);
 context.siteData = siteData;
 assert.ok(vm.runInContext("buildSearchIndex(siteData).length", context) > 80);
 assert.equal(vm.runInContext("findSearchResults(buildSearchIndex(siteData), 'uziemienie')[0].title", context), "earthing");
